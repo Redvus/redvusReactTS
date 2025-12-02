@@ -1,0 +1,154 @@
+// Базовые стили
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        sans-serif;
+    line-height: 1.5;
+    color: $color-gray-900;
+    background-color: $color-white;
+    transition: background-color $transition-base, color $transition-base;
+
+    @include dark-theme {
+        color: $color-gray-100;
+        background-color: $color-black;
+    }
+}
+
+// Типографика
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    color: $color-black;
+
+    @include dark-theme {
+        color: $color-white;
+    }
+}
+
+h1 {
+    @include typography("4xl", 800);
+    letter-spacing: -0.025em;
+}
+
+h2 {
+    @include typography("3xl", 700);
+    letter-spacing: -0.025em;
+}
+
+h3 {
+    @include typography("2xl", 600);
+}
+
+p {
+    @include typography("base", 400);
+    color: $color-gray-600;
+
+    @include dark-theme {
+        color: $color-gray-300;
+    }
+}
+
+// Ссылки
+a {
+    color: $color-accent;
+    text-decoration: none;
+    transition: color $transition-fast;
+
+    @include dark-theme {
+        color: $color-white;
+    }
+
+    &:hover {
+        color: $color-accent-light;
+
+        @include dark-theme {
+            color: $color-gray-300;
+        }
+    }
+}
+
+// Кнопки
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+    transition: all $transition-fast;
+}
+
+// Изображения
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+// Утилитные классы
+.container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+
+    @include screen(sm) {
+        padding: 0 1.5rem;
+    }
+
+    @include screen(lg) {
+        padding: 0 2rem;
+    }
+}
+
+// Темная тема переключатель
+.theme-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+
+    button {
+        @include flex-center;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        background: $color-white;
+        border: 1px solid $color-gray-200;
+        box-shadow: $shadow-md;
+
+        @include dark-theme {
+            background: $color-gray-800;
+            border-color: $color-gray-700;
+        }
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        svg {
+            width: 1.25rem;
+            height: 1.25rem;
+            fill: $color-gray-700;
+
+            @include dark-theme {
+                fill: $color-gray-300;
+            }
+        }
+    }
+}

@@ -5,9 +5,11 @@ import type { GalleryItem as GalleryItemType } from '../types/gallery.types';
 interface GalleryItemProps {
     item: GalleryItemType;
     index: number;
+    theme: 'light' | 'dark';
+    onOpenModal: (item: GalleryItemType) => void;
 }
 
-const GalleryItem: React.FC<GalleryItemProps> = ({ item, index }) => {
+const GalleryItem: React.FC<GalleryItemProps> = ({ item, index, onOpenModal }) => {
     const itemRef = useRef<HTMLDivElement>(null);
     const imageRef = useRef<HTMLImageElement>(null);
 
@@ -88,12 +90,18 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ item, index }) => {
         return labels[type] || type;
     };
 
+    const handleClick = () => {
+        onOpenModal(item);
+    };
+
     return (
         <div
             ref={itemRef}
             className="gallery-item group"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
+            onClick={handleClick}
+            style={{ cursor: 'pointer' }}
         >
             <div className="gallery-item-image overflow-hidden rounded-t-2xl">
                 <img
@@ -134,8 +142,26 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ item, index }) => {
                     ))}
                 </div>
 
-                <button className="gallery-item-button w-full py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg font-medium hover:from-blue-600 hover:to-blue-700 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0">
-                    Подробнее
+                <button
+                    className="gallery-grid__button"
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        onOpenModal(item);
+                    }}
+                >
+                    <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        style={{ marginRight: '8px' }}
+                    >
+                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                    Смотреть проект
                 </button>
             </div>
         </div>
