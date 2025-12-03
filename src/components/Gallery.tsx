@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 import GalleryFilter from './GalleryFilter';
 import GalleryItem from './GalleryItem';
 import Loader from './Loader';
@@ -27,6 +30,28 @@ const Gallery: React.FC = () => {
     });
     const [selectedItem, setSelectedItem] = useState<GalleryItemType | null>(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
+
+    // useEffect(() => {
+    //     // Анимация фоновых элементов
+    //     gsap.to('.bg-blob-1', {
+    //         x: 100,
+    //         y: 50,
+    //         duration: 20,
+    //         repeat: -1,
+    //         yoyo: true,
+    //         ease: 'sine.inOut'
+    //     });
+
+    //     gsap.to('.bg-blob-2', {
+    //         x: -80,
+    //         y: -30,
+    //         duration: 25,
+    //         repeat: -1,
+    //         yoyo: true,
+    //         ease: 'sine.inOut',
+    //         delay: 5
+    //     });
+    // }, []);
 
     // Фильтрация работ с использованием requestAnimationFrame для избежания каскадных рендеров
     useEffect(() => {
@@ -134,6 +159,14 @@ const Gallery: React.FC = () => {
 
     return (
         <>
+            {/* Декоративные элементы фона */}
+            {/* <div className="fixed inset-0 overflow-hidden pointer-events-none">
+                <div className="bg-blob-1 absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-blue-100 to-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+                <div className="bg-blob-2 absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-indigo-100 to-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+            </div> */}
+
+            <Header />
+
             <main ref={containerRef} className="app-main relative z-10">
                 <div className="gallery-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                     <div className="theme-toggle">
@@ -245,6 +278,8 @@ const Gallery: React.FC = () => {
                 onClose={handleCloseModal}
                 item={selectedItem}
             />
+
+            <Footer />
         </>
     );
 };

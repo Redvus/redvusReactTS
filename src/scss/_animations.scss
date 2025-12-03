@@ -1,3 +1,9 @@
+@use "fonts" as *;
+// @use "sass:color";
+// @use "breakpoints" as bp;
+@use "variables" as *;
+@use "mixins" as *;
+
 // Анимации для галереи
 @keyframes float {
     0%,

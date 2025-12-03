@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 // Миксин для медиа запросов
 @mixin screen($breakpoint) {
     @if $breakpoint == sm {

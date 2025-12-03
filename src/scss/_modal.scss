@@ -1,3 +1,9 @@
+@use "fonts" as *;
+// @use "sass:color";
+// @use "breakpoints" as bp;
+@use "variables" as *;
+@use "mixins" as *;
+
 .modal {
     position: fixed;
     top: 0;
