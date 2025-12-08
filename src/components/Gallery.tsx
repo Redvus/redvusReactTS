@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 
 import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Footer from './Layout/Footer/Footer';
 import GalleryFilter from './GalleryFilter';
 import GalleryItem from './GalleryItem';
 import Loader from './Loader';
