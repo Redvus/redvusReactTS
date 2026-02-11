@@ -23,22 +23,16 @@ const Footer: React.FC = () => {
     // }, []);
 
     return (
-        // <footer ref={footerRef} className="footer bg-gray-800 text-white py-6 mt-12">
-        //     <div className="container mx-auto text-center">
-        //         <p>&copy; {new Date().getFullYear()} My Gallery. All rights reserved.</p>
-        //     </div>
-        // </footer>
-
         <footer className="app-footer relative z-10 mt-20 py-8 text-center border-t border-gray-200">
             <div className="max-w-7xl mx-auto px-4">
                 <p className="text-gray-600">
-                    © 2024 Creative Gallery. Создано с использованием React, TypeScript, GSAP и Vite
+                    &copy; {new Date().getFullYear()} My Gallery. All rights reserved.
                 </p>
-                <div className="mt-4 flex justify-center space-x-6">
+                {/* <div className="mt-4 flex justify-center space-x-6">
                     <a href="#" className="text-gray-500 hover:text-blue-600 transition-colors">GitHub</a>
                     <a href="#" className="text-gray-500 hover:text-blue-600 transition-colors">Документация</a>
                     <a href="#" className="text-gray-500 hover:text-blue-600 transition-colors">Контакты</a>
-                </div>
+                </div> */}
             </div>
         </footer>
     );

@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
+import type { ReactNode } from 'react';
 import { gsap } from 'gsap';
 import type { GalleryItem, FilterType } from '../types/gallery.types';
 

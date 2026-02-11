@@ -78,42 +78,6 @@ export const galleryItems: GalleryItem[] = [
         imageUrl: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         date: '2024-01-25',
         tags: ['Packaging', 'Eco-friendly', 'Print']
-    },
-    {
-        id: 9,
-        title: 'Лендинг курсов',
-        description: 'Высококонверсионный лендинг для онлайн-образования',
-        type: 'web',
-        imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-        date: '2024-02-10',
-        tags: ['Vue.js', 'GSAP', 'A/B Testing']
-    },
-    {
-        id: 10,
-        title: 'Иллюстрации для блога',
-        description: 'Серия уникальных иллюстраций для технического блога',
-        type: 'illustration',
-        imageUrl: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-        date: '2024-03-01',
-        tags: ['Vector', 'Blog', 'Tech']
-    },
-    {
-        id: 11,
-        title: 'Брендинг кафе',
-        description: 'Фирменный стиль сети кофеен',
-        type: 'branding',
-        imageUrl: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-        date: '2024-02-15',
-        tags: ['Identity', 'Menu', 'Merch']
-    },
-    {
-        id: 12,
-        title: 'Приложение для медитации',
-        description: 'Мобильное приложение с guided медитациями',
-        type: 'mobile',
-        imageUrl: 'https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-        date: '2024-03-20',
-        tags: ['Swift', 'Audio', 'Health']
     }
 ];
 

@@ -39,7 +39,6 @@ h3,
 h4,
 h5,
 h6 {
-    font-weight: 700;
     line-height: 1.2;
     color: $color-black;
 
@@ -49,17 +48,17 @@ h6 {
 }
 
 h1 {
-    @include typography("4xl", 800);
+    @include typography("4xl", 600);
     letter-spacing: -0.025em;
 }
 
 h2 {
-    @include typography("3xl", 700);
+    @include typography("3xl", 500);
     letter-spacing: -0.025em;
 }
 
 h3 {
-    @include typography("2xl", 600);
+    @include typography("2xl", 400);
 }
 
 p {
@@ -180,30 +179,22 @@ body {
         left: 0;
         right: 0;
         bottom: 0;
-        background: radial-gradient(
-                circle at 20% 80%,
+        background: radial-gradient(circle at 20% 80%,
                 rgba(0, 0, 0, 0.03) 0%,
-                transparent 50%
-            ),
-            radial-gradient(
-                circle at 80% 20%,
+                transparent 50%),
+            radial-gradient(circle at 80% 20%,
                 rgba(0, 0, 0, 0.03) 0%,
-                transparent 50%
-            );
+                transparent 50%);
         pointer-events: none;
         z-index: -1;
 
         @include dark-theme {
-            background: radial-gradient(
-                    circle at 20% 80%,
+            background: radial-gradient(circle at 20% 80%,
                     rgba(255, 255, 255, 0.03) 0%,
-                    transparent 50%
-                ),
-                radial-gradient(
-                    circle at 80% 20%,
+                    transparent 50%),
+                radial-gradient(circle at 80% 20%,
                     rgba(255, 255, 255, 0.03) 0%,
-                    transparent 50%
-                );
+                    transparent 50%);
         }
     }
 }
@@ -360,6 +351,7 @@ body {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -370,6 +362,7 @@ body {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);

@@ -30,43 +30,43 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ item, index, onOpenModal }) =
         }
     }, [index]);
 
-    const handleMouseEnter = () => {
-        if (itemRef.current) {
-            gsap.to(itemRef.current, {
-                scale: 1.05,
-                y: -10,
-                duration: 0.4,
-                ease: 'power2.out'
-            });
+    // const handleMouseEnter = () => {
+    //     if (itemRef.current) {
+    //         gsap.to(itemRef.current, {
+    //             scale: 1.05,
+    //             y: -10,
+    //             duration: 0.4,
+    //             ease: 'power2.out'
+    //         });
 
-            if (imageRef.current) {
-                gsap.to(imageRef.current, {
-                    scale: 1.1,
-                    duration: 0.6,
-                    ease: 'power2.out'
-                });
-            }
-        }
-    };
+    //         if (imageRef.current) {
+    //             gsap.to(imageRef.current, {
+    //                 scale: 1.1,
+    //                 duration: 0.6,
+    //                 ease: 'power2.out'
+    //             });
+    //         }
+    //     }
+    // };
 
-    const handleMouseLeave = () => {
-        if (itemRef.current) {
-            gsap.to(itemRef.current, {
-                scale: 1,
-                y: 0,
-                duration: 0.4,
-                ease: 'power2.out'
-            });
+    // const handleMouseLeave = () => {
+    //     if (itemRef.current) {
+    //         gsap.to(itemRef.current, {
+    //             scale: 1,
+    //             y: 0,
+    //             duration: 0.4,
+    //             ease: 'power2.out'
+    //         });
 
-            if (imageRef.current) {
-                gsap.to(imageRef.current, {
-                    scale: 1,
-                    duration: 0.6,
-                    ease: 'power2.out'
-                });
-            }
-        }
-    };
+    //         if (imageRef.current) {
+    //             gsap.to(imageRef.current, {
+    //                 scale: 1,
+    //                 duration: 0.6,
+    //                 ease: 'power2.out'
+    //             });
+    //         }
+    //     }
+    // };
 
     const getTypeColor = (type: string) => {
         const colors: Record<string, string> = {
@@ -97,13 +97,13 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ item, index, onOpenModal }) =
     return (
         <div
             ref={itemRef}
-            className="gallery-item group"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
+            className="gallery__item group"
+            // onMouseEnter={handleMouseEnter}
+            // onMouseLeave={handleMouseLeave}
             onClick={handleClick}
             style={{ cursor: 'pointer' }}
         >
-            <div className="gallery-item-image overflow-hidden rounded-t-2xl">
+            <picture className="gallery__item_image">
                 <img
                     ref={imageRef}
                     src={item.imageUrl}
@@ -112,22 +112,22 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ item, index, onOpenModal }) =
                     loading="lazy"
                 />
                 <div
-                    className="gallery-item-type absolute top-4 right-4 px-3 py-1 rounded-full text-white text-xs font-semibold uppercase tracking-wider"
+                    className="gallery__item_type absolute top-4 right-4 px-3 py-1 rounded-full text-white text-xs font-semibold uppercase tracking-wider"
                     style={{ backgroundColor: getTypeColor(item.type) }}
                 >
                     {getTypeLabel(item.type)}
                 </div>
-            </div>
+            </picture>
 
-            <div className="gallery-item-content p-6">
+            <div className="gallery__item_content p-6">
                 <div className="flex justify-between items-start mb-3">
-                    <h3 className="gallery-item-title text-xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors">
+                    <h3 className="gallery__item_title text-xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors">
                         {item.title}
                     </h3>
                     <span className="text-sm text-gray-500">{item.date}</span>
                 </div>
 
-                <p className="gallery-item-description text-gray-600 mb-4 line-clamp-2">
+                <p className="gallery__item_description text-gray-600 mb-4 line-clamp-2">
                     {item.description}
                 </p>
 

@@ -1,15 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 
-import Header from '../components/Header';
+import Header from './Layout/Header/Header';
 import Footer from './Layout/Footer/Footer';
-import GalleryFilter from './GalleryFilter';
-import GalleryItem from './GalleryItem';
+
 import Loader from './Loader';
 import Modal from './Modal';
+
+import GalleryFilter from './GalleryFilter';
+import GalleryItem from './GalleryItem';
+
 import type { GalleryItem as GalleryItemType, FilterType } from '../types/gallery.types';
 import { galleryItems } from '../data/gallery.data';
-import '../scss/app.scss';
 
 const Gallery: React.FC = () => {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -121,9 +123,31 @@ const Gallery: React.FC = () => {
     }, [filteredItems, isLoading]);
 
     // Применение темы к DOM
+    // useEffect(() => {
+    //     document.body.classList.toggle('theme-dark', theme === 'dark');
+    // }, [theme]);
+
+    // const toggleTheme = () => {
+    //     const newTheme = theme === 'light' ? 'dark' : 'light';
+    //     setTheme(newTheme);
+    //     document.body.classList.toggle('theme-dark', newTheme === 'dark');
+    //     localStorage.setItem('gallery-theme', newTheme);
+    // };
+
+    // Переключение темы
     useEffect(() => {
-        document.body.classList.toggle('theme-dark', theme === 'dark');
-    }, [theme]);
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const savedTheme = localStorage.getItem('gallery-theme') as 'light' | 'dark';
+
+        if (savedTheme) {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
+            setTheme(savedTheme);
+            document.body.classList.toggle('theme-dark', savedTheme === 'dark');
+        } else if (prefersDark) {
+            setTheme('dark');
+            document.body.classList.add('theme-dark');
+        }
+    }, []);
 
     const toggleTheme = () => {
         const newTheme = theme === 'light' ? 'dark' : 'light';
@@ -167,7 +191,7 @@ const Gallery: React.FC = () => {
 
             <Header />
 
-            <main ref={containerRef} className="app-main relative z-10">
+            <main ref={containerRef} className="wrapper">
                 <div className="gallery-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                     <div className="theme-toggle">
                         <button onClick={toggleTheme} aria-label={`Переключить на ${theme === 'light' ? 'темную' : 'светлую'} тему`}>

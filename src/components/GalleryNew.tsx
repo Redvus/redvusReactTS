@@ -4,7 +4,6 @@ import GalleryFilter from './GalleryFilter';
 import GalleryItem from './GalleryItem';
 import Loader from './Loader';
 import { useGallery } from '../contexts/GalleryContext';
-import '../styles/main.scss';
 
 const Gallery: React.FC = () => {
     const {
