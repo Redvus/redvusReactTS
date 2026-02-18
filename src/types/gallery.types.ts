@@ -6,6 +6,7 @@ export interface GalleryItem {
     // imageUrl: string;
     imageUrl: string; // Главное изображение (превью)
     images?: string[]; // Массив всех изображений проекта
+    videos?: VideoItem[]; // Массив видео проекта
     date: string;
     tags: string[];
     published?: string;
@@ -15,6 +16,13 @@ export interface GalleryItem {
     updatedAt?: string;
     order?: number;
     featured?: boolean;
+}
+
+export interface VideoItem {
+    url: string;
+    thumbnail?: string;
+    title?: string;
+    duration?: number;
 }
 
 export type FilterType = 'all' | 'web' | 'mobile' | 'design' | 'branding' | 'illustration';

@@ -667,3 +667,157 @@
         }
     }
 }
+
+// Стили для видео
+.modal-video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: $color-black;
+    cursor: pointer;
+}
+
+.video-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 20;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.modal-media-container:hover .video-controls {
+    opacity: 1;
+}
+
+.video-play-button {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    @include flex-center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.3);
+        border-color: white;
+        transform: scale(1.1);
+    }
+
+    svg {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}
+
+.video-progress {
+    flex: 1;
+
+    input[type="range"] {
+        width: 100%;
+        height: 4px;
+        -webkit-appearance: none;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 2px;
+        outline: none;
+        cursor: pointer;
+
+        &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: white;
+            cursor: pointer;
+        }
+    }
+}
+
+.video-time {
+    color: white;
+    font-size: 0.875rem;
+    font-family: monospace;
+}
+
+// Индикатор типа медиа
+.modal-media-indicator {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    z-index: 20;
+}
+
+.media-type-badge {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 2rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    backdrop-filter: blur(4px);
+}
+
+.media-counter {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 2rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    backdrop-filter: blur(4px);
+}
+
+// Миниатюра с иконкой видео
+.thumbnail-item.video-thumbnail {
+    position: relative;
+
+    &::after {
+        content: '🎬';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1.25rem;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+        z-index: 5;
+    }
+
+    &:hover::after {
+        opacity: 1;
+    }
+}
+
+.thumbnail-video-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 2rem;
+    height: 2rem;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    @include flex-center;
+    color: white;
+    z-index: 5;
+
+    svg {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+}

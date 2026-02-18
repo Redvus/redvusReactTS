@@ -8,31 +8,84 @@ interface ModalProps {
     item: GalleryItem | null;
 }
 
+// Тип медиа-элемента
+interface MediaItem {
+    type: 'image' | 'video';
+    url: string;
+    thumbnail?: string;
+    title?: string;
+}
+
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
     const modalRef = useRef<HTMLDivElement>(null);
     const overlayRef = useRef<HTMLDivElement>(null);
     const contentRef = useRef<HTMLDivElement>(null);
-    const imageRef = useRef<HTMLImageElement>(null);
+    const mediaRef = useRef<HTMLImageElement | HTMLVideoElement>(null);
+    const videoRef = useRef<HTMLVideoElement>(null);
     const thumbnailsRef = useRef<HTMLDivElement>(null);
 
     const animationFrameRef = useRef<number | null>(null);
     const isMountedRef = useRef<boolean>(true);
 
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
     const [isAnimating, setIsAnimating] = useState(false);
     const [touchStart, setTouchStart] = useState<number | null>(null);
     const [touchEnd, setTouchEnd] = useState<number | null>(null);
     const [showThumbnails, setShowThumbnails] = useState(true);
+    const [isPlaying, setIsPlaying] = useState(false);
+    const [videoProgress, setVideoProgress] = useState(0);
+    const [currentTime, setCurrentTime] = useState(0);
+    const [duration, setDuration] = useState(0);
 
-    // Мемоизируем массив изображений
-    const projectImages = useMemo(() => {
+    // Конвертируем изображения и видео в единый формат медиа
+    const mediaItems = useMemo<MediaItem[]>(() => {
         if (!item) return [];
-        return item.images && item.images.length > 0 ? item.images : [item.imageUrl];
+
+        const items: MediaItem[] = [];
+
+        // Добавляем главное изображение
+        if (item.imageUrl) {
+            items.push({
+                type: 'image',
+                url: item.imageUrl,
+                thumbnail: item.imageUrl,
+                title: `${item.title} - главное`
+            });
+        }
+
+        // Добавляем дополнительные изображения
+        if (item.images && item.images.length > 0) {
+            item.images.forEach((img, index) => {
+                // Проверяем, не добавили ли мы уже это изображение как главное
+                if (img !== item.imageUrl) {
+                    items.push({
+                        type: 'image',
+                        url: img,
+                        thumbnail: img,
+                        title: `${item.title} - изображение ${index + 1}`
+                    });
+                }
+            });
+        }
+
+        // Добавляем видео, если есть
+        if (item.videos && item.videos.length > 0) {
+            item.videos.forEach((video, index) => {
+                items.push({
+                    type: 'video',
+                    url: video.url,
+                    thumbnail: video.thumbnail || item.imageUrl,
+                    title: video.title || `${item.title} - видео ${index + 1}`
+                });
+            });
+        }
+
+        return items;
     }, [item]);
 
-    const hasMultipleImages = projectImages.length > 1;
+    const hasMultipleMedia = mediaItems.length > 1;
 
-    // Сброс индекса при открытии нового проекта
+    // Сброс индекса и остановка видео при открытии нового проекта
     useEffect(() => {
         if (!isOpen || !item?.id) return;
 
@@ -42,79 +95,139 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
 
         animationFrameRef.current = requestAnimationFrame(() => {
             if (isMountedRef.current) {
-                setCurrentImageIndex(0);
+                setCurrentMediaIndex(0);
+                setIsPlaying(false);
+                setVideoProgress(0);
             }
             animationFrameRef.current = null;
         });
     }, [isOpen, item?.id]);
 
-    // Обновляем src изображения при изменении индекса
+    // Остановка видео при смене медиа
     useEffect(() => {
-        if (imageRef.current && projectImages[currentImageIndex]) {
-            imageRef.current.src = projectImages[currentImageIndex];
+        if (videoRef.current) {
+            videoRef.current.pause();
         }
-    }, [currentImageIndex, projectImages]);
+    }, [currentMediaIndex]);
 
-    // Анимация смены изображения
-    const animateImageChange = useCallback((newIndex: number) => {
-        if (isAnimating || !imageRef.current || !projectImages[newIndex]) return;
+    // Обновление прогресса видео
+    useEffect(() => {
+        let interval: ReturnType<typeof setTimeout>;
+
+        if (isPlaying && videoRef.current) {
+            interval = setInterval(() => {
+                if (videoRef.current) {
+                    const progress = (videoRef.current.currentTime / videoRef.current.duration) * 100;
+                    setVideoProgress(progress);
+                    setCurrentTime(videoRef.current.currentTime);
+                    setDuration(videoRef.current.duration);
+                }
+            }, 100);
+        }
+
+        return () => {
+            if (interval) {
+                clearInterval(interval);
+            }
+        };
+    }, [isPlaying]);
+
+    // Анимация смены медиа
+    const animateMediaChange = useCallback((newIndex: number) => {
+        if (isAnimating || !mediaRef.current || !mediaItems[newIndex]) return;
 
         setIsAnimating(true);
 
         // Определяем направление анимации
-        const direction = newIndex > currentImageIndex ? 'next' : 'prev';
+        const direction = newIndex > currentMediaIndex ? 'next' : 'prev';
 
         const tl = gsap.timeline({
             onComplete: () => {
-                setCurrentImageIndex(newIndex);
+                setCurrentMediaIndex(newIndex);
                 setIsAnimating(false);
             }
         });
 
-        // Анимация текущего изображения
-        tl.to(imageRef.current, {
+        // Анимация текущего медиа
+        tl.to(mediaRef.current, {
             x: direction === 'next' ? -30 : 30,
             opacity: 0,
             duration: 0.2,
             ease: 'power2.in',
             onComplete: () => {
-                // Меняем src после того, как изображение исчезло
-                if (imageRef.current) {
-                    imageRef.current.src = projectImages[newIndex];
+                // Обновляем src после того, как медиа исчезло
+                if (mediaRef.current) {
+                    if (mediaItems[newIndex].type === 'image') {
+                        (mediaRef.current as HTMLImageElement).src = mediaItems[newIndex].url;
+                    }
                 }
             }
         })
-            .set(imageRef.current, {
+            .set(mediaRef.current, {
                 x: direction === 'next' ? 30 : -30,
             })
-            .to(imageRef.current, {
+            .to(mediaRef.current, {
                 x: 0,
                 opacity: 1,
                 duration: 0.3,
                 ease: 'power2.out'
             });
-    }, [isAnimating, currentImageIndex, projectImages]);
+    }, [isAnimating, currentMediaIndex, mediaItems]);
 
     // Навигационные функции
-    const handleNextImage = useCallback(() => {
-        if (!hasMultipleImages || isAnimating) return;
+    const handleNextMedia = useCallback(() => {
+        if (!hasMultipleMedia || isAnimating) return;
 
-        const nextIndex = (currentImageIndex + 1) % projectImages.length;
-        animateImageChange(nextIndex);
-    }, [currentImageIndex, projectImages.length, hasMultipleImages, isAnimating, animateImageChange]);
+        const nextIndex = (currentMediaIndex + 1) % mediaItems.length;
+        animateMediaChange(nextIndex);
+    }, [currentMediaIndex, mediaItems.length, hasMultipleMedia, isAnimating, animateMediaChange]);
 
-    const handlePreviousImage = useCallback(() => {
-        if (!hasMultipleImages || isAnimating) return;
+    const handlePreviousMedia = useCallback(() => {
+        if (!hasMultipleMedia || isAnimating) return;
 
-        const prevIndex = (currentImageIndex - 1 + projectImages.length) % projectImages.length;
-        animateImageChange(prevIndex);
-    }, [currentImageIndex, projectImages.length, hasMultipleImages, isAnimating, animateImageChange]);
+        const prevIndex = (currentMediaIndex - 1 + mediaItems.length) % mediaItems.length;
+        animateMediaChange(prevIndex);
+    }, [currentMediaIndex, mediaItems.length, hasMultipleMedia, isAnimating, animateMediaChange]);
 
     const handleThumbnailClick = useCallback((index: number) => {
-        if (index === currentImageIndex || isAnimating) return;
+        if (index === currentMediaIndex || isAnimating) return;
 
-        animateImageChange(index);
-    }, [currentImageIndex, isAnimating, animateImageChange]);
+        animateMediaChange(index);
+    }, [currentMediaIndex, isAnimating, animateMediaChange]);
+
+    // Управление видео
+    const handlePlayPause = useCallback(() => {
+        if (videoRef.current) {
+            if (isPlaying) {
+                videoRef.current.pause();
+            } else {
+                videoRef.current.play();
+            }
+            setIsPlaying(!isPlaying);
+        }
+    }, [isPlaying]);
+
+    const handleVideoEnded = useCallback(() => {
+        setIsPlaying(false);
+        setVideoProgress(0);
+    }, []);
+
+    const handleVideoTimeUpdate = useCallback(() => {
+        if (videoRef.current) {
+            const progress = (videoRef.current.currentTime / videoRef.current.duration) * 100;
+            setVideoProgress(progress);
+            setCurrentTime(videoRef.current.currentTime);
+            setDuration(videoRef.current.duration);
+        }
+    }, []);
+
+    const handleSeek = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+        if (videoRef.current) {
+            const time = (parseFloat(e.target.value) / 100) * videoRef.current.duration;
+            videoRef.current.currentTime = time;
+            setVideoProgress(parseFloat(e.target.value));
+        }
+    }, []);
 
     // Обработчик клавиш
     const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
@@ -126,22 +239,33 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
                 break;
             case 'ArrowLeft':
                 e.preventDefault();
-                if (hasMultipleImages) {
-                    handlePreviousImage();
+                if (hasMultipleMedia) {
+                    handlePreviousMedia();
                 }
                 break;
             case 'ArrowRight':
                 e.preventDefault();
-                if (hasMultipleImages) {
-                    handleNextImage();
+                if (hasMultipleMedia) {
+                    handleNextMedia();
+                }
+                break;
+            case ' ':
+                e.preventDefault();
+                if (mediaItems[currentMediaIndex]?.type === 'video') {
+                    handlePlayPause();
                 }
                 break;
         }
-    }, [isOpen, hasMultipleImages, handlePreviousImage, handleNextImage]);
+    }, [isOpen, hasMultipleMedia, handlePreviousMedia, handleNextMedia, handlePlayPause, mediaItems, currentMediaIndex]);
 
     // Закрытие модального окна
     const handleClose = useCallback(() => {
         if (!modalRef.current || !overlayRef.current || !contentRef.current) return;
+
+        // Останавливаем видео при закрытии
+        if (videoRef.current) {
+            videoRef.current.pause();
+        }
 
         const tl = gsap.timeline({
             onComplete: () => {
@@ -183,21 +307,21 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
     }, []);
 
     const handleTouchEnd = useCallback(() => {
-        if (!touchStart || !touchEnd || !hasMultipleImages || isAnimating) return;
+        if (!touchStart || !touchEnd || !hasMultipleMedia || isAnimating) return;
 
         const distance = touchStart - touchEnd;
         const isLeftSwipe = distance > 50;
         const isRightSwipe = distance < -50;
 
         if (isLeftSwipe) {
-            handleNextImage();
+            handleNextMedia();
         } else if (isRightSwipe) {
-            handlePreviousImage();
+            handlePreviousMedia();
         }
 
         setTouchStart(null);
         setTouchEnd(null);
-    }, [touchStart, touchEnd, hasMultipleImages, isAnimating, handleNextImage, handlePreviousImage]);
+    }, [touchStart, touchEnd, hasMultipleMedia, isAnimating, handleNextMedia, handlePreviousMedia]);
 
     // Анимация открытия/закрытия
     useEffect(() => {
@@ -226,7 +350,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
                     '-=0.2'
                 );
 
-            if (thumbnailsRef.current && hasMultipleImages) {
+            if (thumbnailsRef.current && hasMultipleMedia) {
                 gsap.fromTo(thumbnailsRef.current,
                     { y: 20, opacity: 0 },
                     { y: 0, opacity: 1, duration: 0.5, delay: 0.3 }
@@ -237,7 +361,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
         return () => {
             document.body.style.overflow = 'auto';
         };
-    }, [isOpen, hasMultipleImages]);
+    }, [isOpen, hasMultipleMedia]);
 
     // Устанавливаем флаг монтирования
     useEffect(() => {
@@ -250,7 +374,10 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
         };
     }, []);
 
-    if (!item) return null;
+    if (!item || mediaItems.length === 0) return null;
+
+    const currentMedia = mediaItems[currentMediaIndex];
+    const isVideo = currentMedia.type === 'video';
 
     const getTypeLabel = (type: string) => {
         const labels: Record<string, string> = {
@@ -296,24 +423,78 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
                     </svg>
                 </button>
 
-                {/* Секция изображений */}
-                <div className="modal-image-section">
-                    {/* Основное изображение */}
-                    <div className="modal-image-container">
-                        <img
-                            ref={imageRef}
-                            src={projectImages[currentImageIndex] || ''}
-                            alt={`${item.title} - изображение ${currentImageIndex + 1}`}
-                            className="modal-image"
-                        />
+                {/* Секция медиа */}
+                <div className="modal-media-section">
+                    {/* Основное медиа */}
+                    <div className="modal-media-container">
+                        {isVideo ? (
+                            <>
+                                <video
+                                    ref={(el) => {
+                                        videoRef.current = el;
+                                        mediaRef.current = el as HTMLVideoElement;
+                                    }}
+                                    src={currentMedia.url}
+                                    className="modal-video"
+                                    onClick={handlePlayPause}
+                                    onEnded={handleVideoEnded}
+                                    onTimeUpdate={handleVideoTimeUpdate}
+                                />
 
-                        {/* Навигация по изображениям */}
-                        {hasMultipleImages && (
+                                {/* Элементы управления видео */}
+                                <div className="video-controls">
+                                    <button
+                                        className="video-play-button"
+                                        onClick={handlePlayPause}
+                                    >
+                                        {isPlaying ? (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                                <path d="M10 9v6m4-6v6" />
+                                            </svg>
+                                        ) : (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                                <path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                                                <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                        )}
+                                    </button>
+
+                                    <div className="video-progress">
+                                        <input
+                                            type="range"
+                                            min="0"
+                                            max="100"
+                                            value={videoProgress}
+                                            onChange={handleSeek}
+                                            className="video-progress-bar"
+                                        />
+                                    </div>
+
+                                    <div className="video-time">
+                                        <>
+                                            <span>{formatTime(currentTime)}</span>
+                                            <span> / </span>
+                                            <span>{formatTime(duration)}</span>
+                                        </>
+                                    </div>
+                                </div>
+                            </>
+                        ) : (
+                            <img
+                                ref={mediaRef as React.RefObject<HTMLImageElement>}
+                                src={currentMedia.url}
+                                alt={currentMedia.title || item.title}
+                                className="modal-image"
+                            />
+                        )}
+
+                        {/* Навигация по медиа */}
+                        {hasMultipleMedia && (
                             <>
                                 <button
-                                    className="modal-image-nav modal-image-nav--prev"
-                                    onClick={handlePreviousImage}
-                                    aria-label="Предыдущее изображение"
+                                    className="modal-media-nav modal-media-nav--prev"
+                                    onClick={handlePreviousMedia}
+                                    aria-label="Предыдущее"
                                     disabled={isAnimating}
                                 >
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -322,9 +503,9 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
                                 </button>
 
                                 <button
-                                    className="modal-image-nav modal-image-nav--next"
-                                    onClick={handleNextImage}
-                                    aria-label="Следующее изображение"
+                                    className="modal-media-nav modal-media-nav--next"
+                                    onClick={handleNextMedia}
+                                    aria-label="Следующее"
                                     disabled={isAnimating}
                                 >
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -332,19 +513,24 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
                                     </svg>
                                 </button>
 
-                                {/* Индикатор текущего изображения */}
-                                <div className="modal-image-counter">
-                                    {currentImageIndex + 1} / {projectImages.length}
+                                {/* Индикатор типа медиа и позиции */}
+                                <div className="modal-media-indicator">
+                                    <span className="media-type-badge">
+                                        {isVideo ? '🎬 Видео' : '🖼️ Изображение'}
+                                    </span>
+                                    <span className="media-counter">
+                                        {currentMediaIndex + 1} / {mediaItems.length}
+                                    </span>
                                 </div>
                             </>
                         )}
                     </div>
 
                     {/* Миниатюры */}
-                    {hasMultipleImages && (
+                    {hasMultipleMedia && (
                         <div ref={thumbnailsRef} className="modal-thumbnails">
                             <div className="thumbnails-header">
-                                <h4>Все изображения проекта</h4>
+                                <h4>Все медиафайлы проекта</h4>
                                 <button
                                     className="toggle-thumbnails"
                                     onClick={() => setShowThumbnails(prev => !prev)}
@@ -355,14 +541,25 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
 
                             {showThumbnails && (
                                 <div className="thumbnails-grid">
-                                    {projectImages.map((img, index) => (
+                                    {mediaItems.map((media, index) => (
                                         <button
                                             key={index}
-                                            className={`thumbnail-item ${index === currentImageIndex ? 'active' : ''}`}
+                                            className={`thumbnail-item ${index === currentMediaIndex ? 'active' : ''} ${media.type === 'video' ? 'video-thumbnail' : ''}`}
                                             onClick={() => handleThumbnailClick(index)}
                                             disabled={isAnimating}
                                         >
-                                            <img src={img} alt={`${item.title} - миниатюра ${index + 1}`} />
+                                            <img
+                                                src={media.thumbnail || media.url}
+                                                alt={media.title || `Медиа ${index + 1}`}
+                                            />
+                                            {media.type === 'video' && (
+                                                <div className="thumbnail-video-icon">
+                                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                                        <path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                                                        <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                    </svg>
+                                                </div>
+                                            )}
                                             <div className="thumbnail-overlay">
                                                 <span>{index + 1}</span>
                                             </div>
@@ -411,6 +608,14 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
                                 </svg>
                                 <span>Тип: {getTypeLabel(item.type)}</span>
                             </div>
+                            {mediaItems.length > 1 && (
+                                <div className="modal-details__item">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    </svg>
+                                    <span>Медиафайлов: {mediaItems.length}</span>
+                                </div>
+                            )}
                         </div>
                     </div>
 
@@ -432,6 +637,15 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
             </div>
         </div>
     );
+};
+
+// Вспомогательная функция для форматирования времени видео
+const formatTime = (seconds: number): string => {
+    if (isNaN(seconds)) return '0:00';
+
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
 };
 
 export default Modal;
