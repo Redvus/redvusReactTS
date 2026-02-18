@@ -5,7 +5,8 @@ import Header from './Layout/Header/Header';
 import Footer from './Layout/Footer/Footer';
 
 import Loader from './Loader';
-import Modal from './Modal';
+// import Modal from './Modal';
+import Modal from './ModalMany';
 
 import GalleryFilter from './GalleryFilter';
 import GalleryItem from './GalleryItem';
@@ -30,6 +31,8 @@ const Gallery: React.FC = () => {
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         return prefersDark ? 'dark' : 'light';
     });
+    // const [selectedItem, setSelectedItem] = useState<GalleryItemType | null>(null);
+    // const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedItem, setSelectedItem] = useState<GalleryItemType | null>(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -298,6 +301,9 @@ const Gallery: React.FC = () => {
                 </div>
             </main>
             <Modal
+                // isOpen={isModalOpen}
+                // onClose={handleCloseModal}
+                // item={selectedItem}
                 isOpen={isModalOpen}
                 onClose={handleCloseModal}
                 item={selectedItem}

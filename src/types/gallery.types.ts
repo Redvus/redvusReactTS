@@ -3,7 +3,9 @@ export interface GalleryItem {
     title: string;
     description: string;
     type: string;
-    imageUrl: string;
+    // imageUrl: string;
+    imageUrl: string; // Главное изображение (превью)
+    images?: string[]; // Массив всех изображений проекта
     date: string;
     tags: string[];
     published?: string;
