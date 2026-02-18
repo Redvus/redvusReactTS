@@ -14,7 +14,8 @@ export const galleryItems: GalleryItem[] = [
         type: 'web',
         imageUrl: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         date: '2024-01-15',
-        tags: ['React', 'TypeScript', 'Node.js']
+        tags: ['React', 'TypeScript', 'Node.js'],
+        published: 'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/forpost/R_Forpost.mp4'
     },
     {
         id: 2,

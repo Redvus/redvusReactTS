@@ -6,7 +6,7 @@ export interface GalleryItem {
     imageUrl: string;
     date: string;
     tags: string[];
-    published?: boolean;
+    published?: string;
     views?: number;
     likes?: number;
     createdAt?: string;
