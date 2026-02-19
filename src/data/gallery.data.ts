@@ -3,6 +3,7 @@ import type { FilterType, GalleryItem } from '../types/gallery.types';
 export interface FilterOption {
     id: FilterType;
     label: string;
+    icon: string;
     count: number;
 }
 
@@ -72,10 +73,10 @@ export const galleryItems: GalleryItem[] = [
 ];
 
 export const filterOptions: FilterOption[] = [
-    { id: 'all', label: 'Проектов', count: galleryItems.length },
-    { id: 'web', label: 'Сайты', count: galleryItems.filter(item => item.type === 'web').length },
-    { id: 'games', label: 'Игры', count: galleryItems.filter(item => item.type === 'games').length },
-    { id: 'branding', label: 'Брендинг', count: galleryItems.filter(item => item.type === 'branding').length },
-    { id: 'publish', label: 'Полиграфия', count: galleryItems.filter(item => item.type === 'publish').length },
-    { id: 'design', label: 'Дизайн', count: galleryItems.filter(item => item.type === 'design').length }
+    { id: 'all', label: 'Проектов', icon: 'fas fa-th-large', count: galleryItems.length },
+    { id: 'web', label: 'Сайты', icon: 'fas fa-globe', count: galleryItems.filter(item => item.type === 'web').length },
+    { id: 'games', label: 'Игры', icon: 'fas fa-gamepad', count: galleryItems.filter(item => item.type === 'games').length },
+    { id: 'branding', label: 'Брендинг', icon: 'fas fa-splotch', count: galleryItems.filter(item => item.type === 'branding').length },
+    { id: 'publish', label: 'Полиграфия', icon: 'fas fa-book-open', count: galleryItems.filter(item => item.type === 'publish').length },
+    { id: 'design', label: 'Дизайн', icon: 'fas fa-object-group', count: galleryItems.filter(item => item.type === 'design').length }
 ];

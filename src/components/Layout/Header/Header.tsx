@@ -3,6 +3,7 @@ import React, { useRef } from 'react';
 // import { gsap } from 'gsap';
 
 import RedvusLogo from '../../UI/RedvusLogo';
+import Social from '../../UI/Social';
 
 const Header: React.FC = () => {
     const headerRef = useRef<HTMLDivElement>(null);
@@ -41,13 +42,8 @@ const Header: React.FC = () => {
     return (
         <>
             <header ref={headerRef} className="header">
-                {/* <RedvusLogo /> */}
-
-                {/* С кастомными размерами */}
-                {/* <RedvusLogo height={48} /> */}
-
-                {/* С дополнительным CSS-классом */}
                 <RedvusLogo className="header__logo" />
+                <Social className="header__social" />
             </header>
         </>
     );

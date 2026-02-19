@@ -92,6 +92,15 @@ const GalleryFilter: React.FC<GalleryFilterProps> = ({ activeFilter, onFilterCha
                                 {filter.count}
                             </span>
                         </span>
+                        <span className="gallery-filter__icon">
+                            <i className={filter.icon}></i>
+                            <span className={`gallery-filter__count ${activeFilter === filter.id
+                                ? 'gallery-filter__count--active'
+                                : ''
+                                }`}>
+                                {filter.count}
+                            </span>
+                        </span>
                     </button>
                 ))}
             </div>

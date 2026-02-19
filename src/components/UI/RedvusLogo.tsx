@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 
 const RedvusLogo = ({ width = 425, height = 168, className = '' }) => {
     return (
