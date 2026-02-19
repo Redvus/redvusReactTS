@@ -1,5 +1,5 @@
 @use "fonts" as *;
-// @use "sass:color";
+@use "colors" as *;
 // @use "breakpoints" as bp;
 @use "variables" as *;
 @use "mixins" as *;
@@ -18,56 +18,13 @@ html {
     -moz-osx-font-smoothing: grayscale;
 }
 
+// Дополнительные глобальные стили
 body {
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
         sans-serif;
     line-height: 1.5;
-    color: $color-gray-900;
-    background-color: $color-white;
+    background-color: var(--layoutBackgroundLight);
     transition: background-color $transition-base, color $transition-base;
-
-    @include dark-theme {
-        color: $color-gray-100;
-        background-color: $color-black;
-    }
-}
-
-// Типографика
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    line-height: 1.2;
-    color: $color-black;
-
-    @include dark-theme {
-        color: $color-white;
-    }
-}
-
-h1 {
-    @include typography("4xl", 600);
-    letter-spacing: -0.025em;
-}
-
-h2 {
-    @include typography("3xl", 500);
-    letter-spacing: -0.025em;
-}
-
-h3 {
-    @include typography("2xl", 400);
-}
-
-p {
-    @include typography("base", 400);
-    color: $color-gray-600;
-
-    @include dark-theme {
-        color: $color-gray-300;
-    }
 }
 
 // Ссылки
@@ -96,29 +53,6 @@ button {
     border: none;
     background: none;
     transition: all $transition-fast;
-}
-
-// Изображения
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-// Утилитные классы
-.container {
-    width: 100%;
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 1rem;
-
-    @include screen(sm) {
-        padding: 0 1.5rem;
-    }
-
-    @include screen(lg) {
-        padding: 0 2rem;
-    }
 }
 
 // Темная тема переключатель
@@ -158,13 +92,6 @@ img {
     }
 }
 
-// Дополнительные глобальные стили
-body {
-    &.theme-dark {
-        // @include dark-theme;
-    }
-}
-
 // Контейнер приложения
 .app {
     min-height: 100vh;
@@ -199,110 +126,13 @@ body {
     }
 }
 
-// Хедер приложения
-.app-header {
-    padding: 3rem 1rem;
-    text-align: center;
-
-    @include screen(md) {
-        padding: 4rem 1rem;
-    }
-
-    &__title {
-        font-size: 3rem;
-        font-weight: 800;
-        letter-spacing: -0.05em;
-        margin-bottom: 1rem;
-        background: linear-gradient(135deg, #000 0%, #333 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-
-        @include dark-theme {
-            background: linear-gradient(135deg, #fff 0%, #ccc 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        @include screen(md) {
-            font-size: 4rem;
-        }
-    }
-
-    &__subtitle {
-        font-size: 1.125rem;
-        color: $color-gray-600;
-        max-width: 600px;
-        margin: 0 auto;
-
-        @include dark-theme {
-            color: $color-gray-400;
-        }
-
-        @include screen(md) {
-            font-size: 1.25rem;
-        }
-    }
-}
-
-// Футер приложения
-.app-footer {
-    margin-top: auto;
-    padding: 2rem 1rem;
-    border-top: 1px solid $color-gray-200;
-
-    @include dark-theme {
-        border-top-color: $color-gray-800;
-    }
-
-    &__content {
-        text-align: center;
-        color: $color-gray-600;
-
-        @include dark-theme {
-            color: $color-gray-400;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: underline;
-
-            &:hover {
-                color: $color-black;
-
-                @include dark-theme {
-                    color: $color-white;
-                }
-            }
-        }
-    }
-}
-
 // Темная тема классы
 .theme-dark {
-    background-color: $color-black;
-    color: $color-white;
+    background-color: var(--layoutBackground);
+    color: var(--body-font-color);
 
-    // Переопределение цветов для темной темы
-    .gallery-grid__item {
-        background: $color-gray-900;
-        border-color: $color-gray-800;
-    }
-
-    .gallery-stats__item {
-        background: $color-gray-900;
-        border-color: $color-gray-800;
-    }
-
-    .gallery-filter__button {
-        background: $color-gray-900;
-        border-color: $color-gray-700;
-        color: $color-gray-300;
-
-        &.active {
-            background: $color-white;
-            color: $color-black;
-        }
+    button {
+        color: var(--body-font-color);
     }
 }
 
@@ -312,9 +142,9 @@ body {
     gap: 1.5rem;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
-    @include screen(lg) {
-        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    }
+    // @include screen(lg) {
+    //     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    // }
 }
 
 // Эффекты для изображений

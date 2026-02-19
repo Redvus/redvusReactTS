@@ -1,9 +1,14 @@
 // Импортируем все SCSS файлы
-@use "variables";
-@use "mixins";
 @use "fonts";
+@use "sass:color";
+@use "breakpoints";
+@use "variables";
+// @use "mixins";
 @use "animations";
 @use "base";
+
+@use "header";
+@use "layout";
 
 @use "gallery";
 @use "modal";

@@ -176,23 +176,22 @@ const Gallery: React.FC = () => {
     };
 
     // Оптимизированная функция для вычисления статистики
-    const getGalleryStats = () => {
-        const totalItems = filteredItems.length;
-        const uniqueCategories = new Set(filteredItems.map(item => item.type)).size;
-        return { totalItems, uniqueCategories };
-    };
+    // const getGalleryStats = () => {
+    //     const totalItems = filteredItems.length;
+    //     const uniqueCategories = new Set(filteredItems.map(item => item.type)).size;
+    //     return { totalItems, uniqueCategories };
+    // };
 
-    const { totalItems, uniqueCategories } = getGalleryStats();
+    // const { totalItems, uniqueCategories } = getGalleryStats();
 
     return (
         <>
-            {/* Декоративные элементы фона */}
-            {/* <div className="fixed inset-0 overflow-hidden pointer-events-none">
-                <div className="bg-blob-1 absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-blue-100 to-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
-                <div className="bg-blob-2 absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-indigo-100 to-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
-            </div> */}
-
             <Header />
+
+            <GalleryFilter
+                activeFilter={activeFilter}
+                onFilterChange={handleFilterChange}
+            />
 
             <main ref={containerRef} className="wrapper">
                 <div className="gallery-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -210,12 +209,7 @@ const Gallery: React.FC = () => {
                         </button>
                     </div>
 
-                    <GalleryFilter
-                        activeFilter={activeFilter}
-                        onFilterChange={handleFilterChange}
-                    />
-
-                    <div className="gallery-stats mb-12 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl shadow-sm">
+                    {/* <div className="gallery-stats mb-12 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl shadow-sm">
                         <div className="flex flex-col sm:flex-row justify-between items-center">
                             <div className="text-center sm:text-left mb-4 sm:mb-0">
                                 <h3 className="text-2xl font-bold text-gray-800">Портфолио проектов</h3>
@@ -241,7 +235,7 @@ const Gallery: React.FC = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
 
                     {isLoading ? (
                         <div className="loading-container py-32">
@@ -280,7 +274,7 @@ const Gallery: React.FC = () => {
                                 )}
                             </div>
 
-                            {filteredItems.length > 0 && (
+                            {/* {filteredItems.length > 0 && (
                                 <div className="mt-12 text-center">
                                     <button
                                         onClick={() => {
@@ -295,15 +289,12 @@ const Gallery: React.FC = () => {
                                         </svg>
                                     </button>
                                 </div>
-                            )}
+                            )} */}
                         </>
                     )}
                 </div>
             </main>
             <Modal
-                // isOpen={isModalOpen}
-                // onClose={handleCloseModal}
-                // item={selectedItem}
                 isOpen={isModalOpen}
                 onClose={handleCloseModal}
                 item={selectedItem}

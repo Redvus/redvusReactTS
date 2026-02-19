@@ -31,7 +31,35 @@ export const galleryItems: GalleryItem[] = [
         id: 2,
         title: 'Фитнес-трекер',
         description: 'Мобильное приложение для отслеживания активности и питания',
-        type: 'mobile',
+        type: 'games',
+        imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        images: [
+            'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+        ],
+        date: '2024-02-20',
+        tags: ['React Native', 'Firebase', 'HealthKit']
+    },
+    {
+        id: 3,
+        title: 'Фитнес-трекер',
+        description: 'Мобильное приложение для отслеживания активности и питания',
+        type: 'games',
+        imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        images: [
+            'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+            'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+        ],
+        date: '2024-02-20',
+        tags: ['React Native', 'Firebase', 'HealthKit']
+    },
+    {
+        id: 4,
+        title: 'Фитнес-трекер',
+        description: 'Мобильное приложение для отслеживания активности и питания',
+        type: 'games',
         imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         images: [
             'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
@@ -44,10 +72,10 @@ export const galleryItems: GalleryItem[] = [
 ];
 
 export const filterOptions: FilterOption[] = [
-    { id: 'all', label: 'Все работы', count: galleryItems.length },
-    { id: 'web', label: 'Веб', count: galleryItems.filter(item => item.type === 'web').length },
-    { id: 'mobile', label: 'Мобильные', count: galleryItems.filter(item => item.type === 'mobile').length },
-    { id: 'design', label: 'Дизайн', count: galleryItems.filter(item => item.type === 'design').length },
+    { id: 'all', label: 'Проектов', count: galleryItems.length },
+    { id: 'web', label: 'Сайты', count: galleryItems.filter(item => item.type === 'web').length },
+    { id: 'games', label: 'Игры', count: galleryItems.filter(item => item.type === 'games').length },
     { id: 'branding', label: 'Брендинг', count: galleryItems.filter(item => item.type === 'branding').length },
-    { id: 'illustration', label: 'Иллюстрации', count: galleryItems.filter(item => item.type === 'illustration').length }
+    { id: 'publish', label: 'Полиграфия', count: galleryItems.filter(item => item.type === 'publish').length },
+    { id: 'design', label: 'Дизайн', count: galleryItems.filter(item => item.type === 'design').length }
 ];
