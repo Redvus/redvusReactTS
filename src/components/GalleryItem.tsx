@@ -17,12 +17,16 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ item, index, onOpenModal }) =
         if (itemRef.current) {
             gsap.fromTo(
                 itemRef.current,
-                { opacity: 0, y: 50, scale: 0.9 },
                 {
                     opacity: 1,
-                    y: 0,
-                    scale: 1,
-                    duration: 0.8,
+                    // y: 50,
+                    // scale: 0.9
+                },
+                {
+                    // opacity: 1,
+                    // y: 0,
+                    // scale: 1,
+                    // duration: 0.8,
                     delay: index * 0.1,
                     ease: 'back.out(1.7)'
                 }
@@ -108,41 +112,40 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ item, index, onOpenModal }) =
                     ref={imageRef}
                     src={item.imageUrl}
                     alt={item.title}
-                    className="w-full h-64 object-cover transition-transform duration-600"
                     loading="lazy"
                 />
                 <div
-                    className="gallery__item_type absolute top-4 right-4 px-3 py-1 rounded-full text-white text-xs font-semibold uppercase tracking-wider"
+                    className="gallery__item_type"
                     style={{ backgroundColor: getTypeColor(item.type) }}
                 >
                     {getTypeLabel(item.type)}
                 </div>
             </picture>
 
-            <div className="gallery__item_content p-6">
-                <div className="flex justify-between items-start mb-3">
-                    <h3 className="gallery__item_title text-xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors">
+            <div className="gallery__item_content">
+                <div className="gallery__item_header">
+                    <h3 className="gallery__item_title">
                         {item.title}
                     </h3>
-                    <span className="text-sm text-gray-500">{item.date}</span>
+                    {/* <span className="gallery__item_date">{item.date}</span> */}
                 </div>
 
-                <p className="gallery__item_description text-gray-600 mb-4 line-clamp-2">
-                    {item.description}
-                </p>
+                <div className="gallery__item_description">
+                    <p>{item.description}</p>
+                </div>
 
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="gallery__item_tags">
                     {item.tags.map((tag, idx) => (
                         <span
                             key={idx}
-                            className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full"
+                            className="gallery__item_tag"
                         >
                             {tag}
                         </span>
                     ))}
                 </div>
 
-                <button
+                {/* <button
                     className="gallery-grid__button"
                     onClick={(e) => {
                         e.stopPropagation();
@@ -162,7 +165,7 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ item, index, onOpenModal }) =
                         <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                     </svg>
                     Смотреть проекты
-                </button>
+                </button> */}
             </div>
         </div>
     );

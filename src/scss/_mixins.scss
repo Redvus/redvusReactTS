@@ -64,6 +64,7 @@
     flex-wrap: wrap;
     // grid-template-columns: repeat($columns, 1fr);
     flex: $flex;
+    justify-content: space-between;
 }
 
 // Миксин для flexbox

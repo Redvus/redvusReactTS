@@ -10,7 +10,7 @@ export interface FilterOption {
 export const galleryItems: GalleryItem[] = [
     {
         id: 1,
-        title: 'Корпоративный портал',
+        title: 'Корпоративный портал трекер',
         description: 'Современный веб-портал для управления бизнес-процессами компании',
         type: 'web',
         imageUrl: 'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/forpost/ForpostCover.jpg',
@@ -30,9 +30,9 @@ export const galleryItems: GalleryItem[] = [
     },
     {
         id: 2,
-        title: 'Фитнес-трекер',
+        title: 'Фитнес-трекер трекер',
         description: 'Мобильное приложение для отслеживания активности и питания',
-        type: 'games',
+        type: 'web',
         imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         images: [
             'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
@@ -75,6 +75,7 @@ export const galleryItems: GalleryItem[] = [
 export const filterOptions: FilterOption[] = [
     { id: 'all', label: 'Проектов', icon: 'fas fa-th-large', count: galleryItems.length },
     { id: 'web', label: 'Сайты', icon: 'fas fa-globe', count: galleryItems.filter(item => item.type === 'web').length },
+    { id: 'mobile', label: 'Мобильные', icon: 'fas fa-mobile-screen-button', count: galleryItems.filter(item => item.type === 'mobile').length },
     { id: 'games', label: 'Игры', icon: 'fas fa-gamepad', count: galleryItems.filter(item => item.type === 'games').length },
     { id: 'branding', label: 'Брендинг', icon: 'fas fa-splotch', count: galleryItems.filter(item => item.type === 'branding').length },
     { id: 'publish', label: 'Полиграфия', icon: 'fas fa-book-open', count: galleryItems.filter(item => item.type === 'publish').length },
