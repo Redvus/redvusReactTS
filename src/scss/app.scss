@@ -1,13 +1,16 @@
-// New format in Dart SCSS
-@use "breakpoints";
-@use "colors";
+// Импортируем все SCSS файлы
 @use "fonts";
+@use "sass:color";
+@use "breakpoints";
 @use "variables";
-@use "buttons";
+// @use "mixins";
+@use "animations";
+@use "base";
 
-// @use "sidebar";
-// @use "header";
-// @use "nav";
-// @use "footer";
-// @use "layout";
-// @use "modal";
+@use "preloader";
+@use "header";
+@use "layout";
+
+@use "gallery";
+@use "modal";
+// @use "admin";

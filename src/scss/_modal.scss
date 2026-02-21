@@ -1,61 +1,823 @@
-@use 'breakpoints' as bp;
-@use "sass:color";
-@use 'fonts' as *;
-@use 'buttons' as *;
+@use "fonts" as *;
+// @use "sass:color";
+// @use "breakpoints" as bp;
+@use "variables" as *;
+@use "mixins" as *;
 
 .modal {
-	width: calc(100% - ((var(--header-height)) * 3));
-	min-height: calc(100vh - ((var(--header-height) ) * 1.5) - var(--header-height));
-	position: absolute;
-	display: flex;
-	flex-direction: row;
-	padding: calc((var(--header-height)) * 1.5) calc((var(--header-height)) * 1.5) var(--header-height) calc((var(--header-height)) * 1.5);
-	background-color: var(--elementBackground);
-	top: 0;
-	left: 0;
-	// z-index: -1;
-	// visibility: hidden;
-	// transform: translateX(100%);
-	overflow: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    @include flex-center;
+    padding: 1rem;
+    // opacity: 0;
+    // pointer-events: none;
+    transition: opacity $transition-base;
 
-	&__news {
-		display: flex;
-		flex-direction: column;
-		background-color: var(--layoutBackground);
+    &.is-open {
+        opacity: 1;
+        pointer-events: all;
+    }
 
-		&_title {
-			display: flex;
-			align-items: center;
-			justify-content: flex-start;
-			text-align: left;
-			font-weight: $font-weight-thin;
-			font-stretch: $font-width-extended;
-		}
+    &-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.8);
+        opacity: 0;
+        backdrop-filter: blur(8px);
+        cursor: pointer;
 
-		&_block {
-			display: flex;
-			flex-wrap: wrap;
-			align-items: center;
-			justify-content: space-between;
-		}
+        @include dark-theme {
+            background: rgba(0, 0, 0, 0.9);
+        }
+    }
 
-		&_single {
-			position: fixed;
-			z-index: 1500;
+    &-content {
+        position: relative;
+        width: 100%;
+        max-width: 1200px;
+        max-height: 90vh;
+        background: $color-white;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: $shadow-2xl;
+        z-index: 1;
+        opacity: 0;
+        transform: translateY(20px);
 
-			&_close {
-				@include buttonClose();
-			}
-		}
+        @include dark-theme {
+            background: $color-gray-900;
+            color: $color-white;
+        }
 
-		&_close {
-			@include buttonClose(grayBack);
-		}
-	}
+        @include screen(md) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            max-height: 80vh;
+        }
+    }
 
-	&__calendar {
-		display: flex;
-		flex-direction: column;
-		background-color: var(--layoutBackground);
-	}
+    &-close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        @include flex-center;
+        border-radius: 50%;
+        background: $color-white;
+        border: 1px solid $color-gray-200;
+        color: $color-gray-700;
+        z-index: 10;
+        transition: all $transition-fast;
+
+        @include dark-theme {
+            background: $color-gray-800;
+            border-color: $color-gray-700;
+            color: $color-gray-300;
+        }
+
+        &:hover {
+            background: $color-black;
+            color: $color-white;
+            border-color: $color-black;
+            transform: scale(1.1);
+
+            @include dark-theme {
+                background: $color-white;
+                color: $color-black;
+                border-color: $color-white;
+            }
+        }
+
+        svg {
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+    }
+
+    &-image {
+        height: 300px;
+        overflow: hidden;
+        position: relative;
+
+        @include screen(md) {
+            height: auto;
+            border-right: 1px solid $color-gray-200;
+
+            @include dark-theme {
+                border-right-color: $color-gray-800;
+            }
+        }
+
+        &__img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            filter: grayscale(0.3) contrast(1.1);
+
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+    }
+
+    &-body {
+        padding: 2rem;
+        overflow-y: auto;
+        max-height: calc(90vh - 300px);
+
+        @include screen(md) {
+            max-height: 80vh;
+        }
+    }
+
+    &-header {
+        margin-bottom: 2rem;
+    }
+
+    &-meta {
+        @include flex-center;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+    }
+
+    &-type {
+        @include typography("sm", 600);
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        background: $color-black;
+        color: $color-white;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+
+        @include dark-theme {
+            background: $color-white;
+            color: $color-black;
+        }
+    }
+
+    &-date {
+        @include typography("sm", 500);
+        color: $color-gray-500;
+
+        @include dark-theme {
+            color: $color-gray-400;
+        }
+    }
+
+    &-title {
+        @include typography("2xl", 700);
+        color: $color-black;
+        margin-bottom: 1rem;
+        line-height: 1.3;
+
+        @include dark-theme {
+            color: $color-white;
+        }
+    }
+
+    &-description {
+        @include typography("base", 400);
+        color: $color-gray-600;
+        line-height: 1.7;
+
+        @include dark-theme {
+            color: $color-gray-300;
+        }
+    }
+
+    &-subtitle {
+        @include typography("lg", 600);
+        color: $color-black;
+        margin-bottom: 1rem;
+
+        @include dark-theme {
+            color: $color-white;
+        }
+    }
+
+    &-tags {
+        margin-bottom: 2rem;
+
+        &__list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        &__tag {
+            @include typography("sm", 500);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            background: $color-gray-100;
+            color: $color-gray-700;
+            transition: all $transition-fast;
+
+            @include dark-theme {
+                background: $color-gray-800;
+                color: $color-gray-300;
+            }
+
+            &:hover {
+                background: $color-black;
+                color: $color-white;
+
+                @include dark-theme {
+                    background: $color-white;
+                    color: $color-black;
+                }
+            }
+        }
+    }
+
+    &-details {
+        margin-bottom: 2rem;
+
+        &__content {
+            display: grid;
+            gap: 1rem;
+        }
+
+        &__item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            @include typography("base", 400);
+            color: $color-gray-700;
+
+            @include dark-theme {
+                color: $color-gray-300;
+            }
+
+            svg {
+                width: 1.25rem;
+                height: 1.25rem;
+                color: $color-gray-500;
+
+                @include dark-theme {
+                    color: $color-gray-400;
+                }
+            }
+        }
+    }
+
+    &-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-top: 2rem;
+
+        @include screen(sm) {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    &-action {
+        &__button {
+            @include flex-center;
+            gap: 0.75rem;
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border-radius: 0.75rem;
+            @include typography("base", 600);
+            border: 2px solid transparent;
+            transition: all $transition-base;
+
+            svg {
+                width: 1.25rem;
+                height: 1.25rem;
+            }
+
+            &--primary {
+                background: $color-black;
+                color: $color-white;
+
+                @include dark-theme {
+                    background: $color-white;
+                    color: $color-black;
+                }
+
+                &:hover {
+                    background: $color-gray-900;
+                    transform: translateY(-2px);
+                    box-shadow: $shadow-lg;
+
+                    @include dark-theme {
+                        background: $color-gray-200;
+                    }
+                }
+            }
+
+            &:not(&--primary) {
+                background: $color-white;
+                border-color: $color-gray-300;
+                color: $color-gray-700;
+
+                @include dark-theme {
+                    background: $color-gray-900;
+                    border-color: $color-gray-700;
+                    color: $color-gray-300;
+                }
+
+                &:hover {
+                    border-color: $color-black;
+                    color: $color-black;
+                    transform: translateY(-2px);
+                    box-shadow: $shadow-md;
+
+                    @include dark-theme {
+                        border-color: $color-white;
+                        color: $color-white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Обновленная структура модального окна
+.modal-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1200px;
+    width: 90vw;
+    height: 80vh;
+    background: $color-white;
+    border-radius: 1rem;
+    overflow: hidden;
+
+    @include dark-theme {
+        background: $color-gray-900;
+    }
+
+    @include screen(md) {
+        grid-template-columns: 1fr;
+        height: 90vh;
+        width: 95vw;
+    }
+}
+
+// Секция с изображениями
+.modal-image-section {
+    background: $color-gray-100;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+
+    @include dark-theme {
+        background: $color-gray-800;
+    }
+}
+
+.modal-image-container {
+    position: relative;
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $color-black;
+}
+
+.modal-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+// Навигация по изображениям
+.modal-image-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: rgba($color-white, 0.8);
+    border: 1px solid rgba($color-gray-300, 0.5);
+    color: $color-gray-700;
+    @include flex-center;
+    cursor: pointer;
+    transition: all $transition-fast;
+    z-index: 10;
+
+    @include dark-theme {
+        background: rgba($color-gray-800, 0.8);
+        color: $color-gray-300;
+    }
+
+    &:hover {
+        background: $color-white;
+        transform: translateY(-50%) scale(1.1);
+
+        @include dark-theme {
+            background: $color-gray-700;
+            color: $color-white;
+        }
+    }
+
+    &:active {
+        transform: translateY(-50%) scale(0.95);
+    }
+
+    &--prev {
+        left: 1rem;
+    }
+
+    &--next {
+        right: 1rem;
+    }
+
+    svg {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}
+
+// Счетчик изображений
+.modal-image-counter {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    background: rgba($color-black, 0.6);
+    color: $color-white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 2rem;
+    @include typography('sm', 500);
+    backdrop-filter: blur(4px);
+    z-index: 10;
+}
+
+// Миниатюры
+.modal-thumbnails {
+    padding: 1rem;
+    border-top: 1px solid $color-gray-200;
+
+    @include dark-theme {
+        border-top-color: $color-gray-700;
+    }
+}
+
+.thumbnails-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+
+    h4 {
+        @include typography('sm', 600);
+        color: $color-gray-700;
+
+        @include dark-theme {
+            color: $color-gray-300;
+        }
+    }
+}
+
+.toggle-thumbnails {
+    @include typography('xs', 500);
+    color: $color-gray-600;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    transition: all $transition-fast;
+
+    &:hover {
+        color: $color-gray-900;
+        background: $color-gray-100;
+
+        @include dark-theme {
+            color: $color-white;
+            background: $color-gray-700;
+        }
+    }
+}
+
+.thumbnails-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    gap: 0.5rem;
+    max-height: 150px;
+    overflow-y: auto;
+    padding: 0.25rem;
+}
+
+.thumbnail-item {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: 0.375rem;
+    overflow: hidden;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all $transition-fast;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform $transition-base;
+    }
+
+    .thumbnail-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba($color-black, 0.5);
+        @include flex-center;
+        opacity: 0;
+        transition: opacity $transition-base;
+
+        span {
+            color: $color-white;
+            @include typography('xs', 600);
+        }
+    }
+
+    &:hover {
+        border-color: $color-blue-500;
+
+        img {
+            transform: scale(1.1);
+        }
+
+        .thumbnail-overlay {
+            opacity: 1;
+        }
+    }
+
+    &.active {
+        border-color: $color-blue-500;
+        box-shadow: 0 0 0 2px rgba($color-blue-500, 0.3);
+
+        @include dark-theme {
+            border-color: $color-blue-400;
+        }
+    }
+}
+
+// Информационная секция
+.modal-info-section {
+    padding: 2rem;
+    overflow-y: auto;
+
+    @include screen(md) {
+        padding: 1.5rem;
+    }
+}
+
+// Адаптация для мобильных
+@media (max-width: $breakpoint-md) {
+    .modal-image-nav {
+        width: 2.5rem;
+        height: 2.5rem;
+
+        &--prev {
+            left: 0.5rem;
+        }
+
+        &--next {
+            right: 0.5rem;
+        }
+    }
+
+    .thumbnails-grid {
+        grid-template-columns: repeat(4, 1fr);
+        max-height: 120px;
+    }
+}
+
+@media (max-width: $breakpoint-sm) {
+    .thumbnails-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+// Анимации модального окна
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes modalSlideOut {
+    from {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+}
+
+// Медиа запросы для модального окна
+@media (max-width: $breakpoint-md) {
+    .modal {
+        &-content {
+            max-height: 95vh;
+        }
+
+        &-body {
+            max-height: calc(95vh - 300px);
+        }
+    }
+}
+
+@media (max-width: $breakpoint-sm) {
+    .modal {
+        padding: 0.5rem;
+
+        &-content {
+            max-height: 98vh;
+        }
+
+        &-body {
+            padding: 1.5rem;
+            max-height: calc(98vh - 250px);
+        }
+
+        &-image {
+            height: 250px;
+        }
+
+        &-actions {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+// Стили для видео
+.modal-video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: $color-black;
+    cursor: pointer;
+}
+
+.video-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 20;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.modal-media-container:hover .video-controls {
+    opacity: 1;
+}
+
+.video-play-button {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    @include flex-center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background: rgba(255, 255, 255, 0.3);
+        border-color: white;
+        transform: scale(1.1);
+    }
+
+    svg {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}
+
+.video-progress {
+    flex: 1;
+
+    input[type="range"] {
+        width: 100%;
+        height: 4px;
+        -webkit-appearance: none;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 2px;
+        outline: none;
+        cursor: pointer;
+
+        &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: white;
+            cursor: pointer;
+        }
+    }
+}
+
+.video-time {
+    color: white;
+    font-size: 0.875rem;
+    font-family: monospace;
+}
+
+// Индикатор типа медиа
+.modal-media-indicator {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    z-index: 20;
+}
+
+.media-type-badge {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 2rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    backdrop-filter: blur(4px);
+}
+
+.media-counter {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 2rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    backdrop-filter: blur(4px);
+}
+
+// Миниатюра с иконкой видео
+.thumbnail-item.video-thumbnail {
+    position: relative;
+
+    &::after {
+        content: '🎬';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1.25rem;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+        z-index: 5;
+    }
+
+    &:hover::after {
+        opacity: 1;
+    }
+}
+
+.thumbnail-video-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 2rem;
+    height: 2rem;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    @include flex-center;
+    color: white;
+    z-index: 5;
+
+    svg {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
 }

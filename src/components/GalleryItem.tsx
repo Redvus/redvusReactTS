@@ -5,9 +5,11 @@ import type { GalleryItem as GalleryItemType } from '../types/gallery.types';
 interface GalleryItemProps {
     item: GalleryItemType;
     index: number;
+    theme: 'light' | 'dark';
+    onOpenModal: (item: GalleryItemType) => void;
 }
 
-const GalleryItem: React.FC<GalleryItemProps> = ({ item, index }) => {
+const GalleryItem: React.FC<GalleryItemProps> = ({ item, index, onOpenModal }) => {
     const itemRef = useRef<HTMLDivElement>(null);
     const imageRef = useRef<HTMLImageElement>(null);
 
@@ -28,43 +30,43 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ item, index }) => {
         }
     }, [index]);
 
-    const handleMouseEnter = () => {
-        if (itemRef.current) {
-            gsap.to(itemRef.current, {
-                scale: 1.05,
-                y: -10,
-                duration: 0.4,
-                ease: 'power2.out'
-            });
+    // const handleMouseEnter = () => {
+    //     if (itemRef.current) {
+    //         gsap.to(itemRef.current, {
+    //             scale: 1.05,
+    //             y: -10,
+    //             duration: 0.4,
+    //             ease: 'power2.out'
+    //         });
 
-            if (imageRef.current) {
-                gsap.to(imageRef.current, {
-                    scale: 1.1,
-                    duration: 0.6,
-                    ease: 'power2.out'
-                });
-            }
-        }
-    };
+    //         if (imageRef.current) {
+    //             gsap.to(imageRef.current, {
+    //                 scale: 1.1,
+    //                 duration: 0.6,
+    //                 ease: 'power2.out'
+    //             });
+    //         }
+    //     }
+    // };
 
-    const handleMouseLeave = () => {
-        if (itemRef.current) {
-            gsap.to(itemRef.current, {
-                scale: 1,
-                y: 0,
-                duration: 0.4,
-                ease: 'power2.out'
-            });
+    // const handleMouseLeave = () => {
+    //     if (itemRef.current) {
+    //         gsap.to(itemRef.current, {
+    //             scale: 1,
+    //             y: 0,
+    //             duration: 0.4,
+    //             ease: 'power2.out'
+    //         });
 
-            if (imageRef.current) {
-                gsap.to(imageRef.current, {
-                    scale: 1,
-                    duration: 0.6,
-                    ease: 'power2.out'
-                });
-            }
-        }
-    };
+    //         if (imageRef.current) {
+    //             gsap.to(imageRef.current, {
+    //                 scale: 1,
+    //                 duration: 0.6,
+    //                 ease: 'power2.out'
+    //             });
+    //         }
+    //     }
+    // };
 
     const getTypeColor = (type: string) => {
         const colors: Record<string, string> = {
@@ -88,14 +90,20 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ item, index }) => {
         return labels[type] || type;
     };
 
+    const handleClick = () => {
+        onOpenModal(item);
+    };
+
     return (
         <div
             ref={itemRef}
-            className="gallery-item group"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
+            className="gallery__item group"
+            // onMouseEnter={handleMouseEnter}
+            // onMouseLeave={handleMouseLeave}
+            onClick={handleClick}
+            style={{ cursor: 'pointer' }}
         >
-            <div className="gallery-item-image overflow-hidden rounded-t-2xl">
+            <picture className="gallery__item_image">
                 <img
                     ref={imageRef}
                     src={item.imageUrl}
@@ -104,22 +112,22 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ item, index }) => {
                     loading="lazy"
                 />
                 <div
-                    className="gallery-item-type absolute top-4 right-4 px-3 py-1 rounded-full text-white text-xs font-semibold uppercase tracking-wider"
+                    className="gallery__item_type absolute top-4 right-4 px-3 py-1 rounded-full text-white text-xs font-semibold uppercase tracking-wider"
                     style={{ backgroundColor: getTypeColor(item.type) }}
                 >
                     {getTypeLabel(item.type)}
                 </div>
-            </div>
+            </picture>
 
-            <div className="gallery-item-content p-6">
+            <div className="gallery__item_content p-6">
                 <div className="flex justify-between items-start mb-3">
-                    <h3 className="gallery-item-title text-xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors">
+                    <h3 className="gallery__item_title text-xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors">
                         {item.title}
                     </h3>
                     <span className="text-sm text-gray-500">{item.date}</span>
                 </div>
 
-                <p className="gallery-item-description text-gray-600 mb-4 line-clamp-2">
+                <p className="gallery__item_description text-gray-600 mb-4 line-clamp-2">
                     {item.description}
                 </p>
 
@@ -134,8 +142,26 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ item, index }) => {
                     ))}
                 </div>
 
-                <button className="gallery-item-button w-full py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg font-medium hover:from-blue-600 hover:to-blue-700 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0">
-                    Подробнее
+                <button
+                    className="gallery-grid__button"
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        onOpenModal(item);
+                    }}
+                >
+                    <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        style={{ marginRight: '8px' }}
+                    >
+                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                    Смотреть проекты
                 </button>
             </div>
         </div>
