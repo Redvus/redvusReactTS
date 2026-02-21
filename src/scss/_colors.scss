@@ -1,11 +1,11 @@
 @use "sass:color";
 
 $colors: (
-    primary: #dfc7b7,
-    secondary: #ff643c,
+    primary: #111E25,
+    secondary: #89969C,
     third: #092330,
     fourth: #ffffff,
-    five: #1e252b,
+    five: #ff643c,
 );
 
 :root {
@@ -23,9 +23,4 @@ $colors: (
         --#{$name}-lighten-20: #{color.adjust($color, $lightness: 20%)};
         --#{$name}-lighten-30: #{color.adjust($color, $lightness: 30%)};
     }
-
-    --layoutBackground: var(--third-darken-10);
-    --elementBackground: var(--fourth);
-    // --error : var(--third);
-    // --success : var(--fourth);
 }

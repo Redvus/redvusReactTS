@@ -1,4 +1,8 @@
 import './scss/app.scss';
+import './assets/fonts/fontawesome-free-7.0.0-web/scss/fontawesome.scss';
+import './assets/fonts/fontawesome-free-7.0.0-web/scss/regular.scss';
+import './assets/fonts/fontawesome-free-7.0.0-web/scss/solid.scss';
+import './assets/fonts/fontawesome-free-7.0.0-web/scss/brands.scss';
 
 // import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
