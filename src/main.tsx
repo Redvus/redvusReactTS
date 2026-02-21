@@ -3,7 +3,10 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import './scss/app.scss';
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+// Добавляем класс visible к root после рендера
+const root = ReactDOM.createRoot(document.getElementById('root')!);
+
+root.render(
     <React.StrictMode>
         <App />
     </React.StrictMode>
