@@ -84,6 +84,14 @@ $transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
 
 // Layout
 :root {
+    --border_thin: 0.07rem;
+    --border_normal: 0.15rem;
+    --border_bold: 0.3rem;
+    --border_heavy: 0.6rem;
+
+    --base-duration: 0.2s;
+    --base-timing: 0.3s;
+
     --header-height: 2.5rem;
     --wrapperPadding: 10vw;
 

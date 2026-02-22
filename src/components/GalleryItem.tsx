@@ -18,12 +18,12 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ item, index, onOpenModal }) =
             gsap.fromTo(
                 itemRef.current,
                 {
-                    opacity: 1,
+                    // opacity: 0,
                     // y: 50,
-                    // scale: 0.9
+                    // scale: 0.95
                 },
                 {
-                    // opacity: 1,
+                    opacity: 1,
                     // y: 0,
                     // scale: 1,
                     // duration: 0.8,
@@ -75,21 +75,23 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ item, index, onOpenModal }) =
     const getTypeColor = (type: string) => {
         const colors: Record<string, string> = {
             'web': '#3b82f6',
-            'mobile': '#10b981',
-            'design': '#8b5cf6',
-            'branding': '#f59e0b',
-            'illustration': '#ec4899'
+            'mobile': '#cd6904',
+            'video': '#10b981',
+            'games': '#8059dc',
+            'branding': '#da408d',
+            'art': '#c83535'
         };
         return colors[type] || '#6b7280';
     };
 
     const getTypeLabel = (type: string) => {
         const labels: Record<string, string> = {
-            'web': 'Веб',
-            'mobile': 'Мобильное',
-            'design': 'Дизайн',
-            'branding': 'Брендинг',
-            'illustration': 'Иллюстрация'
+            'web': 'сайты',
+            'mobile': 'мобильные',
+            'games': 'игры',
+            'branding': 'логотипы',
+            'video': 'видео',
+            'art': 'арт'
         };
         return labels[type] || type;
     };
@@ -107,27 +109,30 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ item, index, onOpenModal }) =
             onClick={handleClick}
             style={{ cursor: 'pointer' }}
         >
-            <picture className="gallery__item_image">
-                <img
-                    ref={imageRef}
-                    src={item.imageUrl}
-                    alt={item.title}
-                    loading="lazy"
-                />
+            <div className="gallery__item_top">
+                <picture className="gallery__item_image">
+                    <img
+                        ref={imageRef}
+                        src={item.imageUrl}
+                        alt={item.title}
+                        loading="lazy"
+                    />
+                </picture>
                 <div
                     className="gallery__item_type"
                     style={{ backgroundColor: getTypeColor(item.type) }}
                 >
                     {getTypeLabel(item.type)}
                 </div>
-            </picture>
+                <span className="gallery__item_date">{item.date}</span>
+            </div>
+
 
             <div className="gallery__item_content">
                 <div className="gallery__item_header">
                     <h3 className="gallery__item_title">
                         {item.title}
                     </h3>
-                    {/* <span className="gallery__item_date">{item.date}</span> */}
                 </div>
 
                 <div className="gallery__item_description">

@@ -184,6 +184,11 @@ const Gallery: React.FC = () => {
 
     // const { totalItems, uniqueCategories } = getGalleryStats();
 
+    // Сортировка по дате (новые сверху)
+    const sortedItems = [...filteredItems].sort((a, b) =>
+        new Date(b.date).getTime() - new Date(a.date).getTime()
+    );
+
     return (
         <>
             <Header />
@@ -248,7 +253,7 @@ const Gallery: React.FC = () => {
                         <>
                             <div ref={galleryRef} className="gallery-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                                 {filteredItems.length > 0 ? (
-                                    filteredItems.map((item, index) => (
+                                    sortedItems.map((item, index) => (
                                         <GalleryItem
                                             key={item.id}
                                             item={item}
