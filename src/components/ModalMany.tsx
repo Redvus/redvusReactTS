@@ -397,33 +397,32 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
         >
             <div
                 ref={overlayRef}
-                className="modal-overlay"
+                className="modal__overlay"
                 onClick={handleOverlayClick}
                 aria-hidden="true"
             />
+            {/* Кнопка закрытия */}
+            <button
+                className="modal__close"
+                onClick={handleClose}
+                aria-label="Закрыть модальное окно"
+            >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
 
             <div
                 ref={contentRef}
-                className="modal-content"
+                className="modal__content"
                 onTouchStart={handleTouchStart}
                 onTouchMove={handleTouchMove}
                 onTouchEnd={handleTouchEnd}
             >
-                {/* Кнопка закрытия */}
-                <button
-                    className="modal-close"
-                    onClick={handleClose}
-                    aria-label="Закрыть модальное окно"
-                >
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-
                 {/* Секция медиа */}
-                <div className="modal-media-section">
+                <div className="modal__media">
                     {/* Основное медиа */}
-                    <div className="modal-media-container">
+                    <div className="modal__media_container">
                         {isVideo ? (
                             <>
                                 <video
@@ -478,19 +477,21 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
                                 </div>
                             </>
                         ) : (
-                            <img
-                                ref={mediaRef as React.RefObject<HTMLImageElement>}
-                                src={currentMedia.url}
-                                alt={currentMedia.title || item.title}
-                                className="modal-image"
-                            />
+                            <picture>
+                                <img
+                                    ref={mediaRef as React.RefObject<HTMLImageElement>}
+                                    src={currentMedia.url}
+                                    alt={currentMedia.title || item.title}
+                                    className="modal__media_image"
+                                />
+                            </picture>
                         )}
 
                         {/* Навигация по медиа */}
                         {hasMultipleMedia && (
                             <>
                                 <button
-                                    className="modal-media-nav modal-media-nav--prev"
+                                    className="modal__media_nav modal__media_nav--prev"
                                     onClick={handlePreviousMedia}
                                     aria-label="Предыдущее"
                                     disabled={isAnimating}
@@ -501,7 +502,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
                                 </button>
 
                                 <button
-                                    className="modal-media-nav modal-media-nav--next"
+                                    className="modal__media_nav modal__media_nav--next"
                                     onClick={handleNextMedia}
                                     aria-label="Следующее"
                                     disabled={isAnimating}
@@ -512,7 +513,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
                                 </button>
 
                                 {/* Индикатор типа медиа и позиции */}
-                                <div className="modal-media-indicator">
+                                {/* <div className="modal__media_indicator">
                                     <span className="media-type-badge">
                                         {isVideo ? (
                                             <div className="thumbnail-video-icon">
@@ -523,18 +524,19 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
                                             </div>
                                         ) : '🖼️'}
                                     </span>
-                                    <span className="media-counter">
+                                    <span className="modal__media_counter">
                                         {currentMediaIndex + 1} / {mediaItems.length}
                                     </span>
-                                </div>
+                                </div> */}
                             </>
                         )}
                     </div>
 
                     {/* Миниатюры */}
                     {hasMultipleMedia && (
-                        <div ref={thumbnailsRef} className="modal-thumbnails">
-                            <div className="thumbnails-header">
+                        // <div ref={thumbnailsRef} className="modal__media_thumbnails">
+                        <div className="modal__media_thumbnails">
+                            {/* <div className="thumbnails-header">
                                 <h4>Все медиафайлы проекта</h4>
                                 <button
                                     className="toggle-thumbnails"
@@ -542,10 +544,10 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
                                 >
                                     {showThumbnails ? 'Скрыть' : 'Показать'}
                                 </button>
-                            </div>
+                            </div> */}
 
                             {showThumbnails && (
-                                <div className="thumbnails-grid">
+                                <div className="modal__media_thumbnails_grid">
                                     {mediaItems.map((media, index) => (
                                         <button
                                             key={index}
@@ -577,18 +579,18 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
                 </div>
 
                 {/* Информация о проекте */}
-                <div className="modal-info-section">
-                    <div className="modal-header">
-                        <div className="modal-meta">
-                            <span className="modal-type">{getTypeLabel(item.type)}</span>
-                            <span className="modal-date">{item.date}</span>
+                <div className="modal__bottom">
+                    <div className="modal__content_header">
+                        <div className="modal__content_meta">
+                            <span className="modal__content_type">{getTypeLabel(item.type)}</span>
+                            <span className="modal__content_date">{item.date}</span>
                         </div>
-                        <h2 className="modal-title">{item.title}</h2>
-                        <p className="modal-description">{item.description}</p>
+                        <h2 className="modal__content_title">{item.title}</h2>
+                        <p className="modal__content_description">{item.description}</p>
                     </div>
 
-                    <div className="modal-tags">
-                        <h3 className="modal-subtitle">Технологии:</h3>
+                    <div className="modal__content_tags">
+                        {/* <h3 className="modal-subtitle">Технологии:</h3> */}
                         <div className="modal-tags__list">
                             {item.tags.map((tag, index) => (
                                 <span key={index} className="modal-tags__tag">
@@ -598,7 +600,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
                         </div>
                     </div>
 
-                    <div className="modal-details">
+                    {/* <div className="modal-details">
                         <h3 className="modal-subtitle">Детали проекта:</h3>
                         <div className="modal-details__content">
                             <div className="modal-details__item">
@@ -637,7 +639,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
                             </svg>
                             <span>Скачать кейс</span>
                         </button>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

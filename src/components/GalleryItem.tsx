@@ -18,15 +18,15 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ item, index, onOpenModal }) =
             gsap.fromTo(
                 itemRef.current,
                 {
-                    // opacity: 0,
+                    opacity: 0,
                     // y: 50,
-                    // scale: 0.95
+                    scale: 0.95
                 },
                 {
                     opacity: 1,
                     // y: 0,
-                    // scale: 1,
-                    // duration: 0.8,
+                    scale: 1,
+                    duration: 0.8,
                     delay: index * 0.1,
                     ease: 'back.out(1.7)'
                 }
@@ -89,7 +89,7 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ item, index, onOpenModal }) =
             'web': 'сайты',
             'mobile': 'мобильные',
             'games': 'игры',
-            'branding': 'логотипы',
+            'branding': 'брэндинг',
             'video': 'видео',
             'art': 'арт'
         };
