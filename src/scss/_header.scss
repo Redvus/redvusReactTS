@@ -59,19 +59,6 @@
         background-color: var(--layoutBackground);
     }
 
-    &__social {
-        min-width: var(--marginBase);
-        height: var(--header-height);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        a {
-            margin-left: calc(var(--marginBase) * 0.5);
-            color: var(--body-font-color);
-        }
-    }
-
     @include bp.media-up('XSmall') {
         padding: 0 var(--marginBase);
 

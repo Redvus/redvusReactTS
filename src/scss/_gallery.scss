@@ -15,10 +15,11 @@
         position: fixed;
         background-color: var(--headerBackgroundLight);
         top: 0;
-        left: 50%;
+        // left: 50%;
+        right: var(--wrapperPadding);
         margin: 0 auto;
         padding: calc(var(--wrapperPadding) * 0.1) 0;
-        transform: translateX(-50%);
+        // transform: translateX(-50%);
         z-index: 200;
 
         @include dark-theme {
@@ -124,6 +125,9 @@
             padding: calc(var(--marginBase) * 0.75) calc(var(--marginBase) * 1);
             top: inherit;
             bottom: 0;
+            left: 50%;
+            right: inherit;
+            transform: translateX(-50%);
 
             @include dark-theme {
                 background-color: var(--layoutBackground);

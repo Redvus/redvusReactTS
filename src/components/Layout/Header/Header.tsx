@@ -3,7 +3,7 @@ import React, { useRef } from 'react';
 // import { gsap } from 'gsap';
 
 import RedvusLogo from '../../UI/RedvusLogo';
-import Social from '../../UI/Social';
+// import Social from '../../UI/Social';
 
 const Header: React.FC = () => {
     const headerRef = useRef<HTMLDivElement>(null);
@@ -43,7 +43,7 @@ const Header: React.FC = () => {
         <>
             <header ref={headerRef} className="header">
                 <RedvusLogo className="header__logo" />
-                <Social className="header__social" />
+                {/* <Social className="header__social" /> */}
             </header>
         </>
     );
