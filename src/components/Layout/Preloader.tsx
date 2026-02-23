@@ -36,7 +36,7 @@ const Preloader: React.FC<PreloaderProps> = ({
         const randomIndex = Math.floor(Math.random() * quotes.length);
         if (quoteRef.current && authorRef.current) {
             quoteRef.current.textContent = quotes[randomIndex].text;
-            authorRef.current.textContent = `— ${quotes[randomIndex].author}`;
+            authorRef.current.textContent = `${quotes[randomIndex].author}`;
         }
     }, []);
 
@@ -60,7 +60,7 @@ const Preloader: React.FC<PreloaderProps> = ({
             if (quoteRef.current && authorRef.current) {
                 const randomIndex = Math.floor(Math.random() * quotes.length);
                 quoteRef.current.textContent = quotes[randomIndex].text;
-                authorRef.current.textContent = `— ${quotes[randomIndex].author}`;
+                authorRef.current.textContent = `${quotes[randomIndex].author}`;
             }
         }, minDisplayTime * 2000);
 
