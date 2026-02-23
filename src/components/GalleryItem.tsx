@@ -135,11 +135,11 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ item, index, onOpenModal }) =
                     </h3>
                 </div>
 
-                <div className="gallery__item_description">
+                {/* <div className="gallery__item_description">
                     <p>{item.description}</p>
-                </div>
+                </div> */}
 
-                <div className="gallery__item_tags">
+                {/* <div className="gallery__item_tags">
                     {item.tags.map((tag, idx) => (
                         <span
                             key={idx}
@@ -148,7 +148,7 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ item, index, onOpenModal }) =
                             {tag}
                         </span>
                     ))}
-                </div>
+                </div> */}
 
                 {/* <button
                     className="gallery-grid__button"

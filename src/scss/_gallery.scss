@@ -370,8 +370,8 @@
     &__item {
         @include flex-column();
         @include gsap-ready;
-        min-height: var(--galleryItemHeight);
-        border-radius: 1rem;
+        height: var(--galleryItemHeight);
+        border-radius: calc(var(--marginBase) * 0.7);
         overflow: hidden;
         border: var(--border_thin) solid var(--fourth-darken-30);
         // transition: all $transition-base;
@@ -403,7 +403,7 @@
 
         &_top {
             width: 100%;
-            height: 50%;
+            height: var(--galleryItemTopHeight);
             display: block;
             position: relative;
             z-index: 2;
@@ -436,7 +436,7 @@
 
         &_content {
             width: 100%;
-            height: 50%;
+            height: calc(100% - var(--galleryItemTopHeight));
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -446,7 +446,7 @@
 
         &_header {
             width: 100%;
-            height: 30%;
+            height: 100%;
             display: flex;
             align-items: center;
         }

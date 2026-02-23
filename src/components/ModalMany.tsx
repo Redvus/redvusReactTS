@@ -325,7 +325,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
         if (!modalRef.current || !overlayRef.current || !contentRef.current) return;
 
         if (isOpen) {
-            document.body.style.overflow = 'hidden';
+            // document.body.style.overflow = 'hidden';
             gsap.set(modalRef.current, { display: 'flex' });
 
             const tl = gsap.timeline();
@@ -378,13 +378,26 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
 
     const getTypeLabel = (type: string) => {
         const labels: Record<string, string> = {
-            'web': 'Веб-разработка',
-            'mobile': 'Мобильное приложение',
-            'design': 'Дизайн',
-            'branding': 'Брендинг',
-            'illustration': 'Иллюстрация'
+            'web': 'сайты',
+            'mobile': 'мобильные',
+            'games': 'игры',
+            'branding': 'брэндинг',
+            'video': 'видео',
+            'art': 'арт'
         };
         return labels[type] || type;
+    };
+
+    const getTypeColor = (type: string) => {
+        const colors: Record<string, string> = {
+            'web': '#3b82f6',
+            'mobile': '#cd6904',
+            'video': '#10b981',
+            'games': '#8059dc',
+            'branding': '#da408d',
+            'art': '#c83535'
+        };
+        return colors[type] || '#6b7280';
     };
 
     return (
@@ -431,12 +444,16 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
                                         mediaRef.current = el as HTMLVideoElement;
                                     }}
                                     src={currentMedia.url}
-                                    className="modal-video"
+                                    className="modal__media_video"
                                     poster={currentMedia.thumbnail}
                                     onClick={handlePlayPause}
                                     onEnded={handleVideoEnded}
                                     onTimeUpdate={handleVideoTimeUpdate}
                                 />
+
+                                {/* <div className="modal__video_play">
+                                    <i className="fas fa-play"></i>
+                                </div> */}
 
                                 {/* Элементы управления видео */}
                                 <div className="video-controls">
@@ -551,7 +568,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
                                     {mediaItems.map((media, index) => (
                                         <button
                                             key={index}
-                                            className={`thumbnail-item ${index === currentMediaIndex ? 'active' : ''} ${media.type === 'video' ? 'video-thumbnail' : ''}`}
+                                            className={`modal__media_thumbnails_item ${index === currentMediaIndex ? 'active' : ''} ${media.type === 'video' ? 'video-thumbnail' : ''}`}
                                             onClick={() => handleThumbnailClick(index)}
                                             disabled={isAnimating}
                                         >
@@ -567,7 +584,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
                                                     </svg>
                                                 </div>
                                             )}
-                                            <div className="thumbnail-overlay">
+                                            <div className="modal__media_thumbnails_overlay">
                                                 <span>{index + 1}</span>
                                             </div>
                                         </button>
@@ -578,27 +595,30 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
                     )}
                 </div>
 
+                <span
+                    className="modal__content_type"
+                    style={{ backgroundColor: getTypeColor(item.type) }}
+                >
+                    {getTypeLabel(item.type)}</span>
+                {/* <span className="modal__content_date">{item.date}</span> */}
+
                 {/* Информация о проекте */}
                 <div className="modal__bottom">
-                    <div className="modal__content_header">
-                        <div className="modal__content_meta">
-                            <span className="modal__content_type">{getTypeLabel(item.type)}</span>
-                            <span className="modal__content_date">{item.date}</span>
-                        </div>
-                        <h2 className="modal__content_title">{item.title}</h2>
-                        <p className="modal__content_description">{item.description}</p>
+                    <div className="modal__bottom_header">
+                        {/* <div className="modal__bottom_meta">
+
+                        </div> */}
+                        <h3 className="modal__bottom_title">{item.title}</h3>
+                        <p className="modal__bottom_description">{item.description}</p>
                     </div>
 
-                    <div className="modal__content_tags">
-                        {/* <h3 className="modal-subtitle">Технологии:</h3> */}
-                        <div className="modal-tags__list">
-                            {item.tags.map((tag, index) => (
-                                <span key={index} className="modal-tags__tag">
-                                    {tag}
-                                </span>
-                            ))}
-                        </div>
-                    </div>
+                    <ul className="modal__bottom_tags">
+                        {item.tags.map((tag, index) => (
+                            <li key={index} className="modal__bottom_tag">
+                                {tag}
+                            </li>
+                        ))}
+                    </ul>
 
                     {/* <div className="modal-details">
                         <h3 className="modal-subtitle">Детали проекта:</h3>
