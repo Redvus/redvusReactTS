@@ -23,14 +23,14 @@ const App: React.FC = () => {
     const [preloaderComplete, setPreloaderComplete] = useState(false);
 
     const handlePreloaderComplete = () => {
-        console.log('Preloader complete callback');
+        // console.log('Preloader complete callback');
         setPreloaderComplete(true);
     };
 
     return (
         <GalleryProvider>
             <Preloader
-                minDisplayTime={2500}
+                minDisplayTime={2.5}
                 onComplete={handlePreloaderComplete}
             />
 

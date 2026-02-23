@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import ReactDOM from 'react-dom';
+import { gsap } from 'gsap';
 
 interface PreloaderProps {
     minDisplayTime?: number;
@@ -18,7 +19,7 @@ const quotes = [
 ];
 
 const Preloader: React.FC<PreloaderProps> = ({
-    minDisplayTime = 1000,
+    minDisplayTime = 1,
     onComplete
 }) => {
     const [isVisible, setIsVisible] = useState(true);
@@ -61,7 +62,7 @@ const Preloader: React.FC<PreloaderProps> = ({
                 quoteRef.current.textContent = quotes[randomIndex].text;
                 authorRef.current.textContent = `— ${quotes[randomIndex].author}`;
             }
-        }, 3000);
+        }, minDisplayTime * 2000);
 
         return () => clearInterval(interval);
     }, []);
@@ -69,29 +70,42 @@ const Preloader: React.FC<PreloaderProps> = ({
     // Скрываем прелоадер после загрузки
     useEffect(() => {
         const hidePreloader = () => {
-            setTimeout(() => {
-                if (preloaderElement) {
-                    // Скрываем элемент
-                    setTimeout(() => {
-                        preloaderElement.style.opacity = '0';
-                    }, 700);
-                    setTimeout(() => {
+            if (preloaderElement) {
+                gsap.to(preloaderElement, {
+                    duration: minDisplayTime / 2.2,
+                    delay: minDisplayTime * 1.3,
+                    autoAlpha: 0,
+                    ease: 'power2.out',
+                    onComplete: () => {
                         preloaderElement.style.display = 'none';
-                    }, 1800);
-
-                    setIsVisible(false);
-
-                    // Показываем контент
-                    const rootElement = document.getElementById('root');
-                    if (rootElement) {
-                        rootElement.classList.add('visible');
+                        setIsVisible(false);
                     }
+                });
+            }
 
-                    if (onComplete) {
-                        onComplete();
-                    }
-                }
-            }, minDisplayTime);
+            // setTimeout(() => {
+            //     if (preloaderElement) {
+            //         // Скрываем элемент
+            //         // setTimeout(() => {
+            //         //     preloaderElement.style.opacity = '0';
+            //         // }, 700);
+            //         // setTimeout(() => {
+            //         //     preloaderElement.style.display = 'none';
+            //         // }, 1800);
+
+            //         setIsVisible(false);
+
+            //         // Показываем контент
+            //         const rootElement = document.getElementById('root');
+            //         if (rootElement) {
+            //             rootElement.classList.add('visible');
+            //         }
+
+            //         if (onComplete) {
+            //             onComplete();
+            //         }
+            //     }
+            // }, minDisplayTime);
         };
 
         if (document.readyState === 'complete') {
@@ -107,27 +121,27 @@ const Preloader: React.FC<PreloaderProps> = ({
 
     // Рендерим через портал прямо в статический блок
     return ReactDOM.createPortal(
-        <div ref={preloaderContentRef} className="preloader-content">
-            <div className="preloader__logo">
+        <div ref={preloaderContentRef} className="preloader__content">
+            {/* <div className="preloader__logo">
                 <svg viewBox="0 0 100 100" className="preloader__logo-svg">
                     <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" strokeWidth="2" />
                     <path d="M30 50 L70 50 M50 30 L50 70" stroke="currentColor" strokeWidth="2" />
                 </svg>
-            </div>
+            </div> */}
 
-            <div className="preloader__quote-container">
-                <div ref={quoteRef} className="preloader__quote"></div>
+            <div className="preloader__quote_container">
+                <h2 ref={quoteRef} className="preloader__quote"></h2>
                 <div ref={authorRef} className="preloader__author"></div>
             </div>
 
             <div className="preloader__progress">
-                <div ref={progressBarRef} className="preloader__progress-bar" style={{ width: '0%' }} />
+                <div ref={progressBarRef} className="preloader__progress_bar" style={{ width: '0%' }} />
             </div>
 
-            <div className="preloader__hint">
+            {/* <div className="preloader__hint">
                 <span className="preloader__hint-icon">✨</span>
                 <span>загрузка вдохновения...</span>
-            </div>
+            </div> */}
         </div>,
         preloaderElement
     );
