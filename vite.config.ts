@@ -8,13 +8,13 @@ export default defineConfig({
         port: 3000,
         open: true
     },
-    css: {
-        preprocessorOptions: {
-            scss: {
-                additionalData: `@import "./src/styles/variables.scss";`
-            }
-        }
-    },
+    // css: {
+    //     preprocessorOptions: {
+    //         scss: {
+    //             additionalData: `@import "./src/styles/variables.scss";`
+    //         }
+    //     }
+    // },
     build: {
         outDir: 'public',
         sourcemap: true,
