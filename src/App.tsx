@@ -30,7 +30,8 @@ const App: React.FC = () => {
     return (
         <GalleryProvider>
             <Preloader
-                minDisplayTime={2.5}
+                minDisplayTime={1.5}
+                minDisplayDelay={1800}
                 onComplete={handlePreloaderComplete}
             />
 

@@ -182,6 +182,10 @@
         }
     }
 
+    &-container {
+        width: 100%;
+    }
+
     &-grid {
 
         @include bp.media-up('XXLarge') {

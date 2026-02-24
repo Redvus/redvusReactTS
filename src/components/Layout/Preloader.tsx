@@ -4,6 +4,7 @@ import { gsap } from 'gsap';
 
 interface PreloaderProps {
     minDisplayTime?: number;
+    minDisplayDelay?: number;
     onComplete?: () => void;
 }
 
@@ -20,6 +21,7 @@ const quotes = [
 
 const Preloader: React.FC<PreloaderProps> = ({
     minDisplayTime = 1,
+    minDisplayDelay = 1000,
     onComplete
 }) => {
     const [isVisible, setIsVisible] = useState(true);
@@ -46,7 +48,7 @@ const Preloader: React.FC<PreloaderProps> = ({
         const interval = setInterval(() => {
             if (progressBarRef.current) {
                 const elapsed = Date.now() - startTime;
-                const progress = Math.min((elapsed / 3000) * 100, 100);
+                const progress = Math.min((elapsed / minDisplayDelay) * 100, 100);
                 progressBarRef.current.style.width = `${progress}%`;
             }
         }, 50);
@@ -62,7 +64,7 @@ const Preloader: React.FC<PreloaderProps> = ({
                 quoteRef.current.textContent = quotes[randomIndex].text;
                 authorRef.current.textContent = `${quotes[randomIndex].author}`;
             }
-        }, minDisplayTime * 2000);
+        }, minDisplayTime * minDisplayDelay);
 
         return () => clearInterval(interval);
     }, []);

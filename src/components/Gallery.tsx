@@ -199,7 +199,7 @@ const Gallery: React.FC = () => {
             />
 
             <main ref={containerRef} className="wrapper">
-                <div className="gallery-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div className="gallery-container">
                     <div className="theme-toggle">
                         <button onClick={toggleTheme} aria-label={`Переключить на ${theme === 'light' ? 'темную' : 'светлую'} тему`}>
                             {theme === 'light' ? (
@@ -251,7 +251,7 @@ const Gallery: React.FC = () => {
                         </div>
                     ) : (
                         <>
-                            <div ref={galleryRef} className="gallery-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <div ref={galleryRef} className="gallery-grid">
                                 {filteredItems.length > 0 ? (
                                     sortedItems.map((item, index) => (
                                         <GalleryItem

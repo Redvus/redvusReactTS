@@ -43,7 +43,41 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
 
         const items: MediaItem[] = [];
 
-        // Добавляем видео, если есть как главное
+        // // Добавляем видео, если есть как главное
+        // if (item.videos && item.videos.length > 0) {
+        //     item.videos.forEach((video, index) => {
+        //         items.push({
+        //             type: 'video',
+        //             url: video.url,
+        //             thumbnail: video.thumbnail || item.imageUrl,
+        //             title: video.title || `${item.title} - видео ${index + 1}`
+        //         });
+        //     });
+        // } else if (item.imageUrl) {
+        //     items.push({
+        //         type: 'image',
+        //         url: item.imageUrl,
+        //         thumbnail: item.imageUrl,
+        //         title: `${item.title} - главное`
+        //     });
+        // }
+
+        // // Добавляем дополнительные изображения
+        // if (item.images && item.images.length > 0) {
+        //     item.images.forEach((img, index) => {
+        //         // Проверяем, не добавили ли мы уже это изображение как главное
+        //         if (img !== item.imageUrl) {
+        //             items.push({
+        //                 type: 'image',
+        //                 url: img,
+        //                 thumbnail: img,
+        //                 title: `${item.title} - изображение ${index + 1}`
+        //             });
+        //         }
+        //     });
+        // }
+
+        // Добавляем видео, если есть
         if (item.videos && item.videos.length > 0) {
             item.videos.forEach((video, index) => {
                 items.push({
@@ -53,27 +87,20 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
                     title: video.title || `${item.title} - видео ${index + 1}`
                 });
             });
-        } else if (item.imageUrl) {
-            items.push({
-                type: 'image',
-                url: item.imageUrl,
-                thumbnail: item.imageUrl,
-                title: `${item.title} - главное`
-            });
         }
 
-        // Добавляем дополнительные изображения
+        // Добавляем ТОЛЬКО дополнительные изображения (исключаем imageUrl)
         if (item.images && item.images.length > 0) {
-            item.images.forEach((img, index) => {
-                // Проверяем, не добавили ли мы уже это изображение как главное
-                if (img !== item.imageUrl) {
-                    items.push({
-                        type: 'image',
-                        url: img,
-                        thumbnail: img,
-                        title: `${item.title} - изображение ${index + 1}`
-                    });
-                }
+            // Создаем массив ТОЛЬКО из дополнительных изображений
+            const additionalImages = item.images.filter(img => img !== item.imageUrl);
+
+            additionalImages.forEach((img, index) => {
+                items.push({
+                    type: 'image',
+                    url: img,
+                    thumbnail: img,
+                    title: `${item.title} - изображение ${index + 1}`
+                });
             });
         }
 

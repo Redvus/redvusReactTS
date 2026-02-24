@@ -8,6 +8,7 @@ export interface FilterOption {
 }
 
 export const galleryItems: GalleryItem[] = [
+    // Art
     {
         id: 1,
         title: 'Форпост',
@@ -30,18 +31,22 @@ export const galleryItems: GalleryItem[] = [
     },
     {
         id: 2,
-        title: 'Фитнес-трекер трекер',
-        description: 'Мобильное приложение для отслеживания активности и питания',
-        type: 'web',
-        imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        title: 'Гараж',
+        description: 'Сборка любимых игр в одном месте в тематике постапокалипсиса',
+        type: 'art',
+        imageUrl: 'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_0.jpg',
         images: [
-            'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-            'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-            'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+            'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_1.jpg',
+            'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_2.jpg',
+            'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_3.jpg',
+            'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_4.jpg',
+            'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_5.jpg',
+            'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_6.jpg',
         ],
         date: '2025-02',
-        tags: ['React', 'Node.js']
+        tags: ['Blender', 'Substance Paiter', 'Photoshop']
     },
+    // Sites
     {
         id: 3,
         title: 'Фитнес-трекер',
