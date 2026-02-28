@@ -31,7 +31,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
     const [isAnimating, setIsAnimating] = useState(false);
     const [touchStart, setTouchStart] = useState<number | null>(null);
     const [touchEnd, setTouchEnd] = useState<number | null>(null);
-    const [showThumbnails, setShowThumbnails] = useState(true);
+    const [showThumbnails, /*setShowThumbnails*/] = useState(true);
     const [isPlaying, setIsPlaying] = useState(false);
     const [videoProgress, setVideoProgress] = useState(0);
     const [currentTime, setCurrentTime] = useState(0);
@@ -44,23 +44,16 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
         const items: MediaItem[] = [];
 
         // // Добавляем видео, если есть как главное
-        // if (item.videos && item.videos.length > 0) {
-        //     item.videos.forEach((video, index) => {
-        //         items.push({
-        //             type: 'video',
-        //             url: video.url,
-        //             thumbnail: video.thumbnail || item.imageUrl,
-        //             title: video.title || `${item.title} - видео ${index + 1}`
-        //         });
-        //     });
-        // } else if (item.imageUrl) {
-        //     items.push({
-        //         type: 'image',
-        //         url: item.imageUrl,
-        //         thumbnail: item.imageUrl,
-        //         title: `${item.title} - главное`
-        //     });
-        // }
+        if (item.videos && item.videos.length > 0) {
+            item.videos.forEach((video, index) => {
+                items.push({
+                    type: 'video',
+                    url: video.url,
+                    thumbnail: video.thumbnail || item.imageUrl,
+                    title: video.title || `${item.title} - видео ${index + 1}`
+                });
+            });
+        }
 
         // // Добавляем дополнительные изображения
         // if (item.images && item.images.length > 0) {
@@ -78,16 +71,16 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
         // }
 
         // Добавляем видео, если есть
-        if (item.videos && item.videos.length > 0) {
-            item.videos.forEach((video, index) => {
-                items.push({
-                    type: 'video',
-                    url: video.url,
-                    thumbnail: video.thumbnail || item.imageUrl,
-                    title: video.title || `${item.title} - видео ${index + 1}`
-                });
-            });
-        }
+        // if (item.videos && item.videos.length > 0) {
+        //     item.videos.forEach((video, index) => {
+        //         items.push({
+        //             type: 'video',
+        //             url: video.url,
+        //             thumbnail: video.thumbnail || item.imageUrl,
+        //             title: video.title || `${item.title} - видео ${index + 1}`
+        //         });
+        //     });
+        // }
 
         // Добавляем ТОЛЬКО дополнительные изображения (исключаем imageUrl)
         if (item.images && item.images.length > 0) {
@@ -103,6 +96,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
                 });
             });
         }
+
+
 
         return items;
     }, [item]);
@@ -401,7 +396,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
     if (!item || mediaItems.length === 0) return null;
 
     const currentMedia = mediaItems[currentMediaIndex];
-    const isVideo = currentMedia.type === 'video';
+    const isVideo = currentMedia?.type === 'video';
 
     const getTypeLabel = (type: string) => {
         const labels: Record<string, string> = {
@@ -419,9 +414,9 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
         const colors: Record<string, string> = {
             'web': '#3b82f6',
             'mobile': '#cd6904',
-            'video': '#10b981',
             'games': '#8059dc',
             'branding': '#da408d',
+            'video': '#10b981',
             'art': '#c83535'
         };
         return colors[type] || '#6b7280';
@@ -534,27 +529,31 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
                         {/* Навигация по медиа */}
                         {hasMultipleMedia && (
                             <>
-                                <button
-                                    className="modal__media_nav modal__media_nav--prev"
-                                    onClick={handlePreviousMedia}
-                                    aria-label="Предыдущее"
-                                    disabled={isAnimating}
-                                >
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                        <path d="M15 18l-6-6 6-6" />
-                                    </svg>
-                                </button>
+                                {currentMediaIndex > 0 && (
+                                    <button
+                                        className="modal__media_nav modal__media_nav--prev"
+                                        onClick={handlePreviousMedia}
+                                        aria-label="Предыдущее"
+                                        disabled={isAnimating}
+                                    >
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                            <path d="M15 18l-6-6 6-6" />
+                                        </svg>
+                                    </button>
+                                )}
 
-                                <button
-                                    className="modal__media_nav modal__media_nav--next"
-                                    onClick={handleNextMedia}
-                                    aria-label="Следующее"
-                                    disabled={isAnimating}
-                                >
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                        <path d="M9 18l6-6-6-6" />
-                                    </svg>
-                                </button>
+                                {currentMediaIndex < mediaItems.length - 1 && (
+                                    <button
+                                        className="modal__media_nav modal__media_nav--next"
+                                        onClick={handleNextMedia}
+                                        aria-label="Следующее"
+                                        disabled={isAnimating}
+                                    >
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                            <path d="M9 18l6-6-6-6" />
+                                        </svg>
+                                    </button>
+                                )}
 
                                 {/* Индикатор типа медиа и позиции */}
                                 {/* <div className="modal__media_indicator">
@@ -574,6 +573,14 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
                                 </div> */}
                             </>
                         )}
+
+                        <ul className="modal__media_tags">
+                            {item.tags.map((tag, index) => (
+                                <li key={index} className="modal__media_tag">
+                                    {tag}
+                                </li>
+                            ))}
+                        </ul>
                     </div>
 
                     {/* Миниатюры */}
@@ -635,17 +642,17 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
                         {/* <div className="modal__bottom_meta">
 
                         </div> */}
-                        <h3 className="modal__bottom_title">{item.title}</h3>
+                        {/* <h3 className="modal__bottom_title">{item.title}</h3> */}
                         <p className="modal__bottom_description">{item.description}</p>
                     </div>
 
-                    <ul className="modal__bottom_tags">
+                    {/* <ul className="modal__bottom_tags">
                         {item.tags.map((tag, index) => (
                             <li key={index} className="modal__bottom_tag">
                                 {tag}
                             </li>
                         ))}
-                    </ul>
+                    </ul> */}
 
                     {/* <div className="modal-details">
                         <h3 className="modal-subtitle">Детали проекта:</h3>

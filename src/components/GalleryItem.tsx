@@ -124,7 +124,11 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ item, index, onOpenModal }) =
                 >
                     {getTypeLabel(item.type)}
                 </div>
-                <span className="gallery__item_date">{item.date}</span>
+                <span
+                    className="gallery__item_date"
+                    style={{ backgroundColor: getTypeColor(item.type) }}
+                >
+                    {item.date}</span>
             </div>
 
 

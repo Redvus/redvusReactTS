@@ -152,12 +152,12 @@ const Gallery: React.FC = () => {
         }
     }, []);
 
-    const toggleTheme = () => {
-        const newTheme = theme === 'light' ? 'dark' : 'light';
-        setTheme(newTheme);
-        document.body.classList.toggle('theme-dark', newTheme === 'dark');
-        localStorage.setItem('gallery-theme', newTheme);
-    };
+    // const toggleTheme = () => {
+    //     const newTheme = theme === 'light' ? 'dark' : 'light';
+    //     setTheme(newTheme);
+    //     document.body.classList.toggle('theme-dark', newTheme === 'dark');
+    //     localStorage.setItem('gallery-theme', newTheme);
+    // };
 
     const handleFilterChange = (filter: FilterType) => {
         setActiveFilter(filter);
@@ -200,7 +200,7 @@ const Gallery: React.FC = () => {
 
             <main ref={containerRef} className="wrapper">
                 <div className="gallery-container">
-                    <div className="theme-toggle">
+                    {/* <div className="theme-toggle">
                         <button onClick={toggleTheme} aria-label={`Переключить на ${theme === 'light' ? 'темную' : 'светлую'} тему`}>
                             {theme === 'light' ? (
                                 <svg viewBox="0 0 24 24" fill="currentColor">
@@ -212,7 +212,7 @@ const Gallery: React.FC = () => {
                                 </svg>
                             )}
                         </button>
-                    </div>
+                    </div> */}
 
                     {/* <div className="gallery-stats mb-12 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl shadow-sm">
                         <div className="flex flex-col sm:flex-row justify-between items-center">

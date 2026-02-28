@@ -8,7 +8,7 @@
 .gallery {
 
     &-filter {
-        width: calc(100% - ((var(--wrapperPadding) * 2.5) * 2));
+        // width: calc(100% - ((var(--wrapperPadding) * 2.5) * 2));
         display: flex;
         justify-content: center;
         align-items: center;
@@ -489,7 +489,7 @@
             border-radius: 9999px;
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
-            bottom: calc(var(--marginBase) * -0.85);
+            bottom: calc(var(--marginBase) * -0.7);
             left: 0;
             color: var(--fourth);
             // margin-bottom: calc(var(--marginBase) * 0.5);
@@ -507,7 +507,7 @@
             border-radius: 9999px;
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
-            bottom: calc(var(--marginBase) * -0.85);
+            bottom: calc(var(--marginBase) * -0.7);
             right: 0;
             color: var(--fourth);
             background-color: var(--primary-lighten-20);
