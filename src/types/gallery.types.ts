@@ -9,7 +9,7 @@ export interface GalleryItem {
     videos?: VideoItem[]; // Массив видео проекта
     date: string;
     tags: string[];
-    published?: string;
+    published?: boolean;
     views?: number;
     likes?: number;
     createdAt?: string;
@@ -36,13 +36,13 @@ export interface GalleryStats {
     totalLikes: number;
 }
 
-export interface AdminActivity {
-    id: string;
-    action: 'create' | 'update' | 'delete' | 'publish' | 'unpublish';
-    workId: number;
-    workTitle: string;
-    userId: string;
-    userName: string;
-    timestamp: string;
-    details?: string;
-}
+// export interface AdminActivity {
+//     id: string;
+//     action: 'create' | 'update' | 'delete' | 'publish' | 'unpublish';
+//     workId: number;
+//     workTitle: string;
+//     userId: string;
+//     userName: string;
+//     timestamp: string;
+//     details?: string;
+// }

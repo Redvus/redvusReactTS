@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, /*useContext,*/ useState, useEffect } from 'react';
 import type { ReactNode } from 'react';
 import { gsap } from 'gsap';
 import type { GalleryItem, FilterType } from '../types/gallery.types';
@@ -26,13 +26,13 @@ interface WorkStats {
 
 const GalleryContext = createContext<GalleryContextType | undefined>(undefined);
 
-export const useGallery = () => {
-    const context = useContext(GalleryContext);
-    if (!context) {
-        throw new Error('useGallery must be used within GalleryProvider');
-    }
-    return context;
-};
+// export const useGallery = () => {
+//     const context = useContext(GalleryContext);
+//     if (!context) {
+//         throw new Error('useGallery must be used within GalleryProvider');
+//     }
+//     return context;
+// };
 
 interface GalleryProviderProps {
     children: ReactNode;

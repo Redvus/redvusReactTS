@@ -1,5 +1,5 @@
 // import React from 'react';
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 // import { RouterProvider } from 'react-router-dom';
@@ -20,19 +20,19 @@ import './assets/fonts/fontawesome-free-7.0.0-web/scss/brands.scss';
 
 const App: React.FC = () => {
 
-    const [preloaderComplete, setPreloaderComplete] = useState(false);
+    // const [preloaderComplete, setPreloaderComplete] = useState(false);
 
-    const handlePreloaderComplete = () => {
-        // console.log('Preloader complete callback');
-        setPreloaderComplete(true);
-    };
+    // const handlePreloaderComplete = () => {
+    //     // console.log('Preloader complete callback');
+    //     setPreloaderComplete(true);
+    // };
 
     return (
         <GalleryProvider>
             <Preloader
                 minDisplayTime={1.5}
                 minDisplayDelay={1800}
-                onComplete={handlePreloaderComplete}
+            // onComplete={handlePreloaderComplete}
             />
 
             {/* {preloaderComplete && ( */}
