@@ -4,9 +4,7 @@ import { gsap } from 'gsap';
 import Header from './Layout/Header/Header';
 import Footer from './Layout/Footer/Footer';
 
-import Loader from './Loader';
-// import Modal from './Modal';
-import Modal from './ModalMany';
+import Modal from './Modal';
 
 import GalleryFilter from './GalleryFilter';
 import GalleryItem from './GalleryItem';
@@ -21,7 +19,7 @@ const Gallery: React.FC = () => {
     const [isLoading, setIsLoading] = useState(false);
 
     const galleryRef = useRef<HTMLDivElement>(null);
-    const counterRef = useRef<HTMLSpanElement>(null);
+    // const counterRef = useRef<HTMLSpanElement>(null);
 
     const [theme, setTheme] = useState<'light' | 'dark'>(() => {
         const savedTheme = localStorage.getItem('gallery-theme') as 'light' | 'dark';
@@ -59,6 +57,7 @@ const Gallery: React.FC = () => {
     // }, []);
 
     // Фильтрация работ с использованием requestAnimationFrame для избежания каскадных рендеров
+
     useEffect(() => {
         let isMounted = true;
 
@@ -93,18 +92,18 @@ const Gallery: React.FC = () => {
     useEffect(() => {
         if (!isLoading && galleryRef.current) {
             // Анимация счетчика
-            if (counterRef.current) {
-                gsap.fromTo(
-                    counterRef.current,
-                    { scale: 1.5, rotation: 10 },
-                    {
-                        scale: 1,
-                        rotation: 0,
-                        duration: 0.5,
-                        ease: 'back.out(1.7)'
-                    }
-                );
-            }
+            // if (counterRef.current) {
+            //     gsap.fromTo(
+            //         counterRef.current,
+            //         { scale: 1.5, rotation: 10 },
+            //         {
+            //             scale: 1,
+            //             rotation: 0,
+            //             duration: 0.5,
+            //             ease: 'back.out(1.7)'
+            //         }
+            //     );
+            // }
 
             // Анимация элементов галереи
             const items = galleryRef.current.querySelectorAll('.gallery-item');
@@ -245,7 +244,6 @@ const Gallery: React.FC = () => {
                     {isLoading ? (
                         <div className="loading-container py-32">
                             <div className="text-center">
-                                <Loader />
                                 <p className="mt-4 text-gray-600">Загружаем работы...</p>
                             </div>
                         </div>

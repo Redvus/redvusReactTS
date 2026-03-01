@@ -40,9 +40,12 @@
 
     &__content {
         width: 100%;
-        max-width: calc(var(--modalTopHeight) * var(--modalIndex));
+        // max-width: calc(var(--modalTopHeight) * var(--modalIndex));
         height: 100vh;
+        display: flex;
+        flex-direction: row;
         position: relative;
+        padding: calc(var(--marginBase) * 5);
         // background: $color-white;
         // border-radius: 1rem;
         // overflow: auto;
@@ -132,7 +135,7 @@
     }
 
     &__media {
-        width: 100%;
+        width: var(--modalMediaWidth);
         // height: 80vh;
         display: flex;
         flex-direction: column;
@@ -372,12 +375,12 @@
     }
 
     &__bottom {
-        width: 100%;
+        width: calc(100% - var(--modalMediaWidth) - var(--marginBase) * 1);
         height: calc(100vh - var(--modalTopHeight) - var(--modalThumbnailsHeight));
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        padding: var(--marginBase) 0 calc(var(--marginBase) * 1);
+        padding: var(--marginBase) 0 calc(var(--marginBase) * 1) var(--marginBase);
         position: relative;
 
         &_header {
