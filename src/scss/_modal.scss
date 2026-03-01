@@ -23,6 +23,8 @@
     }
 
     &__overlay {
+        display: flex;
+        justify-content: center;
         position: absolute;
         top: 0;
         left: 0;
@@ -40,13 +42,14 @@
 
     &__content {
         width: 100%;
-        max-width: calc(var(--modalTopHeight) * var(--modalIndex));
-        height: 100vh;
+        // max-width: calc(var(--modalTopHeight) * var(--modalIndex));
+        height: calc(100vh - (var(--marginBase) * 3));
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
         position: relative;
-        // background: $color-white;
-        // border-radius: 1rem;
-        // overflow: auto;
-        // box-shadow: $shadow-2xl;
+        padding-top: calc(var(--marginBase) * 3);
+        // margin: 0 auto;
         z-index: 1;
         opacity: 0;
         // transform: translateY(20px);
@@ -56,23 +59,23 @@
             color: var(--fourth);
         }
 
-        &_type {
-            width: fit-content;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: absolute;
-            padding: calc(var(--marginBase) * 0.07) calc(var(--marginBase) * 0.7) calc(var(--marginBase) * 0.2);
-            border-radius: 9999px;
-            // border-top-left-radius: 0;
-            // border-bottom-left-radius: 0;
-            top: calc(var(--marginBase) * 1);
-            left: calc(var(--marginBase) * 1);
-            color: var(--fourth);
-            // margin-bottom: calc(var(--marginBase) * 0.5);
-            font-size: var(--font-size-small);
-            z-index: 2;
-        }
+        // &_type {
+        //     width: fit-content;
+        //     display: flex;
+        //     align-items: center;
+        //     justify-content: center;
+        //     position: absolute;
+        //     padding: calc(var(--marginBase) * 0.07) calc(var(--marginBase) * 0.7) calc(var(--marginBase) * 0.2);
+        //     border-radius: 9999px;
+        //     // border-top-left-radius: 0;
+        //     // border-bottom-left-radius: 0;
+        //     top: calc(var(--marginBase) * 1);
+        //     left: calc(var(--marginBase) * 1);
+        //     color: var(--fourth);
+        //     // margin-bottom: calc(var(--marginBase) * 0.5);
+        //     font-size: var(--font-size-small);
+        //     z-index: 2;
+        // }
 
         &_date {
             width: fit-content;
@@ -132,7 +135,7 @@
     }
 
     &__media {
-        width: 100%;
+        width: calc(var(--modalTopHeight) * var(--modalIndex));
         // height: 80vh;
         display: flex;
         flex-direction: column;
@@ -140,8 +143,8 @@
         overflow: hidden;
 
         &_container {
-            width: 100%;
-            height: var(--modalTopHeight);
+            width: calc(var(--modalTopHeight) * var(--modalIndex));
+            height: calc(var(--modalTopHeight));
             position: relative;
             // background: $color-black;
             @include flex-center;
@@ -369,15 +372,33 @@
                 }
             }
         }
+
+        &_type {
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            padding: calc(var(--marginBase) * 0.07) calc(var(--marginBase) * 0.7) calc(var(--marginBase) * 0.2);
+            border-radius: 9999px;
+            // border-top-left-radius: 0;
+            // border-bottom-left-radius: 0;
+            top: calc(var(--marginBase) * 1);
+            left: calc(var(--marginBase) * 1);
+            color: var(--fourth);
+            // margin-bottom: calc(var(--marginBase) * 0.5);
+            font-size: var(--font-size-small);
+            z-index: 2;
+        }
     }
 
     &__bottom {
-        width: 100%;
+        width: calc(20% - (var(--marginBase) * 2));
         height: calc(100vh - var(--modalTopHeight) - var(--modalThumbnailsHeight));
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        padding: var(--marginBase) 0 calc(var(--marginBase) * 1);
+        padding: 0 0 calc(var(--marginBase) * 1) calc(var(--marginBase) * 2);
         position: relative;
 
         &_header {
@@ -414,6 +435,7 @@
             height: 30%;
             display: flex;
             align-items: center;
+            margin-bottom: calc(var(--marginBase) * 2);
         }
 
         &_description {

@@ -581,6 +581,12 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
                                 </li>
                             ))}
                         </ul>
+
+                        <span
+                            className="modal__media_type"
+                            style={{ backgroundColor: getTypeColor(item.type) }}
+                        >
+                            {getTypeLabel(item.type)}</span>
                     </div>
 
                     {/* Миниатюры */}
@@ -629,11 +635,11 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
                     )}
                 </div>
 
-                <span
+                {/* <span
                     className="modal__content_type"
                     style={{ backgroundColor: getTypeColor(item.type) }}
                 >
-                    {getTypeLabel(item.type)}</span>
+                    {getTypeLabel(item.type)}</span> */}
                 {/* <span className="modal__content_date">{item.date}</span> */}
 
                 {/* Информация о проекте */}
@@ -642,7 +648,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
                         {/* <div className="modal__bottom_meta">
 
                         </div> */}
-                        {/* <h3 className="modal__bottom_title">{item.title}</h3> */}
+                        <h3 className="modal__bottom_title">{item.title}</h3>
                         <p className="modal__bottom_description">{item.description}</p>
                     </div>
 
