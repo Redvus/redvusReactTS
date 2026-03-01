@@ -1,6 +1,6 @@
-// import React from 'react';
+import React from 'react';
 // import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+// import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 // import { RouterProvider } from 'react-router-dom';
 // import { router } from './routes';
@@ -35,16 +35,18 @@ const App: React.FC = () => {
             // onComplete={handlePreloaderComplete}
             />
 
+            {<Gallery />}
+
             {/* {preloaderComplete && ( */}
-            <Router>
+            {/* <Router>
                 <Routes>
-                    {/* <Route path="/admin/login" element={<AdminLogin />} /> */}
-                    {/* <Route path="/admin/*" element={<AdminDashboard />} /> */}
+                    <Route path="/admin/login" element={<AdminLogin />} />
+                    <Route path="/admin/*" element={<AdminDashboard />} />
 
                     <Route path="*" element={<Navigate to="/" replace />} />
-                    <Route path="/" element={<Gallery />} />
+                    <Route path="/" element= />
                 </Routes>
-            </Router>
+            </Router> */}
             {/* )} */}
         </GalleryProvider>
     );
