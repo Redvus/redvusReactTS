@@ -106,21 +106,24 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
 
     // Сброс индекса и остановка видео при открытии нового проекта
     useEffect(() => {
-        if (!isOpen || !item?.id) return;
+        // if (!isOpen || !item?.id) return;
+        if (!isOpen && item) {
+            if (animationFrameRef.current !== null) {
+                cancelAnimationFrame(animationFrameRef.current);
+            }
 
-        if (animationFrameRef.current !== null) {
-            cancelAnimationFrame(animationFrameRef.current);
+            animationFrameRef.current = requestAnimationFrame(() => {
+                if (isMountedRef.current) {
+                    setCurrentMediaIndex(0);
+                    setIsPlaying(false);
+                    setVideoProgress(0);
+                }
+                animationFrameRef.current = null;
+            });
         }
 
-        animationFrameRef.current = requestAnimationFrame(() => {
-            if (isMountedRef.current) {
-                setCurrentMediaIndex(0);
-                setIsPlaying(false);
-                setVideoProgress(0);
-            }
-            animationFrameRef.current = null;
-        });
-    }, [isOpen, item?.id]);
+
+    }, [isOpen, item]);
 
     // Остановка видео при смене медиа
     useEffect(() => {
@@ -209,10 +212,12 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
     }, [currentMediaIndex, mediaItems.length, hasMultipleMedia, isAnimating, animateMediaChange]);
 
     const handleThumbnailClick = useCallback((index: number) => {
-        if (index === currentMediaIndex || isAnimating) return;
+        // if (index === currentMediaIndex || isAnimating) return;
+        if (index === currentMediaIndex || isAnimating || !mediaItems[index]) return;
 
         animateMediaChange(index);
-    }, [currentMediaIndex, isAnimating, animateMediaChange]);
+        // }, [currentMediaIndex, isAnimating, animateMediaChange]);
+    }, [currentMediaIndex, isAnimating, animateMediaChange, mediaItems]);
 
     // Управление видео
     const handlePlayPause = useCallback(() => {
@@ -289,6 +294,10 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
         const tl = gsap.timeline({
             onComplete: () => {
                 if (isMountedRef.current) {
+                    // Сбрасываем состояние перед закрытием
+                    setCurrentMediaIndex(0);
+                    setIsPlaying(false);
+                    setVideoProgress(0);
                     onClose();
                 }
             }
@@ -326,7 +335,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
     }, []);
 
     const handleTouchEnd = useCallback(() => {
-        if (!touchStart || !touchEnd || !hasMultipleMedia || isAnimating) return;
+        // if (!touchStart || !touchEnd || !hasMultipleMedia || isAnimating) return;
+        if (!touchStart || !touchEnd || !hasMultipleMedia || isAnimating || mediaItems.length === 0) return;
 
         const distance = touchStart - touchEnd;
         const isLeftSwipe = distance > 50;
@@ -340,7 +350,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
 
         setTouchStart(null);
         setTouchEnd(null);
-    }, [touchStart, touchEnd, hasMultipleMedia, isAnimating, handleNextMedia, handlePreviousMedia]);
+        // }, [touchStart, touchEnd, hasMultipleMedia, isAnimating, handleNextMedia, handlePreviousMedia]);
+    }, [touchStart, touchEnd, hasMultipleMedia, isAnimating, handleNextMedia, handlePreviousMedia, mediaItems.length]);
 
     // Анимация открытия/закрытия
     useEffect(() => {
@@ -396,6 +407,13 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
     if (!item || mediaItems.length === 0) return null;
 
     const currentMedia = mediaItems[currentMediaIndex];
+
+    // Если нет медиа или currentMedia не определен, не показываем модальное окно
+    if (mediaItems.length === 0 || !currentMedia) {
+        console.log('Нет дополнительных медиа для отображения');
+        return null;
+    }
+
     const isVideo = currentMedia?.type === 'video';
 
     const getTypeLabel = (type: string) => {
