@@ -253,35 +253,6 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
         }
     }, []);
 
-    // Обработчик клавиш
-    const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
-        if (!isOpen) return;
-
-        switch (e.key) {
-            case 'Escape':
-                // handleClose();
-                break;
-            case 'ArrowLeft':
-                e.preventDefault();
-                if (hasMultipleMedia) {
-                    handlePreviousMedia();
-                }
-                break;
-            case 'ArrowRight':
-                e.preventDefault();
-                if (hasMultipleMedia) {
-                    handleNextMedia();
-                }
-                break;
-            case ' ':
-                e.preventDefault();
-                if (mediaItems[currentMediaIndex]?.type === 'video') {
-                    handlePlayPause();
-                }
-                break;
-        }
-    }, [isOpen, hasMultipleMedia, handlePreviousMedia, handleNextMedia, handlePlayPause, mediaItems, currentMediaIndex]);
-
     // Закрытие модального окна
     const handleClose = useCallback(() => {
         if (!modalRef.current || !overlayRef.current || !contentRef.current) return;
@@ -317,6 +288,35 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
             }, '-=0.2')
             .set(modalRef.current, { display: 'none' });
     }, [onClose]);
+
+    // Обработчик клавиш
+    const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
+        if (!isOpen) return;
+
+        switch (e.key) {
+            case 'Escape':
+                handleClose();
+                break;
+            case 'ArrowLeft':
+                e.preventDefault();
+                if (hasMultipleMedia) {
+                    handlePreviousMedia();
+                }
+                break;
+            case 'ArrowRight':
+                e.preventDefault();
+                if (hasMultipleMedia) {
+                    handleNextMedia();
+                }
+                break;
+            case ' ':
+                e.preventDefault();
+                if (mediaItems[currentMediaIndex]?.type === 'video') {
+                    handlePlayPause();
+                }
+                break;
+        }
+    }, [isOpen, hasMultipleMedia, handlePreviousMedia, handleNextMedia, handlePlayPause, mediaItems, currentMediaIndex, handleClose]);
 
     const handleOverlayClick = useCallback((e: React.MouseEvent) => {
         if (e.target === e.currentTarget) {
