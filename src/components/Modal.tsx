@@ -455,8 +455,10 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
                 onTouchEnd={handleTouchEnd}
             >
                 {/* Секция медиа */}
+                {/* <div className={`modal__media ${isVideo ? 'modal__media--video' : ''}`}> */}
                 <div className="modal__media">
                     {/* Основное медиа */}
+                    {/* <div className={`modal__media_container ${isVideo ? 'modal__media_container--video' : ''}`}> */}
                     <div className="modal__media_container">
                         {isVideo ? (
                             <>
