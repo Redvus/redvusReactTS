@@ -64,7 +64,7 @@ export const galleryItems: GalleryItem[] = [
         id: 4,
         title: 'Фитнекер',
         description: 'Мобильное приложение для отслеживания активности и питания',
-        type: 'video',
+        type: 'web',
         imageUrl: 'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_0.jpg',
         images: [
             'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_1.jpg',
@@ -72,7 +72,8 @@ export const galleryItems: GalleryItem[] = [
             'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_3.jpg',
         ],
         date: '2025-04',
-        tags: ['Javascript', 'CSS']
+        tags: ['Javascript', 'CSS'],
+        linked: 'https://smibs.ru'
     }
 ];
 

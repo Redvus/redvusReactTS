@@ -15,7 +15,7 @@ export interface GalleryItem {
     createdAt?: string;
     updatedAt?: string;
     order?: number;
-    featured?: boolean;
+    linked?: string;
 }
 
 export interface VideoItem {

@@ -602,11 +602,26 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
                             ))}
                         </ul>
 
-                        <span
-                            className="modal__media_type"
-                            style={{ backgroundColor: getTypeColor(item.type) }}
-                        >
-                            {getTypeLabel(item.type)}</span>
+                        <div className="modal__media_top">
+                            <span
+                                className="modal__media_type"
+                                style={{ backgroundColor: getTypeColor(item.type) }}
+                            >
+                                {getTypeLabel(item.type)}</span>
+
+                            {item.linked && (
+                                <a href={item.linked}
+                                    className="modal__media_link"
+                                    style={{ backgroundColor: getTypeColor(item.type) }}
+                                    target="_blank" rel="noopener noreferrer">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                    </svg>
+                                </a>
+                            )}
+                        </div>
+
+
                     </div>
 
                     {/* Миниатюры */}
