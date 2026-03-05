@@ -65,7 +65,7 @@ export const galleryItems: GalleryItem[] = [
         title: 'Фитнекер',
         description: 'Мобильное приложение для отслеживания активности и питания',
         type: 'web',
-        imageUrl: 'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_0.jpg',
+        imageUrl: 'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_00.jpg',
         images: [
             'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_1.jpg',
             'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_2.jpg',
@@ -74,6 +74,28 @@ export const galleryItems: GalleryItem[] = [
         date: '2025-04',
         tags: ['Javascript', 'CSS'],
         linked: 'https://smibs.ru'
+    },
+    {
+        id: 5,
+        title: 'Проект Гарин-Михайловский',
+        description: 'Мобильное приложение для отслеживания активности и питания',
+        type: 'games',
+        imageUrl: 'https://c846fb63-voos.s3.twcstorage.ru/redvus/games/garin/rp_garin_00.jpg',
+        images: [
+            'https://c846fb63-voos.s3.twcstorage.ru/redvus/games/garin/rp_garin_01.jpg',
+            'https://c846fb63-voos.s3.twcstorage.ru/redvus/games/garin/rp_garin_02.jpg',
+            'https://c846fb63-voos.s3.twcstorage.ru/redvus/games/garin/rp_garin_03.jpg',
+        ],
+        videos: [
+            {
+                url: 'https://c846fb63-voos.s3.twcstorage.ru/redvus/games/garin/rp_garin_intro.mp4',
+                thumbnail: 'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/forpost/ForpostCover.jpg',
+                title: 'Демонстрация работы портала'
+            }
+        ],
+        date: '2025-04',
+        tags: ['Blender', 'Substance Paiter', 'Photoshop', 'Javascript', 'CSS'],
+        linked: 'https://redvus.ru/garin'
     }
 ];
 
