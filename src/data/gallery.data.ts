@@ -34,14 +34,14 @@ export const galleryItems: GalleryItem[] = [
         title: 'Гараж',
         description: 'Сборка любимых игр в одном месте в тематике постапокалипсиса',
         type: 'art',
-        imageUrl: 'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_0.jpg',
+        imageUrl: 'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_00.jpg',
         images: [
-            'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_1.jpg',
-            'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_2.jpg',
-            'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_3.jpg',
-            'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_4.jpg',
-            'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_5.jpg',
-            'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_6.jpg',
+            'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_01.jpg',
+            'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_02.jpg',
+            'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_03.jpg',
+            'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_04.jpg',
+            'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_05.jpg',
+            'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_06.jpg'
         ],
         date: '2025-02',
         tags: ['Blender', 'Substance Paiter', 'Photoshop']
