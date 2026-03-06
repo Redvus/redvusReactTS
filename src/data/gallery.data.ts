@@ -77,7 +77,7 @@ export const galleryItems: GalleryItem[] = [
     },
     {
         id: 5,
-        title: 'Проект Гарин-Михайловский',
+        title: 'Проект о разностороннем человеке Гарине-Михайловском',
         description: 'Мобильное приложение для отслеживания активности и питания',
         type: 'games',
         imageUrl: 'https://c846fb63-voos.s3.twcstorage.ru/redvus/games/garin/rp_garin_00.jpg',

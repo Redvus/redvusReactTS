@@ -26,8 +26,8 @@
 
 @font-face {
     font-family: 'Roboto Flex';
-    src: local('Roboto Flex'), url('../assets/fonts/RobotoFlexVar/RobotoFlexVar.woff2') format('woff2-variations');
-    src: local('Roboto Flex'), url('../assets/fonts/RobotoFlexVar/RobotoFlexVar.woff2') format('woff2') tech('variations');
+    src: local('Roboto Flex'), url('/public/fonts/fonts/RobotoFlexVar/RobotoFlexVar.woff2') format('woff2-variations');
+    src: local('Roboto Flex'), url('/public/fonts/fonts/RobotoFlexVar/RobotoFlexVar.woff2') format('woff2') tech('variations');
     font-weight: 100 900;
     font-stretch: 75% 125%;
     font-style: oblique 0deg 10deg;
@@ -65,7 +65,7 @@ $font-width-extended: 125%;
     --font-size-small: calc(var(--font-size-base) * 0.875);
     --font-size-h1: calc(var(--font-size-base) + 2vmax);
     --font-size-h2: calc(var(--font-size-base) + 1.5vmax);
-    --font-size-h3: calc(var(--font-size-base) + 1vmax);
+    --font-size-h3: calc(var(--font-size-base) * 1.4);
     --font-size-h4: calc(var(--font-size-base) + 0.7vmax);
     --font-size-h5: calc(var(--font-size-base) + 0.5vmax);
     --font-size-h6: calc(var(--font-size-base) + 0.3vmax);
