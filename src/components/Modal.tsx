@@ -106,21 +106,24 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
 
     // Сброс индекса и остановка видео при открытии нового проекта
     useEffect(() => {
-        if (!isOpen || !item?.id) return;
+        // if (!isOpen || !item?.id) return;
+        if (!isOpen && item) {
+            if (animationFrameRef.current !== null) {
+                cancelAnimationFrame(animationFrameRef.current);
+            }
 
-        if (animationFrameRef.current !== null) {
-            cancelAnimationFrame(animationFrameRef.current);
+            animationFrameRef.current = requestAnimationFrame(() => {
+                if (isMountedRef.current) {
+                    setCurrentMediaIndex(0);
+                    setIsPlaying(false);
+                    setVideoProgress(0);
+                }
+                animationFrameRef.current = null;
+            });
         }
 
-        animationFrameRef.current = requestAnimationFrame(() => {
-            if (isMountedRef.current) {
-                setCurrentMediaIndex(0);
-                setIsPlaying(false);
-                setVideoProgress(0);
-            }
-            animationFrameRef.current = null;
-        });
-    }, [isOpen, item?.id]);
+
+    }, [isOpen, item]);
 
     // Остановка видео при смене медиа
     useEffect(() => {
@@ -209,10 +212,12 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
     }, [currentMediaIndex, mediaItems.length, hasMultipleMedia, isAnimating, animateMediaChange]);
 
     const handleThumbnailClick = useCallback((index: number) => {
-        if (index === currentMediaIndex || isAnimating) return;
+        // if (index === currentMediaIndex || isAnimating) return;
+        if (index === currentMediaIndex || isAnimating || !mediaItems[index]) return;
 
         animateMediaChange(index);
-    }, [currentMediaIndex, isAnimating, animateMediaChange]);
+        // }, [currentMediaIndex, isAnimating, animateMediaChange]);
+    }, [currentMediaIndex, isAnimating, animateMediaChange, mediaItems]);
 
     // Управление видео
     const handlePlayPause = useCallback(() => {
@@ -248,35 +253,6 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
         }
     }, []);
 
-    // Обработчик клавиш
-    const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
-        if (!isOpen) return;
-
-        switch (e.key) {
-            case 'Escape':
-                // handleClose();
-                break;
-            case 'ArrowLeft':
-                e.preventDefault();
-                if (hasMultipleMedia) {
-                    handlePreviousMedia();
-                }
-                break;
-            case 'ArrowRight':
-                e.preventDefault();
-                if (hasMultipleMedia) {
-                    handleNextMedia();
-                }
-                break;
-            case ' ':
-                e.preventDefault();
-                if (mediaItems[currentMediaIndex]?.type === 'video') {
-                    handlePlayPause();
-                }
-                break;
-        }
-    }, [isOpen, hasMultipleMedia, handlePreviousMedia, handleNextMedia, handlePlayPause, mediaItems, currentMediaIndex]);
-
     // Закрытие модального окна
     const handleClose = useCallback(() => {
         if (!modalRef.current || !overlayRef.current || !contentRef.current) return;
@@ -289,6 +265,10 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
         const tl = gsap.timeline({
             onComplete: () => {
                 if (isMountedRef.current) {
+                    // Сбрасываем состояние перед закрытием
+                    setCurrentMediaIndex(0);
+                    setIsPlaying(false);
+                    setVideoProgress(0);
                     onClose();
                 }
             }
@@ -309,6 +289,35 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
             .set(modalRef.current, { display: 'none' });
     }, [onClose]);
 
+    // Обработчик клавиш
+    const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
+        if (!isOpen) return;
+
+        switch (e.key) {
+            case 'Escape':
+                handleClose();
+                break;
+            case 'ArrowLeft':
+                e.preventDefault();
+                if (hasMultipleMedia) {
+                    handlePreviousMedia();
+                }
+                break;
+            case 'ArrowRight':
+                e.preventDefault();
+                if (hasMultipleMedia) {
+                    handleNextMedia();
+                }
+                break;
+            case ' ':
+                e.preventDefault();
+                if (mediaItems[currentMediaIndex]?.type === 'video') {
+                    handlePlayPause();
+                }
+                break;
+        }
+    }, [isOpen, hasMultipleMedia, handlePreviousMedia, handleNextMedia, handlePlayPause, mediaItems, currentMediaIndex, handleClose]);
+
     const handleOverlayClick = useCallback((e: React.MouseEvent) => {
         if (e.target === e.currentTarget) {
             handleClose();
@@ -326,7 +335,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
     }, []);
 
     const handleTouchEnd = useCallback(() => {
-        if (!touchStart || !touchEnd || !hasMultipleMedia || isAnimating) return;
+        // if (!touchStart || !touchEnd || !hasMultipleMedia || isAnimating) return;
+        if (!touchStart || !touchEnd || !hasMultipleMedia || isAnimating || mediaItems.length === 0) return;
 
         const distance = touchStart - touchEnd;
         const isLeftSwipe = distance > 50;
@@ -340,7 +350,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
 
         setTouchStart(null);
         setTouchEnd(null);
-    }, [touchStart, touchEnd, hasMultipleMedia, isAnimating, handleNextMedia, handlePreviousMedia]);
+        // }, [touchStart, touchEnd, hasMultipleMedia, isAnimating, handleNextMedia, handlePreviousMedia]);
+    }, [touchStart, touchEnd, hasMultipleMedia, isAnimating, handleNextMedia, handlePreviousMedia, mediaItems.length]);
 
     // Анимация открытия/закрытия
     useEffect(() => {
@@ -396,6 +407,13 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
     if (!item || mediaItems.length === 0) return null;
 
     const currentMedia = mediaItems[currentMediaIndex];
+
+    // Если нет медиа или currentMedia не определен, не показываем модальное окно
+    if (mediaItems.length === 0 || !currentMedia) {
+        console.log('Нет дополнительных медиа для отображения');
+        return null;
+    }
+
     const isVideo = currentMedia?.type === 'video';
 
     const getTypeLabel = (type: string) => {
@@ -455,8 +473,10 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
                 onTouchEnd={handleTouchEnd}
             >
                 {/* Секция медиа */}
+                {/* <div className={`modal__media ${isVideo ? 'modal__media--video' : ''}`}> */}
                 <div className="modal__media">
                     {/* Основное медиа */}
+                    {/* <div className={`modal__media_container ${isVideo ? 'modal__media_container--video' : ''}`}> */}
                     <div className="modal__media_container">
                         {isVideo ? (
                             <>
@@ -581,6 +601,27 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
                                 </li>
                             ))}
                         </ul>
+
+                        <div className="modal__media_top">
+                            <span
+                                className="modal__media_type"
+                                style={{ backgroundColor: getTypeColor(item.type) }}
+                            >
+                                {getTypeLabel(item.type)}</span>
+
+                            {item.linked && (
+                                <a href={item.linked}
+                                    className="modal__media_link"
+                                    style={{ backgroundColor: getTypeColor(item.type) }}
+                                    target="_blank" rel="noopener noreferrer">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                    </svg>
+                                </a>
+                            )}
+                        </div>
+
+
                     </div>
 
                     {/* Миниатюры */}
@@ -629,11 +670,11 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
                     )}
                 </div>
 
-                <span
+                {/* <span
                     className="modal__content_type"
                     style={{ backgroundColor: getTypeColor(item.type) }}
                 >
-                    {getTypeLabel(item.type)}</span>
+                    {getTypeLabel(item.type)}</span> */}
                 {/* <span className="modal__content_date">{item.date}</span> */}
 
                 {/* Информация о проекте */}
@@ -642,7 +683,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
                         {/* <div className="modal__bottom_meta">
 
                         </div> */}
-                        {/* <h3 className="modal__bottom_title">{item.title}</h3> */}
+                        <h3 className="modal__bottom_title">{item.title}</h3>
                         <p className="modal__bottom_description">{item.description}</p>
                     </div>
 

@@ -98,12 +98,14 @@ $transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
 
     --marginBase: 1rem;
 
-    --galleryItemHeight: 40vh;
+    --galleryItemHeight: 50vh;
     --galleryItemTopHeight: 75%;
 
-    --modalWidth: 75vw;
-    --modalTopHeight: 80vh;
-    --modalIndex: 1.33;
+    --modalWidth: 85vw;
+    --modalTopHeight: 85vh;
+    --modalVideoTopHeight: 60vh;
+    --modalIndex: 1.35;
+    --modalVideoIndex: 1.77;
     --modalThumbnailsHeight: 8vh;
     --modalButtonsHeight: calc(var(--marginBase) * 2.5);
     --modalBorderColor: var(--fourth-darken-30);

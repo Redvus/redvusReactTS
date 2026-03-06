@@ -16,10 +16,29 @@ export default defineConfig({
     //     }
     // },
     build: {
-        outDir: 'public',
-        sourcemap: true,
+        outDir: 'dist',
+        sourcemap: false,
         rollupOptions: {
             output: {
+                entryFileNames: 'assets/app-min.js',    // для JS
+                chunkFileNames: 'assets/[name]-[hash].js', // для чанков
+                assetFileNames: (assetInfo) => {
+                    const fileName = assetInfo.names[0];
+                    // CSS файлы
+                    if (fileName?.endsWith('.css')) {
+                        return 'assets/app-min.css'
+                    }
+                    // Изображения
+                    if (fileName?.match(/\.(png|jpe?g|gif|svg|webp)$/)) {
+                        return 'assets/images/[name]-[hash][extname]'
+                    }
+                    // Шрифты
+                    if (fileName?.match(/\.(woff2|woff|ttf|eot)$/)) {
+                        return 'assets/fonts/[name]-[hash][extname]'
+                    }
+                    // Остальные ассеты
+                    return 'assets/[name]-[hash][extname]'
+                },
                 manualChunks: {
                     vendor: ['react', 'react-dom'],
                     gsap: ['gsap']
