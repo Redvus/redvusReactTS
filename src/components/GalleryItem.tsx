@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import type { GalleryItem as GalleryItemType } from '../types/gallery.types';
-import { getFullS3Url } from '../utils/s3';
+// import { getFullS3Url } from '../utils/s3';
 
 interface GalleryItemProps {
     item: GalleryItemType;
@@ -13,7 +13,7 @@ interface GalleryItemProps {
 const GalleryItem: React.FC<GalleryItemProps> = ({ item, index, onOpenModal }) => {
     const itemRef = useRef<HTMLDivElement>(null);
     const imageRef = useRef<HTMLImageElement>(null);
-    const imageUrl = getFullS3Url(item.imageUrl);
+    // const imageUrl = getFullS3Url(item.imageUrl);
 
     useEffect(() => {
         if (itemRef.current) {
@@ -115,7 +115,7 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ item, index, onOpenModal }) =
                 <picture className="gallery__item_image">
                     <img
                         ref={imageRef}
-                        src={imageUrl}
+                        src={item.imageUrl}
                         alt={item.title}
                         loading="lazy"
                     />

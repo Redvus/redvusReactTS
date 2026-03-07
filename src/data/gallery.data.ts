@@ -35,14 +35,14 @@ export const galleryItems: GalleryItem[] = [
         title: 'Гараж',
         description: 'Сборка любимых игр в одном месте в тематике постапокалипсиса',
         type: 'web',
-        imageUrl: 'projects/garage/rp_garage_00',
+        imageUrl: 'assets/images/projects/garage/rp_garage_00.webp',
         images: [
-            'projects/garage/rp_garage_01',
-            'projects/garage/rp_garage_02',
-            'projects/garage/rp_garage_03',
-            'projects/garage/rp_garage_04',
-            'projects/garage/rp_garage_05',
-            'projects/garage/rp_garage_06'
+            'assets/images/projects/garage/rp_garage_01.webp',
+            'assets/images/projects/garage/rp_garage_02.webp',
+            'assets/images/projects/garage/rp_garage_03.webp',
+            'assets/images/projects/garage/rp_garage_04.webp',
+            'assets/images/projects/garage/rp_garage_05.webp',
+            'assets/images/projects/garage/rp_garage_06.webp'
         ],
         date: '2023-02',
         tags: ['Blender', 'Substance Paiter', 'Photoshop']
