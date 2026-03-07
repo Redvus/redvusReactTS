@@ -21,7 +21,7 @@ export default defineConfig({
         rollupOptions: {
             output: {
                 entryFileNames: 'assets/app-min.js',    // для JS
-                chunkFileNames: 'assets/[name]-[hash].js', // для чанков
+                chunkFileNames: 'assets/[name]-min.js', // для чанков
                 assetFileNames: (assetInfo) => {
                     const fileName = assetInfo.names[0];
                     // CSS файлы
@@ -34,10 +34,10 @@ export default defineConfig({
                     }
                     // Шрифты
                     if (fileName?.match(/\.(woff2|woff|ttf|eot)$/)) {
-                        return 'assets/fonts/[name]-[hash][extname]'
+                        return 'assets/fonts/[name][extname]'
                     }
                     // Остальные ассеты
-                    return 'assets/[name]-[hash][extname]'
+                    return 'assets/[name][extname]'
                 },
                 manualChunks: {
                     vendor: ['react', 'react-dom'],

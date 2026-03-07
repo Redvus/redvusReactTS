@@ -177,9 +177,9 @@
                 height: calc(var(--modalVideoTopHeight));
             }
 
-            @include dark-theme {
-                background: var(--primary-darken-5);
-            }
+            // @include dark-theme {
+            //     background: var(--primary-darken-5);
+            // }
         }
 
         &_thumbnails {

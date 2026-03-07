@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState, useCallback, useMemo } from 'react';
 import { gsap } from 'gsap';
 import type { GalleryItem } from '../types/gallery.types';
+import { getFullS3Url } from '../utils/s3';
 
 interface ModalProps {
     isOpen: boolean;
@@ -42,6 +43,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
         if (!item) return [];
 
         const items: MediaItem[] = [];
+
+        const imageUrl = getFullS3Url(item.imageUrl);
 
         // // Добавляем видео, если есть как главное
         if (item.videos && item.videos.length > 0) {
@@ -85,13 +88,13 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
         // Добавляем ТОЛЬКО дополнительные изображения (исключаем imageUrl)
         if (item.images && item.images.length > 0) {
             // Создаем массив ТОЛЬКО из дополнительных изображений
-            const additionalImages = item.images.filter(img => img !== item.imageUrl);
+            const additionalImages = item.images.filter(img => img !== imageUrl);
 
             additionalImages.forEach((img, index) => {
                 items.push({
                     type: 'image',
-                    url: img,
-                    thumbnail: img,
+                    url: getFullS3Url(img),
+                    thumbnail: getFullS3Url(img),
                     title: `${item.title} - изображение ${index + 1}`
                 });
             });

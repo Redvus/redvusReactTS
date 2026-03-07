@@ -8,16 +8,17 @@ export interface FilterOption {
 }
 
 export const galleryItems: GalleryItem[] = [
-    // Video
+    // Сайты
+
     {
         id: 1,
         title: 'Форпост',
         description: 'Современный веб-портал для управления бизнес-процессами компании',
-        type: 'video',
-        imageUrl: 'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/forpost/ForpostCover.jpg',
+        type: 'web',
+        imageUrl: 'projects/forpost/ForpostCover',
         images: [
-            'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_1.jpg',
-            'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_2.jpg'
+            'projects/garage/rp_garage_1',
+            'projects/garage/rp_garage_2'
         ],
         videos: [
             {
@@ -26,38 +27,40 @@ export const galleryItems: GalleryItem[] = [
                 title: 'Демонстрация работы портала'
             }
         ],
-        date: '2026-02',
+        date: '2022-02',
         tags: ['Blender', 'Substance Paiter', 'DaVinci Resolve']
     },
     {
-        id: 3,
+        id: 2,
         title: 'Гараж',
         description: 'Сборка любимых игр в одном месте в тематике постапокалипсиса',
-        type: 'art',
-        imageUrl: 'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_00.jpg',
+        type: 'web',
+        imageUrl: 'projects/garage/rp_garage_00',
         images: [
-            'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_01.jpg',
-            'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_02.jpg',
-            'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_03.jpg',
-            'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_04.jpg',
-            'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_05.jpg',
-            'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_06.jpg'
+            'projects/garage/rp_garage_01',
+            'projects/garage/rp_garage_02',
+            'projects/garage/rp_garage_03',
+            'projects/garage/rp_garage_04',
+            'projects/garage/rp_garage_05',
+            'projects/garage/rp_garage_06'
         ],
-        date: '2025-02',
+        date: '2023-02',
         tags: ['Blender', 'Substance Paiter', 'Photoshop']
     },
     {
-        id: 2,
-        title: 'Фитнес-трекер',
+        id: 3,
+        title: 'Поледняя сигарета',
         description: 'Мобильное приложение для отслеживания активности и питания',
-        type: 'art',
-        imageUrl: 'https://s3.timeweb.com/c846fb63-voos/wom/fantasy/comparison/fw_comparison_153.jpg',
+        type: 'web',
+        imageUrl: 'projects/girlNuclear/rp_girlnuclear_00',
         images: [
-            'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_4.jpg',
-            'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_1.jpg',
-            'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_2.jpg'
+            'projects/girlNuclear/rp_girlnuclear_01',
+            'projects/girlNuclear/rp_girlnuclear_02',
+            'projects/girlNuclear/rp_girlnuclear_03',
+            'projects/girlNuclear/rp_girlnuclear_04',
+            'projects/girlNuclear/rp_girlnuclear_05'
         ],
-        date: '2025-04',
+        date: '2023-04',
         tags: ['Javascript', 'CSS']
     },
     {
@@ -65,13 +68,13 @@ export const galleryItems: GalleryItem[] = [
         title: 'Фитнекер',
         description: 'Мобильное приложение для отслеживания активности и питания',
         type: 'web',
-        imageUrl: 'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_00.jpg',
+        imageUrl: 'projects/garage/rp_garage_00',
         images: [
-            'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_1.jpg',
-            'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_2.jpg',
-            'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/garage/rp_garage_3.jpg',
+            'projects/garage/rp_garage_1',
+            'projects/garage/rp_garage_2',
+            'projects/garage/rp_garage_3'
         ],
-        date: '2025-04',
+        date: '2021-04',
         tags: ['Javascript', 'CSS'],
         linked: 'https://smibs.ru'
     },
@@ -79,7 +82,7 @@ export const galleryItems: GalleryItem[] = [
         id: 5,
         title: 'Проект о разностороннем человеке Гарине-Михайловском',
         description: 'Мобильное приложение для отслеживания активности и питания',
-        type: 'games',
+        type: 'web',
         imageUrl: 'https://c846fb63-voos.s3.twcstorage.ru/redvus/games/garin/rp_garin_00.jpg',
         images: [
             'https://c846fb63-voos.s3.twcstorage.ru/redvus/games/garin/rp_garin_01.jpg',
@@ -93,16 +96,118 @@ export const galleryItems: GalleryItem[] = [
                 title: 'Демонстрация работы портала'
             }
         ],
-        date: '2025-04',
+        date: '2021-04',
         tags: ['Blender', 'Substance Paiter', 'Photoshop', 'Javascript', 'CSS'],
         linked: 'https://redvus.ru/garin'
+    },
+    // Игры
+    {
+        id: 6,
+        title: 'Форпост',
+        description: 'Современный веб-портал для управления бизнес-процессами компании',
+        type: 'games',
+        imageUrl: 'projects/forpost/ForpostCover',
+        images: [
+            'projects/garage/rp_garage_1',
+            'projects/garage/rp_garage_2'
+        ],
+        date: '2023-02',
+        tags: ['Blender', 'Substance Paiter', 'DaVinci Resolve']
+    },
+
+    // Мобильные
+    {
+        id: 7,
+        title: 'Форпост',
+        description: 'Современный веб-портал для управления бизнес-процессами компании',
+        type: 'mobile',
+        imageUrl: 'projects/forpost/ForpostCover',
+        images: [
+            'projects/garage/rp_garage_1',
+            'projects/garage/rp_garage_2'
+        ],
+        // videos: [
+        //     {
+        //         url: 'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/forpost/R_Forpost.mp4',
+        //         thumbnail: 'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/forpost/ForpostCover.jpg',
+        //         title: 'Демонстрация работы портала'
+        //     }
+        // ],
+        date: '2023-02',
+        tags: ['Blender', 'Substance Paiter', 'DaVinci Resolve']
+    },
+
+    // Брэндинг
+    {
+        id: 8,
+        title: 'Форпост',
+        description: 'Современный веб-портал для управления бизнес-процессами компании',
+        type: 'branding',
+        imageUrl: 'projects/forpost/ForpostCover',
+        images: [
+            'projects/garage/rp_garage_1',
+            'projects/garage/rp_garage_2'
+        ],
+        videos: [
+            {
+                url: 'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/forpost/R_Forpost.mp4',
+                thumbnail: 'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/forpost/ForpostCover.jpg',
+                title: 'Демонстрация работы портала'
+            }
+        ],
+        date: '2020-02',
+        tags: ['Blender', 'Substance Paiter', 'DaVinci Resolve']
+    },
+
+    // Видео
+    {
+        id: 9,
+        title: 'Форпост',
+        description: 'Современный веб-портал для управления бизнес-процессами компании',
+        type: 'video',
+        imageUrl: 'projects/forpost/ForpostCover',
+        images: [
+            'projects/garage/rp_garage_1',
+            'projects/garage/rp_garage_2'
+        ],
+        videos: [
+            {
+                url: 'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/forpost/R_Forpost.mp4',
+                thumbnail: 'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/forpost/ForpostCover.jpg',
+                title: 'Демонстрация работы портала'
+            }
+        ],
+        date: '2026-02',
+        tags: ['Blender', 'Substance Paiter', 'DaVinci Resolve']
+    },
+
+    // Арт
+    {
+        id: 10,
+        title: 'Форпост',
+        description: 'Современный веб-портал для управления бизнес-процессами компании',
+        type: 'art',
+        imageUrl: 'projects/forpost/ForpostCover',
+        images: [
+            'projects/garage/rp_garage_1',
+            'projects/garage/rp_garage_2'
+        ],
+        videos: [
+            {
+                url: 'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/forpost/R_Forpost.mp4',
+                thumbnail: 'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/forpost/ForpostCover.jpg',
+                title: 'Демонстрация работы портала'
+            }
+        ],
+        date: '2025-02',
+        tags: ['Blender', 'Substance Paiter', 'DaVinci Resolve']
     }
 ];
 
 export const filterOptions: FilterOption[] = [
     { id: 'web', label: 'Сайты', icon: 'fas fa-globe', count: galleryItems.filter(item => item.type === 'web').length },
-    { id: 'mobile', label: 'Мобильные', icon: 'fas fa-mobile-screen-button', count: galleryItems.filter(item => item.type === 'mobile').length },
     { id: 'games', label: 'Игры', icon: 'fas fa-gamepad', count: galleryItems.filter(item => item.type === 'games').length },
+    { id: 'mobile', label: 'Мобильные', icon: 'fas fa-mobile-screen-button', count: galleryItems.filter(item => item.type === 'mobile').length },
     { id: 'branding', label: 'Брэндинг', icon: 'fas fa-splotch', count: galleryItems.filter(item => item.type === 'branding').length },
     { id: 'video', label: 'Видео', icon: 'fas fa-video', count: galleryItems.filter(item => item.type === 'video').length },
     { id: 'art', label: 'Арт', icon: 'fas fa-paint-brush', count: galleryItems.filter(item => item.type === 'art').length },
