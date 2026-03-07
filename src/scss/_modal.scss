@@ -41,9 +41,9 @@
     }
 
     &__content {
-        width: 100%;
+        // width: 100%;
         // max-width: calc(var(--modalTopHeight) * var(--modalIndex));
-        height: calc(100vh - (var(--marginBase) * 3));
+        // height: calc(100vh - (var(--marginBase) * 3));
         display: flex;
         flex-direction: row;
         // align-items: center;
@@ -102,8 +102,10 @@
         width: calc(var(--modalButtonsHeight) * 1.2);
         height: calc(var(--modalButtonsHeight) * 1.2);
         position: absolute;
-        top: var(--marginBase);
-        right: var(--marginBase);
+        // top: var(--marginBase);
+        // right: var(--marginBase);
+        top: 0;
+        right: 0;
         border-radius: 50%;
         background: rgba($color-white, 0.8);
         border: var(--border_normal) solid var(--fourth-darken-30);

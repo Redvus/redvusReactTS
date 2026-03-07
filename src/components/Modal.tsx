@@ -457,16 +457,6 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
                 onClick={handleOverlayClick}
                 aria-hidden="true"
             />
-            {/* Кнопка закрытия */}
-            <button
-                className="modal__close"
-                onClick={handleClose}
-                aria-label="Закрыть модальное окно"
-            >
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
 
             <div
                 ref={contentRef}
@@ -682,6 +672,16 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
 
                 {/* Информация о проекте */}
                 <div className="modal__bottom">
+                    {/* Кнопка закрытия */}
+                    <button
+                        className="modal__close"
+                        onClick={handleClose}
+                        aria-label="Закрыть модальное окно"
+                    >
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                            <path d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
                     <div className="modal__bottom_header">
                         {/* <div className="modal__bottom_meta">
 
