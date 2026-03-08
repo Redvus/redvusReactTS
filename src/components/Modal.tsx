@@ -689,7 +689,10 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
 
                         </div> */}
                         <h3 className="modal__bottom_title">{item.title}</h3>
-                        <p className="modal__bottom_description">{item.description}</p>
+                        <p
+                            className="modal__bottom_description"
+                            dangerouslySetInnerHTML={{ __html: item.description }}
+                        ></p>
                     </div>
 
                     {/* <ul className="modal__bottom_tags">

@@ -1,5 +1,7 @@
 import type { FilterType, GalleryItem } from '../types/gallery.types';
 
+const baseUrl = 'https://c846fb63-voos.s3.twcstorage.ru/redvus/';
+
 export interface FilterOption {
     id: FilterType;
     label: string;
@@ -9,110 +11,265 @@ export interface FilterOption {
 
 export const galleryItems: GalleryItem[] = [
     // Сайты
-
     {
         id: 1,
-        title: 'Форпост',
-        description: 'Современный веб-портал для управления бизнес-процессами компании',
+        title: 'Джин Джу',
+        description: 'Ресторан китайской кухни',
         type: 'web',
-        imageUrl: 'projects/forpost/ForpostCover',
+        imageUrl: `${baseUrl}web/djindju/rp_djindju_00.webp`,
         images: [
-            'projects/garage/rp_garage_1',
-            'projects/garage/rp_garage_2'
+            `${baseUrl}web/djindju/rp_djindju_01.webp`,
+            `${baseUrl}web/djindju/rp_djindju_02.webp`,
+            `${baseUrl}web/djindju/rp_djindju_03.webp`
         ],
-        videos: [
-            {
-                url: 'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/forpost/R_Forpost.mp4',
-                thumbnail: 'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/forpost/ForpostCover.jpg',
-                title: 'Демонстрация работы портала'
-            }
-        ],
-        date: '2022-02',
-        tags: ['Blender', 'Substance Paiter', 'DaVinci Resolve']
+        date: '2013-05',
+        tags: ['HTML', 'CSS', 'Javascript'],
+        linked: 'https://djindju.redvus.ru/'
     },
     {
         id: 2,
-        title: 'Гараж',
-        description: 'Сборка любимых игр в одном месте в тематике постапокалипсиса',
+        title: 'Трэкшн Групп',
+        description: 'Продажа, обслуживание и ремонт грузовых автомобилей',
         type: 'web',
-        imageUrl: 'assets/images/projects/garage/rp_garage_00.webp',
+        imageUrl: `${baseUrl}web/traction/rp_traction_00.webp`,
         images: [
-            'assets/images/projects/garage/rp_garage_01.webp',
-            'assets/images/projects/garage/rp_garage_02.webp',
-            'assets/images/projects/garage/rp_garage_03.webp',
-            'assets/images/projects/garage/rp_garage_04.webp',
-            'assets/images/projects/garage/rp_garage_05.webp',
-            'assets/images/projects/garage/rp_garage_06.webp'
+            `${baseUrl}web/traction/rp_traction_01.webp`,
+            `${baseUrl}web/traction/rp_traction_02.webp`,
+            `${baseUrl}web/traction/rp_traction_03.webp`
         ],
-        date: '2023-02',
-        tags: ['Blender', 'Substance Paiter', 'Photoshop']
+        date: '2015-04',
+        tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
+        linked: 'https://tractiongroup.ru/'
     },
     {
         id: 3,
-        title: 'Поледняя сигарета',
-        description: 'Мобильное приложение для отслеживания активности и питания',
+        title: 'Тарзания',
+        description: 'Строительство и обслуживание веревочных парков',
         type: 'web',
-        imageUrl: 'projects/girlNuclear/rp_girlnuclear_00',
+        imageUrl: `${baseUrl}web/tarzaniya/rp_tarzaniya_00.webp`,
         images: [
-            'projects/girlNuclear/rp_girlnuclear_01',
-            'projects/girlNuclear/rp_girlnuclear_02',
-            'projects/girlNuclear/rp_girlnuclear_03',
-            'projects/girlNuclear/rp_girlnuclear_04',
-            'projects/girlNuclear/rp_girlnuclear_05'
+            `${baseUrl}web/tarzaniya/rp_tarzaniya_01.webp`,
+            `${baseUrl}web/tarzaniya/rp_tarzaniya_02.webp`,
+            `${baseUrl}web/tarzaniya/rp_tarzaniya_03.webp`
         ],
-        date: '2023-04',
-        tags: ['Javascript', 'CSS']
+        date: '2015-08',
+        tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
+        linked: 'https://tarzaniya.com/'
     },
     {
         id: 4,
-        title: 'Фитнекер',
-        description: 'Мобильное приложение для отслеживания активности и питания',
+        title: 'Фабрика Форте',
+        description: 'Фабрика по пошиву постельного белья и домашнего текстиля',
         type: 'web',
-        imageUrl: 'projects/garage/rp_garage_00',
+        imageUrl: `${baseUrl}web/fabrikaForte/rp_fabrikaForte_00.webp`,
         images: [
-            'projects/garage/rp_garage_1',
-            'projects/garage/rp_garage_2',
-            'projects/garage/rp_garage_3'
+            `${baseUrl}web/fabrikaForte/rp_fabrikaForte_01.webp`,
+            `${baseUrl}web/fabrikaForte/rp_fabrikaForte_02.webp`,
+            `${baseUrl}web/fabrikaForte/rp_fabrikaForte_03.webp`
         ],
-        date: '2021-04',
-        tags: ['Javascript', 'CSS'],
-        linked: 'https://smibs.ru'
+        date: '2017-03',
+        tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
+        linked: 'https://fabrika-forte.ru/'
     },
     {
         id: 5,
-        title: 'Проект о разностороннем человеке Гарине-Михайловском',
-        description: 'Мобильное приложение для отслеживания активности и питания',
+        title: 'Время обедать',
+        description: 'Сервис по доставке еды для офисов и мероприятий',
         type: 'web',
-        imageUrl: 'https://c846fb63-voos.s3.twcstorage.ru/redvus/games/garin/rp_garin_00.jpg',
+        imageUrl: `${baseUrl}web/timeToLunch/rp_timeToLunch_00.webp`,
         images: [
-            'https://c846fb63-voos.s3.twcstorage.ru/redvus/games/garin/rp_garin_01.jpg',
-            'https://c846fb63-voos.s3.twcstorage.ru/redvus/games/garin/rp_garin_02.jpg',
-            'https://c846fb63-voos.s3.twcstorage.ru/redvus/games/garin/rp_garin_03.jpg',
+            `${baseUrl}web/timeToLunch/rp_timeToLunch_01.webp`,
+            `${baseUrl}web/timeToLunch/rp_timeToLunch_02.webp`,
+            `${baseUrl}web/timeToLunch/rp_timeToLunch_03.webp`,
         ],
-        videos: [
-            {
-                url: 'https://c846fb63-voos.s3.twcstorage.ru/redvus/games/garin/rp_garin_intro.mp4',
-                thumbnail: 'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/forpost/ForpostCover.jpg',
-                title: 'Демонстрация работы портала'
-            }
-        ],
-        date: '2021-04',
-        tags: ['Blender', 'Substance Paiter', 'Photoshop', 'Javascript', 'CSS'],
-        linked: 'https://redvus.ru/garin'
+        date: '2018-06',
+        tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
+        linked: 'https://ttl.redvus.ru/'
     },
-    // Игры
     {
         id: 6,
-        title: 'Форпост',
-        description: 'Современный веб-портал для управления бизнес-процессами компании',
-        type: 'games',
-        imageUrl: 'projects/forpost/ForpostCover',
+        title: 'Бизнес-Ремонт',
+        description: 'Ремонт и обслуживание коммерческой недвижимости',
+        type: 'web',
+        imageUrl: `${baseUrl}web/businessRemont/rp_businessRemont_00.webp`,
         images: [
-            'projects/garage/rp_garage_1',
-            'projects/garage/rp_garage_2'
+            `${baseUrl}web/businessRemont/rp_businessRemont_01.webp`,
+            `${baseUrl}web/businessRemont/rp_businessRemont_02.webp`,
+            `${baseUrl}web/businessRemont/rp_businessRemont_03.webp`,
+        ],
+        date: '2019-05',
+        tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
+        linked: 'https://business-remont.ru/'
+    },
+    {
+        id: 7,
+        title: 'Листт 63',
+        description:
+            `Строительство зданий и производственных, выставочных или складских сооружений.<br /><br />
+            Ремонт офисных, торговых помещений, объектов общественного питания, медицинских помещений`,
+        type: 'web',
+        imageUrl: `${baseUrl}web/businessRemont/rp_businessRemont_00.webp`,
+        images: [
+            `${baseUrl}web/businessRemont/rp_businessRemont_01.webp`,
+            `${baseUrl}web/businessRemont/rp_businessRemont_02.webp`,
+            `${baseUrl}web/businessRemont/rp_businessRemont_03.webp`,
+        ],
+        date: '2019-05',
+        tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
+        linked: 'https://listt63.ru/'
+    },
+    {
+        id: 8,
+        title: 'СМИБС',
+        description: `Муниципальное бюджетное учреждение культуры городского округа Самара «Самарская муниципальная информационно-библиотечная система»`,
+        type: 'web',
+        imageUrl: `${baseUrl}web/smibs/rp_smibs_00.webp`,
+        images: [
+            `${baseUrl}web/smibs/rp_smibs_01.webp`,
+            `${baseUrl}web/smibs/rp_smibs_02.webp`,
+            `${baseUrl}web/smibs/rp_smibs_03.webp`,
+        ],
+        date: '2021-03',
+        tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
+        linked: 'https://smibs.ru/'
+    },
+    {
+        id: 9,
+        title: 'Аквалайф',
+        description: 'Ионизаторы и фильтры для воды',
+        type: 'web',
+        imageUrl: `${baseUrl}web/akvalife/rp_akvalife_00.webp`,
+        images: [
+            `${baseUrl}web/akvalife/rp_akvalife_01.webp`,
+            `${baseUrl}web/akvalife/rp_akvalife_02.webp`,
+            `${baseUrl}web/akvalife/rp_akvalife_03.webp`,
+        ],
+        date: '2022-05',
+        tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
+        linked: 'https://akvalife.redvus.ru/'
+    },
+    {
+        id: 10,
+        title: 'Плейофф',
+        description: 'Школа для подготовки юных хоккеистов',
+        type: 'web',
+        imageUrl: `${baseUrl}web/playoff/rp_playoff_00.webp`,
+        images: [
+            `${baseUrl}web/playoff/rp_playoff_01.webp`,
+            `${baseUrl}web/playoff/rp_playoff_02.webp`,
+            `${baseUrl}web/playoff/rp_playoff_03.webp`,
+        ],
+        date: '2022-09',
+        tags: ['HTML', 'CSS', 'Javascript'],
+        linked: 'https://playoff.redvus.ru/'
+    },
+    {
+        id: 11,
+        title: 'Голиаф',
+        description: 'Компания по перевозке крупногабаритных грузов',
+        type: 'web',
+        imageUrl: `${baseUrl}web/goliaph/rp_goliaph_00.webp`,
+        images: [
+            `${baseUrl}web/goliaph/rp_goliaph_01.webp`,
+            `${baseUrl}web/goliaph/rp_goliaph_02.webp`,
+            `${baseUrl}web/goliaph/rp_goliaph_03.webp`,
+        ],
+        date: '2022-09',
+        tags: ['HTML', 'CSS', 'Javascript'],
+        linked: 'https://goliaph.redvus.ru/'
+    },
+    {
+        id: 12,
+        title: 'Фотобокс',
+        description: `Продажа и профессиональная проявка фотопленки.<br>><br>
+        Печать фотографий и плакатов.`,
+        type: 'web',
+        imageUrl: `${baseUrl}web/photoboxs/rp_photoboxs_00.webp`,
+        images: [
+            `${baseUrl}web/photoboxs/rp_photoboxs_01.webp`,
+            `${baseUrl}web/photoboxs/rp_photoboxs_02.webp`,
+            `${baseUrl}web/photoboxs/rp_photoboxs_03.webp`,
+        ],
+        date: '2023-04',
+        tags: ['HTML', 'CSS', 'Javascript'],
+        linked: 'https://photoboxs.ru/'
+    },
+    {
+        id: 13,
+        title: 'Проект для ресторана',
+        description: `Бизнес-ланч для ресторана с доставкой еды.<br><br>
+        Заказ блюд из меню ресторана с доставкой в офис или на дом.`,
+        type: 'web',
+        imageUrl: `${baseUrl}web/sandwich/rp_sandwich_00.webp`,
+        images: [
+            `${baseUrl}web/sandwich/rp_sandwich_01.webp`,
+            `${baseUrl}web/sandwich/rp_sandwich_02.webp`,
+            `${baseUrl}web/sandwich/rp_sandwich_03.webp`,
+        ],
+        date: '2023-08',
+        tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
+        linked: 'https://sandvich.redvus.ru/'
+    },
+    {
+        id: 14,
+        title: 'ЕвроАвтоЦентр',
+        description: `Продажа и обслуживание грузовых автомобилей Мерседес-Бенц`,
+        type: 'web',
+        imageUrl: `${baseUrl}web/mbtruck/rp_mbtruck_00.webp`,
+        images: [
+            `${baseUrl}web/mbtruck/rp_mbtruck_01.webp`,
+            `${baseUrl}web/mbtruck/rp_mbtruck_02.webp`,
+            `${baseUrl}web/mbtruck/rp_mbtruck_03.webp`,
+        ],
+        date: '2024-04',
+        tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
+        linked: 'https://mb-truck.ru/'
+    },
+    {
+        id: 15,
+        title: 'Краспан',
+        description: `Продажа материалов для фасадов и кровли`,
+        type: 'web',
+        imageUrl: `${baseUrl}web/kraspan/rp_kraspan_00.webp`,
+        images: [
+            `${baseUrl}web/kraspan/rp_kraspan_01.webp`,
+            `${baseUrl}web/kraspan/rp_kraspan_02.webp`,
+            `${baseUrl}web/kraspan/rp_kraspan_03.webp`,
+        ],
+        date: '2024-11',
+        tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
+        linked: 'https://краспан-поволжье.рф/'
+    },
+    {
+        id: 16,
+        title: 'Форсунка',
+        description: `Продажа автозапчастей для грузовых автомобилей`,
+        type: 'web',
+        imageUrl: `${baseUrl}web/forsunka/rp_forsunka_00.webp`,
+        images: [
+            `${baseUrl}web/forsunka/rp_forsunka_01.webp`,
+            `${baseUrl}web/forsunka/rp_forsunka_02.webp`,
+            `${baseUrl}web/forsunka/rp_forsunka_03.webp`,
+        ],
+        date: '2026-02',
+        tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
+        linked: 'https://forsunka.com/'
+    },
+
+    // Игры
+    {
+        id: 17,
+        title: 'Интерактивная выставка',
+        description: 'Работа была сделана в рамках проекта виртуальной интерактивной выставки про выдающегося человека своего времени Н. Г. Гарина-Михайловского.',
+        type: 'games',
+        imageUrl: `${baseUrl}games/garin/rp_garin_00.webp`,
+        images: [
+            `${baseUrl}games/garin/rp_garin_01.webp`,
+            `${baseUrl}games/garin/rp_garin_02.webp`,
+            `${baseUrl}games/garin/rp_garin_03.webp`
         ],
         date: '2023-02',
-        tags: ['Blender', 'Substance Paiter', 'DaVinci Resolve']
+        tags: ['Blender', 'Substance Painter', 'HTML', 'CSS', 'Javascript']
     },
 
     // Мобильные
@@ -134,7 +291,7 @@ export const galleryItems: GalleryItem[] = [
         //     }
         // ],
         date: '2023-02',
-        tags: ['Blender', 'Substance Paiter', 'DaVinci Resolve']
+        tags: ['Blender', 'Substance Painter', 'DaVinci Resolve']
     },
 
     // Брэндинг
@@ -156,7 +313,7 @@ export const galleryItems: GalleryItem[] = [
             }
         ],
         date: '2020-02',
-        tags: ['Blender', 'Substance Paiter', 'DaVinci Resolve']
+        tags: ['Blender', 'Substance Painter', 'DaVinci Resolve']
     },
 
     // Видео
@@ -178,30 +335,40 @@ export const galleryItems: GalleryItem[] = [
             }
         ],
         date: '2026-02',
-        tags: ['Blender', 'Substance Paiter', 'DaVinci Resolve']
+        tags: ['Blender', 'Substance Painter', 'DaVinci Resolve']
     },
 
     // Арт
     {
         id: 10,
-        title: 'Форпост',
-        description: 'Современный веб-портал для управления бизнес-процессами компании',
+        title: 'Мир прекрасен',
+        description: 'Мир никогда не перестанет быть красивым, как бы люди не старались его уничтожить. Всегда найдутся крепкие духом, кто будет цепляться за эту красоту, бороться за неё и жить дальше...',
         type: 'art',
         imageUrl: 'projects/forpost/ForpostCover',
         images: [
             'projects/garage/rp_garage_1',
             'projects/garage/rp_garage_2'
         ],
-        videos: [
-            {
-                url: 'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/forpost/R_Forpost.mp4',
-                thumbnail: 'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/forpost/ForpostCover.jpg',
-                title: 'Демонстрация работы портала'
-            }
-        ],
         date: '2025-02',
-        tags: ['Blender', 'Substance Paiter', 'DaVinci Resolve']
-    }
+        tags: ['Blender', 'Substance Painter', 'DaVinci Resolve']
+    },
+    {
+        id: 3,
+        title: 'Последняя сигарета',
+        description: 'Когда мир на краю пропасти, когда конец неизбежен, остаётся только выкурить последнюю сигарету и поразмышлять напоследок, да вспомнить былое...',
+        type: 'art',
+        imageUrl: `${baseUrl}projects/girlNuclear/rp_girlnuclear_00.webp`,
+        images: [
+            `${baseUrl}projects/girlNuclear/rp_girlnuclear_01.webp`,
+            `${baseUrl}projects/girlNuclear/rp_girlnuclear_02.webp`,
+            `${baseUrl}projects/girlNuclear/rp_girlnuclear_03.webp`,
+            `${baseUrl}projects/girlNuclear/rp_girlnuclear_04.webp`,
+            `${baseUrl}projects/girlNuclear/rp_girlnuclear_05.webp`
+        ],
+        date: '2025-06',
+        tags: ['Blender', 'Substance Painter', 'Photoshop']
+    },
+
 ];
 
 export const filterOptions: FilterOption[] = [
