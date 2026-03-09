@@ -78,9 +78,9 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ item, index, onOpenModal }) =
         const colors: Record<string, string> = {
             'web': '#3b82f6',
             'mobile': '#cd6904',
-            'video': '#10b981',
             'games': '#8059dc',
             'branding': '#da408d',
+            'projects': '#10b981',
             'art': '#c83535'
         };
         return colors[type] || '#6b7280';
@@ -92,7 +92,7 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ item, index, onOpenModal }) =
             'mobile': 'мобильные',
             'games': 'игры',
             'branding': 'брэндинг',
-            'video': 'видео',
+            'projects': 'проекты',
             'art': 'арт'
         };
         return labels[type] || type;

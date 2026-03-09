@@ -259,83 +259,249 @@ export const galleryItems: GalleryItem[] = [
     // Игры
     {
         id: 17,
-        title: 'Интерактивная выставка',
-        description: 'Работа была сделана в рамках проекта виртуальной интерактивной выставки про выдающегося человека своего времени Н. Г. Гарина-Михайловского.',
+        title: 'Славянские мифы',
+        description: 'Интерактивная викторина по славянской мифологии',
         type: 'games',
-        imageUrl: `${baseUrl}games/garin/rp_garin_00.webp`,
+        imageUrl: `${baseUrl}games/slavicMyth/rp_slavicMyth_00.webp`,
         images: [
-            `${baseUrl}games/garin/rp_garin_01.webp`,
-            `${baseUrl}games/garin/rp_garin_02.webp`,
-            `${baseUrl}games/garin/rp_garin_03.webp`
+            `${baseUrl}games/slavicMyth/rp_slavicMyth_01.webp`,
+            `${baseUrl}games/slavicMyth/rp_slavicMyth_02.webp`,
+            `${baseUrl}games/slavicMyth/rp_slavicMyth_03.webp`
         ],
         date: '2023-02',
-        tags: ['Blender', 'Substance Painter', 'HTML', 'CSS', 'Javascript']
+        tags: ['HTML', 'CSS', 'Javascript'],
+        linked: 'https://smibs.ru/slavicmyths/'
     },
+    {
+        id: 18,
+        title: 'Космические пазлы',
+        description: 'Интерактивная викторина по славянской мифологии',
+        type: 'games',
+        imageUrl: `${baseUrl}games/cosmicPuzzles/rp_cosmicPuzzles_00.webp`,
+        images: [
+            `${baseUrl}games/cosmicPuzzles/rp_cosmicPuzzles_01.webp`,
+            `${baseUrl}games/cosmicPuzzles/rp_cosmicPuzzles_02.webp`,
+            `${baseUrl}games/cosmicPuzzles/rp_cosmicPuzzles_03.webp`
+        ],
+        date: '2023-02',
+        tags: ['HTML', 'CSS', 'Javascript'],
+        linked: 'https://smibs.ru/cosmicpuzzles/'
+    },
+    {
+        id: 19,
+        title: 'Краеведия',
+        description: 'Интерактивная викторина по славянской мифологии',
+        type: 'games',
+        imageUrl: `${baseUrl}games/kraevedia/rp_kraevedia_00.webp`,
+        images: [
+            `${baseUrl}games/kraevedia/rp_kraevedia_01.webp`,
+            `${baseUrl}games/kraevedia/rp_kraevedia_02.webp`,
+            `${baseUrl}games/kraevedia/rp_kraevedia_03.webp`
+        ],
+        date: '2023-02',
+        tags: ['HTML', 'CSS', 'Javascript'],
+        linked: 'https://smibs.ru/kraevedia/'
+    },
+    {
+        id: 20,
+        title: 'Игросказы',
+        description: 'Интерактивная викторина по славянской мифологии',
+        type: 'games',
+        imageUrl: `${baseUrl}games/igroskazy/rp_igroskazy_00.webp`,
+        images: [
+            `${baseUrl}games/igroskazy/rp_igroskazy_01.webp`,
+            `${baseUrl}games/igroskazy/rp_igroskazy_02.webp`,
+            `${baseUrl}games/igroskazy/rp_igroskazy_03.webp`
+        ],
+        date: '2023-02',
+        tags: ['HTML', 'CSS', 'Javascript'],
+        linked: 'https://smibs.ru/igroskazy/'
+    },
+    {
+        id: 21,
+        title: 'Волшебное перо',
+        description: 'Интерактивная викторина по славянской мифологии',
+        type: 'games',
+        imageUrl: `${baseUrl}games/magicFeather/rp_magicFeather_00.webp`,
+        images: [
+            `${baseUrl}games/magicFeather/rp_magicFeather_01.webp`,
+            `${baseUrl}games/magicFeather/rp_magicFeather_02.webp`,
+            `${baseUrl}games/magicFeather/rp_magicFeather_03.webp`
+        ],
+        date: '2023-02',
+        tags: ['HTML', 'CSS', 'Javascript'],
+        linked: 'https://smibs.ru/magicfeather/'
+    },
+    {
+        id: 22,
+        title: 'Старая квартира',
+        description: 'Интерактивная викторина по славянской мифологии',
+        type: 'games',
+        imageUrl: `${baseUrl}games/oldApartment/rp_oldApartment_00.webp`,
+        images: [
+            `${baseUrl}games/oldApartment/rp_oldApartment_01.webp`,
+            `${baseUrl}games/oldApartment/rp_oldApartment_02.webp`,
+            `${baseUrl}games/oldApartment/rp_oldApartment_03.webp`
+        ],
+        date: '2023-02',
+        tags: ['HTML', 'CSS', 'Javascript'],
+        linked: 'https://smibs.ru/oldapartment/'
+    },
+    {
+        id: 23,
+        title: 'Марина Цветаева',
+        description: 'Интерактивная викторина по славянской мифологии',
+        type: 'games',
+        imageUrl: `${baseUrl}games/cvetaeva/rp_cvetaeva_00.webp`,
+        images: [
+            `${baseUrl}games/cvetaeva/rp_cvetaeva_01.webp`,
+            `${baseUrl}games/cvetaeva/rp_cvetaeva_02.webp`,
+            `${baseUrl}games/cvetaeva/rp_cvetaeva_03.webp`
+        ],
+        date: '2023-02',
+        tags: ['HTML', 'CSS', 'Javascript'],
+        linked: 'https://smibs.ru/cvetaeva/'
+    },
+    // {
+    //     id: 24,
+    //     title: 'Литературные классики',
+    //     description: 'Интерактивная викторина по славянской мифологии',
+    //     type: 'games',
+    //     imageUrl: `${baseUrl}games/classics/rp_classics_00.webp`,
+    //     images: [
+    //         `${baseUrl}games/classics/rp_classics_01.webp`,
+    //         `${baseUrl}games/classics/rp_classics_02.webp`,
+    //         `${baseUrl}games/classics/rp_classics_03.webp`
+    //     ],
+    //     date: '2023-02',
+    //     tags: ['HTML', 'CSS', 'Javascript'],
+    //     linked: 'https://smibs.ru/classics/'
+    // },
 
     // Мобильные
     {
-        id: 7,
-        title: 'Форпост',
-        description: 'Современный веб-портал для управления бизнес-процессами компании',
+        id: 25,
+        title: 'SMIBS-AR',
+        description: 'Мобильное приложение «SMIBS-AR» для устройств на базе Android, написанное на Kotlin, разработанное для МБУК г.о. Самара «Самарская муниципальная информационно-библиотечная система» (СМИБС). Приложение использует технологию дополненной реальности (AR) для просмотра 3Д моделей изобретений Леонардо да Винчи, восстановленных по чертежам из его записных книжек. Пользователи могут взаимодействовать с 3Д моделями, которые проецируются на реальные объекты в натуральную величину.',
         type: 'mobile',
-        imageUrl: 'projects/forpost/ForpostCover',
+        imageUrl: `${baseUrl}mobile/smibsAR/rp_smibsAR_00.webp`,
         images: [
-            'projects/garage/rp_garage_1',
-            'projects/garage/rp_garage_2'
+            `${baseUrl}mobile/smibsAR/rp_smibsAR_01.webp`,
+            `${baseUrl}mobile/smibsAR/rp_smibsAR_02.webp`,
+            `${baseUrl}mobile/smibsAR/rp_smibsAR_03.webp`
         ],
-        // videos: [
-        //     {
-        //         url: 'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/forpost/R_Forpost.mp4',
-        //         thumbnail: 'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/forpost/ForpostCover.jpg',
-        //         title: 'Демонстрация работы портала'
-        //     }
-        // ],
         date: '2023-02',
-        tags: ['Blender', 'Substance Painter', 'DaVinci Resolve']
+        tags: ['Kotlin', 'Blender', 'Substance Painter']
     },
 
     // Брэндинг
     {
-        id: 8,
-        title: 'Форпост',
-        description: 'Современный веб-портал для управления бизнес-процессами компании',
+        id: 26,
+        title: 'HammerHead',
+        description: 'Логотип для компании по производству боксов для подводных съемок',
         type: 'branding',
-        imageUrl: 'projects/forpost/ForpostCover',
+        imageUrl: `${baseUrl}branding/hammerhead/rp_hammerhead_00.webp`,
         images: [
-            'projects/garage/rp_garage_1',
-            'projects/garage/rp_garage_2'
-        ],
-        videos: [
-            {
-                url: 'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/forpost/R_Forpost.mp4',
-                thumbnail: 'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/forpost/ForpostCover.jpg',
-                title: 'Демонстрация работы портала'
-            }
+            `${baseUrl}branding/hammerhead/rp_hammerhead_01.webp`,
+            `${baseUrl}branding/hammerhead/rp_hammerhead_02.webp`,
+            `${baseUrl}branding/hammerhead/rp_hammerhead_03.webp`
         ],
         date: '2020-02',
-        tags: ['Blender', 'Substance Painter', 'DaVinci Resolve']
+        tags: ['Illustrator']
+    },
+    {
+        id: 27,
+        title: 'АквариуСтрой',
+        description: 'Логотип для компании по строительству',
+        type: 'branding',
+        imageUrl: `${baseUrl}branding/akvariustroi/rp_akvariustroi_00.webp`,
+        images: [
+            `${baseUrl}branding/akvariustroi/rp_akvariustroi_01.webp`,
+            `${baseUrl}branding/akvariustroi/rp_akvariustroi_02.webp`,
+            `${baseUrl}branding/akvariustroi/rp_akvariustroi_03.webp`,
+            `${baseUrl}branding/akvariustroi/rp_akvariustroi_04.webp`,
+            `${baseUrl}branding/akvariustroi/rp_akvariustroi_05.webp`,
+            `${baseUrl}branding/akvariustroi/rp_akvariustroi_06.webp`
+        ],
+        date: '2020-02',
+        tags: ['Illustrator']
+    },
+    {
+        id: 28,
+        title: 'Белла Вита',
+        description: 'Логотип для школы крастоты и здоровья',
+        type: 'branding',
+        imageUrl: `${baseUrl}branding/bellaVita/rp_bellaVita_00.webp`,
+        images: [
+            `${baseUrl}branding/bellaVita/rp_bellaVita_01.webp`,
+            `${baseUrl}branding/bellaVita/rp_bellaVita_02.webp`,
+        ],
+        date: '2020-02',
+        tags: ['Illustrator']
+    },
+    {
+        id: 29,
+        title: 'Экспонорм',
+        description: 'Логотип для компании по изготовлению и продаже выставочных стендов и конструкций',
+        type: 'branding',
+        imageUrl: `${baseUrl}branding/exponorm/rp_exponorm_00.webp`,
+        images: [
+            `${baseUrl}branding/exponorm/rp_exponorm_01.webp`,
+            `${baseUrl}branding/exponorm/rp_exponorm_02.webp`,
+            `${baseUrl}branding/exponorm/rp_exponorm_03.webp`,
+            `${baseUrl}branding/exponorm/rp_exponorm_04.webp`,
+            `${baseUrl}branding/exponorm/rp_exponorm_05.webp`
+        ],
+        date: '2020-02',
+        tags: ['Illustrator']
+    },
+    {
+        id: 30,
+        title: 'Белый Лотос',
+        description: 'Логотип для спа-салона',
+        type: 'branding',
+        imageUrl: `${baseUrl}branding/whiteLotos/rp_whiteLotos_00.webp`,
+        images: [
+            `${baseUrl}branding/whiteLotos/rp_whiteLotos_01.webp`,
+            `${baseUrl}branding/whiteLotos/rp_whiteLotos_02.webp`,
+            `${baseUrl}branding/whiteLotos/rp_whiteLotos_03.webp`,
+            `${baseUrl}branding/whiteLotos/rp_whiteLotos_04.webp`,
+            `${baseUrl}branding/whiteLotos/rp_whiteLotos_05.webp`,
+            `${baseUrl}branding/whiteLotos/rp_whiteLotos_06.webp`,
+            `${baseUrl}branding/whiteLotos/rp_whiteLotos_07.webp`
+        ],
+        date: '2020-02',
+        tags: ['Illustrator']
     },
 
-    // Видео
+    // Проекты
     {
-        id: 9,
-        title: 'Форпост',
-        description: 'Современный веб-портал для управления бизнес-процессами компании',
-        type: 'video',
-        imageUrl: 'projects/forpost/ForpostCover',
+        id: 17,
+        title: 'Интерактивная выставка c элементами игры',
+        description: 'Работа была сделана в рамках проекта виртуальной интерактивной выставки про выдающегося человека своего времени Н. Г. Гарина-Михайловского.',
+        type: 'projects',
+        imageUrl: `${baseUrl}projects/garin/rp_garin_00.webp`,
         images: [
-            'projects/garage/rp_garage_1',
-            'projects/garage/rp_garage_2'
+            `${baseUrl}projects/garin/rp_garin_01.webp`,
+            `${baseUrl}projects/garin/rp_garin_02.webp`,
+            `${baseUrl}projects/garin/rp_garin_03.webp`
         ],
-        videos: [
-            {
-                url: 'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/forpost/R_Forpost.mp4',
-                thumbnail: 'https://c846fb63-voos.s3.twcstorage.ru/redvus/projects/forpost/ForpostCover.jpg',
-                title: 'Демонстрация работы портала'
-            }
+        date: '2023-02',
+        tags: ['Blender', 'Substance Painter', 'HTML', 'CSS', 'Javascript']
+    },
+    {
+        id: 17,
+        title: 'Интерактивная выставка',
+        description: 'Работа была сделана в рамках проекта виртуальной интерактивной выставки про выдающегося человека своего времени Н. Г. Гарина-Михайловского.',
+        type: 'projects',
+        imageUrl: `${baseUrl}projects/garin/rp_garin_00.webp`,
+        images: [
+            `${baseUrl}projects/garin/rp_garin_01.webp`,
+            `${baseUrl}projects/garin/rp_garin_02.webp`,
+            `${baseUrl}projects/garin/rp_garin_03.webp`
         ],
-        date: '2026-02',
-        tags: ['Blender', 'Substance Painter', 'DaVinci Resolve']
+        date: '2023-02',
+        tags: ['Blender', 'Substance Painter', 'HTML', 'CSS', 'Javascript']
     },
 
     // Арт
@@ -376,7 +542,7 @@ export const filterOptions: FilterOption[] = [
     { id: 'games', label: 'Игры', icon: 'fas fa-gamepad', count: galleryItems.filter(item => item.type === 'games').length },
     { id: 'mobile', label: 'Мобильные', icon: 'fas fa-mobile-screen-button', count: galleryItems.filter(item => item.type === 'mobile').length },
     { id: 'branding', label: 'Брэндинг', icon: 'fas fa-splotch', count: galleryItems.filter(item => item.type === 'branding').length },
-    { id: 'video', label: 'Видео', icon: 'fas fa-video', count: galleryItems.filter(item => item.type === 'video').length },
+    { id: 'projects', label: 'Проекты', icon: 'fas fa-video', count: galleryItems.filter(item => item.type === 'projects').length },
     { id: 'art', label: 'Арт', icon: 'fas fa-paint-brush', count: galleryItems.filter(item => item.type === 'art').length },
     { id: 'all', label: 'Всего', icon: 'fas fa-th-large', count: galleryItems.length }
 ];
