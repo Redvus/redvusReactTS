@@ -473,6 +473,48 @@ export const galleryItems: GalleryItem[] = [
         date: '2020-02',
         tags: ['Illustrator']
     },
+    {
+        id: 31,
+        title: 'УЗС 1',
+        description: 'Логотип устройства проверки ультразвуком',
+        type: 'branding',
+        imageUrl: `${baseUrl}branding/uzs_1/rp_uzs1_00.webp`,
+        images: [
+            `${baseUrl}branding/uzs_1/rp_uzs1_01.webp`,
+            `${baseUrl}branding/uzs_1/rp_uzs1_02.webp`,
+            `${baseUrl}branding/uzs_1/rp_uzs1_03.webp`,
+            `${baseUrl}branding/uzs_1/rp_uzs1_04.webp`,
+            `${baseUrl}branding/uzs_1/rp_uzs1_05.webp`,
+            `${baseUrl}branding/uzs_1/rp_uzs1_06.webp`,
+            `${baseUrl}branding/uzs_1/rp_uzs1_07.webp`,
+            `${baseUrl}branding/uzs_1/rp_uzs1_08.webp`
+        ],
+        date: '2020-02',
+        tags: ['Illustrator']
+    },
+    {
+        id: 32,
+        title: 'Трэкшн Групп',
+        description: 'Логотип для компании по продаже и обслуживанию грузовых автомобилей',
+        type: 'branding',
+        imageUrl: `${baseUrl}branding/tractiongroup/rp_tractiongroup_00.webp`,
+        images: [
+            `${baseUrl}branding/tractiongroup/rp_tractiongroup_01.webp`,
+            `${baseUrl}branding/tractiongroup/rp_tractiongroup_02.webp`,
+            `${baseUrl}branding/tractiongroup/rp_tractiongroup_03.webp`,
+            `${baseUrl}branding/tractiongroup/rp_tractiongroup_04.webp`,
+            `${baseUrl}branding/tractiongroup/rp_tractiongroup_05.webp`,
+            `${baseUrl}branding/tractiongroup/rp_tractiongroup_06.webp`,
+            `${baseUrl}branding/tractiongroup/rp_tractiongroup_07.webp`,
+            `${baseUrl}branding/tractiongroup/rp_tractiongroup_08.webp`,
+            `${baseUrl}branding/tractiongroup/rp_tractiongroup_09.webp`,
+            `${baseUrl}branding/tractiongroup/rp_tractiongroup_010.webp`,
+            `${baseUrl}branding/tractiongroup/rp_tractiongroup_011.webp`,
+            `${baseUrl}branding/tractiongroup/rp_tractiongroup_012.webp`
+        ],
+        date: '2020-02',
+        tags: ['Illustrator']
+    },
 
     // Проекты
     {
