@@ -22,7 +22,7 @@ export const galleryItems: GalleryItem[] = [
             `${baseUrl}web/djindju/rp_djindju_02.webp`,
             `${baseUrl}web/djindju/rp_djindju_03.webp`
         ],
-        date: '2013-05',
+        date: '2013',
         tags: ['HTML', 'CSS', 'Javascript'],
         linked: 'https://djindju.redvus.ru/'
     },
@@ -37,7 +37,7 @@ export const galleryItems: GalleryItem[] = [
             `${baseUrl}web/traction/rp_traction_02.webp`,
             `${baseUrl}web/traction/rp_traction_03.webp`
         ],
-        date: '2015-04',
+        date: '2015',
         tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
         linked: 'https://tractiongroup.ru/'
     },
@@ -52,7 +52,7 @@ export const galleryItems: GalleryItem[] = [
             `${baseUrl}web/tarzaniya/rp_tarzaniya_02.webp`,
             `${baseUrl}web/tarzaniya/rp_tarzaniya_03.webp`
         ],
-        date: '2015-08',
+        date: '2015',
         tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
         linked: 'https://tarzaniya.com/'
     },
@@ -67,7 +67,7 @@ export const galleryItems: GalleryItem[] = [
             `${baseUrl}web/fabrikaForte/rp_fabrikaForte_02.webp`,
             `${baseUrl}web/fabrikaForte/rp_fabrikaForte_03.webp`
         ],
-        date: '2017-03',
+        date: '2017',
         tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
         linked: 'https://fabrika-forte.ru/'
     },
@@ -82,7 +82,7 @@ export const galleryItems: GalleryItem[] = [
             `${baseUrl}web/timeToLunch/rp_timeToLunch_02.webp`,
             `${baseUrl}web/timeToLunch/rp_timeToLunch_03.webp`,
         ],
-        date: '2018-06',
+        date: '2018',
         tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
         linked: 'https://ttl.redvus.ru/'
     },
@@ -97,7 +97,7 @@ export const galleryItems: GalleryItem[] = [
             `${baseUrl}web/businessRemont/rp_businessRemont_02.webp`,
             `${baseUrl}web/businessRemont/rp_businessRemont_03.webp`,
         ],
-        date: '2019-05',
+        date: '2019',
         tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
         linked: 'https://business-remont.ru/'
     },
@@ -114,7 +114,7 @@ export const galleryItems: GalleryItem[] = [
             `${baseUrl}web/businessRemont/rp_businessRemont_02.webp`,
             `${baseUrl}web/businessRemont/rp_businessRemont_03.webp`,
         ],
-        date: '2019-05',
+        date: '2019',
         tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
         linked: 'https://listt63.ru/'
     },
@@ -129,7 +129,7 @@ export const galleryItems: GalleryItem[] = [
             `${baseUrl}web/smibs/rp_smibs_02.webp`,
             `${baseUrl}web/smibs/rp_smibs_03.webp`,
         ],
-        date: '2021-03',
+        date: '2021',
         tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
         linked: 'https://smibs.ru/'
     },
@@ -144,7 +144,7 @@ export const galleryItems: GalleryItem[] = [
             `${baseUrl}web/akvalife/rp_akvalife_02.webp`,
             `${baseUrl}web/akvalife/rp_akvalife_03.webp`,
         ],
-        date: '2022-05',
+        date: '2022',
         tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
         linked: 'https://akvalife.redvus.ru/'
     },
@@ -159,7 +159,7 @@ export const galleryItems: GalleryItem[] = [
             `${baseUrl}web/playoff/rp_playoff_02.webp`,
             `${baseUrl}web/playoff/rp_playoff_03.webp`,
         ],
-        date: '2022-09',
+        date: '2022',
         tags: ['HTML', 'CSS', 'Javascript'],
         linked: 'https://playoff.redvus.ru/'
     },
@@ -174,7 +174,7 @@ export const galleryItems: GalleryItem[] = [
             `${baseUrl}web/goliaph/rp_goliaph_02.webp`,
             `${baseUrl}web/goliaph/rp_goliaph_03.webp`,
         ],
-        date: '2022-09',
+        date: '2022',
         tags: ['HTML', 'CSS', 'Javascript'],
         linked: 'https://goliaph.redvus.ru/'
     },
@@ -190,7 +190,7 @@ export const galleryItems: GalleryItem[] = [
             `${baseUrl}web/photoboxs/rp_photoboxs_02.webp`,
             `${baseUrl}web/photoboxs/rp_photoboxs_03.webp`,
         ],
-        date: '2023-04',
+        date: '2023',
         tags: ['HTML', 'CSS', 'Javascript'],
         linked: 'https://photoboxs.ru/'
     },
@@ -206,7 +206,7 @@ export const galleryItems: GalleryItem[] = [
             `${baseUrl}web/sandwich/rp_sandwich_02.webp`,
             `${baseUrl}web/sandwich/rp_sandwich_03.webp`,
         ],
-        date: '2023-08',
+        date: '2023',
         tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
         linked: 'https://sandvich.redvus.ru/'
     },
@@ -221,7 +221,7 @@ export const galleryItems: GalleryItem[] = [
             `${baseUrl}web/mbtruck/rp_mbtruck_02.webp`,
             `${baseUrl}web/mbtruck/rp_mbtruck_03.webp`,
         ],
-        date: '2024-04',
+        date: '2024',
         tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
         linked: 'https://mb-truck.ru/'
     },
@@ -236,7 +236,7 @@ export const galleryItems: GalleryItem[] = [
             `${baseUrl}web/kraspan/rp_kraspan_02.webp`,
             `${baseUrl}web/kraspan/rp_kraspan_03.webp`,
         ],
-        date: '2024-11',
+        date: '2024',
         tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
         linked: 'https://краспан-поволжье.рф/'
     },
@@ -251,7 +251,7 @@ export const galleryItems: GalleryItem[] = [
             `${baseUrl}web/forsunka/rp_forsunka_02.webp`,
             `${baseUrl}web/forsunka/rp_forsunka_03.webp`,
         ],
-        date: '2026-02',
+        date: '2026',
         tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
         linked: 'https://forsunka.com/'
     },
@@ -268,7 +268,7 @@ export const galleryItems: GalleryItem[] = [
             `${baseUrl}games/slavicMyth/rp_slavicMyth_02.webp`,
             `${baseUrl}games/slavicMyth/rp_slavicMyth_03.webp`
         ],
-        date: '2023-02',
+        date: '2023',
         tags: ['HTML', 'CSS', 'Javascript'],
         linked: 'https://smibs.ru/slavicmyths/'
     },
@@ -283,7 +283,7 @@ export const galleryItems: GalleryItem[] = [
             `${baseUrl}games/cosmicPuzzles/rp_cosmicPuzzles_02.webp`,
             `${baseUrl}games/cosmicPuzzles/rp_cosmicPuzzles_03.webp`
         ],
-        date: '2023-02',
+        date: '2023',
         tags: ['HTML', 'CSS', 'Javascript'],
         linked: 'https://smibs.ru/cosmicpuzzles/'
     },
@@ -298,7 +298,7 @@ export const galleryItems: GalleryItem[] = [
             `${baseUrl}games/kraevedia/rp_kraevedia_02.webp`,
             `${baseUrl}games/kraevedia/rp_kraevedia_03.webp`
         ],
-        date: '2023-02',
+        date: '2023',
         tags: ['HTML', 'CSS', 'Javascript'],
         linked: 'https://smibs.ru/kraevedia/'
     },
@@ -313,7 +313,7 @@ export const galleryItems: GalleryItem[] = [
             `${baseUrl}games/igroskazy/rp_igroskazy_02.webp`,
             `${baseUrl}games/igroskazy/rp_igroskazy_03.webp`
         ],
-        date: '2023-02',
+        date: '2023',
         tags: ['HTML', 'CSS', 'Javascript'],
         linked: 'https://smibs.ru/igroskazy/'
     },
@@ -328,7 +328,7 @@ export const galleryItems: GalleryItem[] = [
             `${baseUrl}games/magicFeather/rp_magicFeather_02.webp`,
             `${baseUrl}games/magicFeather/rp_magicFeather_03.webp`
         ],
-        date: '2023-02',
+        date: '2023',
         tags: ['HTML', 'CSS', 'Javascript'],
         linked: 'https://smibs.ru/magicfeather/'
     },
@@ -343,7 +343,7 @@ export const galleryItems: GalleryItem[] = [
             `${baseUrl}games/oldApartment/rp_oldApartment_02.webp`,
             `${baseUrl}games/oldApartment/rp_oldApartment_03.webp`
         ],
-        date: '2023-02',
+        date: '2023',
         tags: ['HTML', 'CSS', 'Javascript'],
         linked: 'https://smibs.ru/oldapartment/'
     },
@@ -358,7 +358,7 @@ export const galleryItems: GalleryItem[] = [
             `${baseUrl}games/cvetaeva/rp_cvetaeva_02.webp`,
             `${baseUrl}games/cvetaeva/rp_cvetaeva_03.webp`
         ],
-        date: '2023-02',
+        date: '2023',
         tags: ['HTML', 'CSS', 'Javascript'],
         linked: 'https://smibs.ru/cvetaeva/'
     },
@@ -373,7 +373,7 @@ export const galleryItems: GalleryItem[] = [
     //         `${baseUrl}games/classics/rp_classics_02.webp`,
     //         `${baseUrl}games/classics/rp_classics_03.webp`
     //     ],
-    //     date: '2023-02',
+    //     date: '2023',
     //     tags: ['HTML', 'CSS', 'Javascript'],
     //     linked: 'https://smibs.ru/classics/'
     // },
@@ -390,7 +390,7 @@ export const galleryItems: GalleryItem[] = [
             `${baseUrl}mobile/smibsAR/rp_smibsAR_02.webp`,
             `${baseUrl}mobile/smibsAR/rp_smibsAR_03.webp`
         ],
-        date: '2023-02',
+        date: '2023',
         tags: ['Kotlin', 'Blender', 'Substance Painter']
     },
 
@@ -406,7 +406,7 @@ export const galleryItems: GalleryItem[] = [
             `${baseUrl}branding/hammerhead/rp_hammerhead_02.webp`,
             `${baseUrl}branding/hammerhead/rp_hammerhead_03.webp`
         ],
-        date: '2020-02',
+        date: '2004',
         tags: ['Illustrator']
     },
     {
@@ -423,7 +423,7 @@ export const galleryItems: GalleryItem[] = [
             `${baseUrl}branding/akvariustroi/rp_akvariustroi_05.webp`,
             `${baseUrl}branding/akvariustroi/rp_akvariustroi_06.webp`
         ],
-        date: '2020-02',
+        date: '2011',
         tags: ['Illustrator']
     },
     {
@@ -436,7 +436,7 @@ export const galleryItems: GalleryItem[] = [
             `${baseUrl}branding/bellaVita/rp_bellaVita_01.webp`,
             `${baseUrl}branding/bellaVita/rp_bellaVita_02.webp`,
         ],
-        date: '2020-02',
+        date: '2010',
         tags: ['Illustrator']
     },
     {
@@ -452,7 +452,7 @@ export const galleryItems: GalleryItem[] = [
             `${baseUrl}branding/exponorm/rp_exponorm_04.webp`,
             `${baseUrl}branding/exponorm/rp_exponorm_05.webp`
         ],
-        date: '2020-02',
+        date: '2008',
         tags: ['Illustrator']
     },
     {
@@ -470,7 +470,7 @@ export const galleryItems: GalleryItem[] = [
             `${baseUrl}branding/whiteLotos/rp_whiteLotos_06.webp`,
             `${baseUrl}branding/whiteLotos/rp_whiteLotos_07.webp`
         ],
-        date: '2020-02',
+        date: '2012',
         tags: ['Illustrator']
     },
     {
@@ -489,7 +489,7 @@ export const galleryItems: GalleryItem[] = [
             `${baseUrl}branding/uzs_1/rp_uzs1_07.webp`,
             `${baseUrl}branding/uzs_1/rp_uzs1_08.webp`
         ],
-        date: '2020-02',
+        date: '2013',
         tags: ['Illustrator']
     },
     {
@@ -512,7 +512,204 @@ export const galleryItems: GalleryItem[] = [
             `${baseUrl}branding/tractiongroup/rp_tractiongroup_011.webp`,
             `${baseUrl}branding/tractiongroup/rp_tractiongroup_012.webp`
         ],
-        date: '2020-02',
+        date: '2015',
+        tags: ['Illustrator']
+    },
+    {
+        id: 33,
+        title: 'Самарская Сувенирная Компания',
+        description: 'Логотип для сувенирной компании',
+        type: 'branding',
+        imageUrl: `${baseUrl}branding/ssk/rp_ssk_00.webp`,
+        images: [
+            `${baseUrl}branding/ssk/rp_ssk_01.webp`,
+            `${baseUrl}branding/ssk/rp_ssk_02.webp`,
+            `${baseUrl}branding/ssk/rp_ssk_03.webp`,
+        ],
+        date: '2014',
+        tags: ['Illustrator']
+    },
+    {
+        id: 34,
+        title: 'Метрология и Автоматизация',
+        description: 'Логотип для метрологической компании',
+        type: 'branding',
+        imageUrl: `${baseUrl}branding/ma/rp_ma_00.webp`,
+        images: [
+            `${baseUrl}branding/ma/rp_ma_01.webp`,
+            `${baseUrl}branding/ma/rp_ma_02.webp`,
+            `${baseUrl}branding/ma/rp_ma_03.webp`,
+            `${baseUrl}branding/ma/rp_ma_04.webp`,
+            `${baseUrl}branding/ma/rp_ma_05.webp`,
+        ],
+        date: '2016',
+        tags: ['Illustrator']
+    },
+    {
+        id: 35,
+        title: 'Биг Бен',
+        description: 'Логотип школы английского языка для детей',
+        type: 'branding',
+        imageUrl: `${baseUrl}branding/bigben/rp_bigben_00.webp`,
+        images: [
+            `${baseUrl}branding/bigben/rp_bigben_01.webp`,
+        ],
+        date: '2013',
+        tags: ['Illustrator']
+    },
+    {
+        id: 36,
+        title: 'Буква',
+        description: 'Логотип для детского проекта',
+        type: 'branding',
+        imageUrl: `${baseUrl}branding/bybukva/rp_byBukva_00.webp`,
+        images: [
+            `${baseUrl}branding/bybukva/rp_byBukva_01.webp`,
+        ],
+        date: '2013',
+        tags: ['Illustrator']
+    },
+    {
+        id: 37,
+        title: 'Архимед',
+        description: 'Логотип для строительной компании',
+        type: 'branding',
+        imageUrl: `${baseUrl}branding/archimed/rp_archimed_00.webp`,
+        images: [
+            `${baseUrl}branding/archimed/rp_archimed_01.webp`,
+        ],
+        date: '2014',
+        tags: ['Illustrator']
+    },
+    {
+        id: 38,
+        title: 'Красавин',
+        description: 'Логотип для студии и школы массажа Валерия Красавина',
+        type: 'branding',
+        imageUrl: `${baseUrl}branding/krasavin/rp_krasavin_00.webp`,
+        images: [
+            `${baseUrl}branding/krasavin/rp_krasavin_01.webp`,
+            `${baseUrl}branding/krasavin/rp_krasavin_02.webp`,
+            `${baseUrl}branding/krasavin/rp_krasavin_03.webp`,
+            `${baseUrl}branding/krasavin/rp_krasavin_04.webp`,
+        ],
+        date: '2012',
+        tags: ['Illustrator']
+    },
+    {
+        id: 39,
+        title: 'Тантал',
+        description: 'Логотип для магазина по продаже электрических изделий',
+        type: 'branding',
+        imageUrl: `${baseUrl}branding/tantal/rp_tantal_00.webp`,
+        images: [
+            `${baseUrl}branding/tantal/rp_tantal_01.webp`,
+            `${baseUrl}branding/tantal/rp_tantal_02.webp`,
+            `${baseUrl}branding/tantal/rp_tantal_03.webp`,
+        ],
+        date: '2011',
+        tags: ['Illustrator']
+    },
+    {
+        id: 40,
+        title: 'СамараАвтоГаз',
+        description: 'Логотип для транспортной компании',
+        type: 'branding',
+        imageUrl: `${baseUrl}branding/sag/rp_sag_00.webp`,
+        images: [
+            `${baseUrl}branding/sag/rp_sag_01.webp`,
+            `${baseUrl}branding/sag/rp_sag_02.webp`,
+            `${baseUrl}branding/sag/rp_sag_03.webp`,
+            `${baseUrl}branding/sag/rp_sag_04.webp`,
+        ],
+        date: '2013',
+        tags: ['Illustrator']
+    },
+    {
+        id: 41,
+        title: 'ЭкоСервис',
+        description: 'Логотип для клиннинговой компании',
+        type: 'branding',
+        imageUrl: `${baseUrl}branding/es/rp_es_00.webp`,
+        images: [
+            `${baseUrl}branding/es/rp_es_01.webp`,
+        ],
+        date: '2013',
+        tags: ['Illustrator']
+    },
+    {
+        id: 42,
+        title: 'Redice',
+        description: 'Логотип для хоккейной школы и магазина',
+        type: 'branding',
+        imageUrl: `${baseUrl}branding/redice/rp_redice_00.webp`,
+        images: [
+            `${baseUrl}branding/redice/rp_redice_01.webp`,
+            `${baseUrl}branding/redice/rp_redice_02.webp`,
+        ],
+        date: '2018',
+        tags: ['Illustrator']
+    },
+    {
+        id: 43,
+        title: 'Фабрика Архипова',
+        description: 'Логотип для маленькой артели',
+        type: 'branding',
+        imageUrl: `${baseUrl}branding/archipov/rp_archipov_00.webp`,
+        images: [
+            `${baseUrl}branding/archipov/rp_archipov_01.webp`,
+        ],
+        date: '2016',
+        tags: ['Illustrator']
+    },
+    {
+        id: 44,
+        title: 'Фабрика Карпова',
+        description: 'Логотип для фабрики Карпова',
+        type: 'branding',
+        imageUrl: `${baseUrl}branding/koff/rp_koff_00.webp`,
+        images: [
+            `${baseUrl}branding/koff/rp_koff_01.webp`,
+            `${baseUrl}branding/koff/rp_koff_02.webp`,
+            `${baseUrl}branding/koff/rp_koff_03.webp`,
+            `${baseUrl}branding/koff/rp_koff_04.webp`,
+            `${baseUrl}branding/koff/rp_koff_05.webp`,
+        ],
+        date: '2014',
+        tags: ['Illustrator']
+    },
+    {
+        id: 45,
+        title: 'Time to Lunch',
+        description: 'Логотип для кухни быстрого питания и по доставке обедов',
+        type: 'branding',
+        imageUrl: `${baseUrl}branding/timetolunch/rp_timetolunch_00.webp`,
+        images: [
+            `${baseUrl}branding/timetolunch/rp_timetolunch_01.webp`,
+            `${baseUrl}branding/timetolunch/rp_timetolunch_02.webp`,
+            `${baseUrl}branding/timetolunch/rp_timetolunch_03.webp`,
+            `${baseUrl}branding/timetolunch/rp_timetolunch_04.webp`,
+            `${baseUrl}branding/timetolunch/rp_timetolunch_05.webp`,
+        ],
+        date: '2018',
+        tags: ['Illustrator']
+    },
+    {
+        id: 46,
+        title: 'Я вижу',
+        description: 'Логотип для сети салонов оптики',
+        type: 'branding',
+        imageUrl: `${baseUrl}branding/isee/rp_isee_00.webp`,
+        images: [
+            `${baseUrl}branding/isee/rp_isee_01.webp`,
+            `${baseUrl}branding/isee/rp_isee_02.webp`,
+            `${baseUrl}branding/isee/rp_isee_03.webp`,
+            `${baseUrl}branding/isee/rp_isee_04.webp`,
+            `${baseUrl}branding/isee/rp_isee_05.webp`,
+            `${baseUrl}branding/isee/rp_isee_06.webp`,
+            `${baseUrl}branding/isee/rp_isee_07.webp`,
+        ],
+        date: '2015',
         tags: ['Illustrator']
     },
 
@@ -528,7 +725,7 @@ export const galleryItems: GalleryItem[] = [
             `${baseUrl}projects/garin/rp_garin_02.webp`,
             `${baseUrl}projects/garin/rp_garin_03.webp`
         ],
-        date: '2023-02',
+        date: '2023',
         tags: ['Blender', 'Substance Painter', 'HTML', 'CSS', 'Javascript']
     },
     {
@@ -542,7 +739,7 @@ export const galleryItems: GalleryItem[] = [
             `${baseUrl}projects/garin/rp_garin_02.webp`,
             `${baseUrl}projects/garin/rp_garin_03.webp`
         ],
-        date: '2023-02',
+        date: '2023',
         tags: ['Blender', 'Substance Painter', 'HTML', 'CSS', 'Javascript']
     },
 
@@ -557,7 +754,7 @@ export const galleryItems: GalleryItem[] = [
             'projects/garage/rp_garage_1',
             'projects/garage/rp_garage_2'
         ],
-        date: '2025-02',
+        date: '2025',
         tags: ['Blender', 'Substance Painter', 'DaVinci Resolve']
     },
     {
@@ -573,7 +770,7 @@ export const galleryItems: GalleryItem[] = [
             `${baseUrl}projects/girlNuclear/rp_girlnuclear_04.webp`,
             `${baseUrl}projects/girlNuclear/rp_girlnuclear_05.webp`
         ],
-        date: '2025-06',
+        date: '2025',
         tags: ['Blender', 'Substance Painter', 'Photoshop']
     },
 
@@ -584,6 +781,7 @@ export const filterOptions: FilterOption[] = [
     { id: 'games', label: 'Игры', icon: 'fas fa-gamepad', count: galleryItems.filter(item => item.type === 'games').length },
     { id: 'mobile', label: 'Мобильные', icon: 'fas fa-mobile-screen-button', count: galleryItems.filter(item => item.type === 'mobile').length },
     { id: 'branding', label: 'Брэндинг', icon: 'fas fa-splotch', count: galleryItems.filter(item => item.type === 'branding').length },
+    // { id: 'publish', label: 'Принт', icon: 'fas fa-book-open', count: galleryItems.filter(item => item.type === 'publish').length },
     { id: 'projects', label: 'Проекты', icon: 'fas fa-video', count: galleryItems.filter(item => item.type === 'projects').length },
     { id: 'art', label: 'Арт', icon: 'fas fa-paint-brush', count: galleryItems.filter(item => item.type === 'art').length },
     { id: 'all', label: 'Всего', icon: 'fas fa-th-large', count: galleryItems.length }

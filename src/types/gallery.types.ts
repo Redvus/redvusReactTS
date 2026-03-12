@@ -25,7 +25,7 @@ export interface VideoItem {
     duration?: number;
 }
 
-export type FilterType = 'all' | 'web' | 'mobile' | 'games' | 'branding' | 'projects' | 'art';
+export type FilterType = 'all' | 'web' | 'mobile' | 'games' | 'branding' | 'projects' | 'publish' | 'art';
 
 export interface GalleryStats {
     total: number;

@@ -80,6 +80,7 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ item, index, onOpenModal }) =
             'mobile': '#cd6904',
             'games': '#8059dc',
             'branding': '#da408d',
+            'publish': '#2a8da9',
             'projects': '#10b981',
             'art': '#c83535'
         };
@@ -92,6 +93,7 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ item, index, onOpenModal }) =
             'mobile': 'мобильные',
             'games': 'игры',
             'branding': 'брэндинг',
+            'publish': 'принт',
             'projects': 'проекты',
             'art': 'арт'
         };
