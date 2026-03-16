@@ -82,6 +82,7 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ item, index, onOpenModal }) =
             'branding': '#da408d',
             'publish': '#2a8da9',
             'projects': '#10b981',
+            'video': '#61b323',
             'art': '#c83535'
         };
         return colors[type] || '#6b7280';
@@ -95,6 +96,7 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ item, index, onOpenModal }) =
             'branding': 'брэндинг',
             'publish': 'принт',
             'projects': 'проекты',
+            'video': 'видео',
             'art': 'арт'
         };
         return labels[type] || type;

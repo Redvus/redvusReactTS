@@ -10,7 +10,7 @@
     display: flex;
     align-items: baseline;
     justify-content: center;
-    padding: calc((var(--header-height) * 3) + (var(--wrapperPadding) * 0.2)) var(--wrapperPadding) 0;
+    padding: calc((var(--header-height) * 3) + (var(--wrapperPadding) * 0.1)) var(--wrapperPadding) 0;
     overflow: hidden;
     z-index: 1;
 

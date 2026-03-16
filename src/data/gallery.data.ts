@@ -489,7 +489,7 @@ export const galleryItems: GalleryItem[] = [
             `${baseUrl}branding/uzs_1/rp_uzs1_07.webp`,
             `${baseUrl}branding/uzs_1/rp_uzs1_08.webp`
         ],
-        date: '2013',
+        date: '2010',
         tags: ['Illustrator']
     },
     {
@@ -640,7 +640,7 @@ export const galleryItems: GalleryItem[] = [
     {
         id: 42,
         title: 'Redice',
-        description: 'Логотип для хоккейной школы и магазина',
+        description: 'Логотип для хоккейной школы и магазина хоккейного снаряжения',
         type: 'branding',
         imageUrl: `${baseUrl}branding/redice/rp_redice_00.webp`,
         images: [
@@ -653,7 +653,7 @@ export const galleryItems: GalleryItem[] = [
     {
         id: 43,
         title: 'Фабрика Архипова',
-        description: 'Логотип для маленькой артели',
+        description: 'Логотип для маленькой артели по ремонту и модернизации оборудования',
         type: 'branding',
         imageUrl: `${baseUrl}branding/archipov/rp_archipov_00.webp`,
         images: [
@@ -665,7 +665,7 @@ export const galleryItems: GalleryItem[] = [
     {
         id: 44,
         title: 'Фабрика Карпова',
-        description: 'Логотип для фабрики Карпова',
+        description: 'Логотип для производственной компании',
         type: 'branding',
         imageUrl: `${baseUrl}branding/koff/rp_koff_00.webp`,
         images: [
@@ -712,10 +712,76 @@ export const galleryItems: GalleryItem[] = [
         date: '2015',
         tags: ['Illustrator']
     },
+    {
+        id: 47,
+        title: 'Козелки',
+        description: 'Переосмысление логотипа и варианты этикеток для продукции Стара-Загорского мясокомбината «Козелки»',
+        type: 'branding',
+        imageUrl: `${baseUrl}branding/kozelki/rp_kozelki_00.webp`,
+        images: [
+            `${baseUrl}branding/kozelki/rp_kozelki_01.webp`,
+            `${baseUrl}branding/kozelki/rp_kozelki_02.webp`,
+            `${baseUrl}branding/kozelki/rp_kozelki_03.webp`,
+            `${baseUrl}branding/kozelki/rp_kozelki_04.webp`,
+            `${baseUrl}branding/kozelki/rp_kozelki_05.webp`,
+            `${baseUrl}branding/kozelki/rp_kozelki_06.webp`,
+            `${baseUrl}branding/kozelki/rp_kozelki_07.webp`,
+            `${baseUrl}branding/kozelki/rp_kozelki_08.webp`,
+            `${baseUrl}branding/kozelki/rp_kozelki_09.webp`,
+            `${baseUrl}branding/kozelki/rp_kozelki_010.webp`,
+        ],
+        date: '2013',
+        tags: ['Illustrator']
+    },
+    {
+        id: 48,
+        title: 'ППЖР',
+        description: 'Логотип устройства пароотборника перекачиваемой жидкости',
+        type: 'branding',
+        imageUrl: `${baseUrl}branding/ppgr/rp_ppgr_00.webp`,
+        images: [
+            `${baseUrl}branding/ppgr/rp_ppgr_01.webp`,
+            `${baseUrl}branding/ppgr/rp_ppgr_02.webp`,
+            `${baseUrl}branding/ppgr/rp_ppgr_03.webp`,
+            `${baseUrl}branding/ppgr/rp_ppgr_04.webp`,
+            `${baseUrl}branding/ppgr/rp_ppgr_05.webp`,
+            `${baseUrl}branding/ppgr/rp_ppgr_06.webp`,
+            `${baseUrl}branding/ppgr/rp_ppgr_07.webp`,
+            `${baseUrl}branding/ppgr/rp_ppgr_08.webp`,
+        ],
+        date: '2010',
+        tags: ['Illustrator']
+    },
+    {
+        id: 49,
+        title: 'Форсунка',
+        description: 'Логотип для компании по продаже запчастей для грузовых автомобилей',
+        type: 'branding',
+        imageUrl: `${baseUrl}branding/forsunka/rp_forsunka_00.webp`,
+        images: [
+            `${baseUrl}branding/forsunka/rp_forsunka_01.webp`,
+            `${baseUrl}branding/forsunka/rp_forsunka_02.webp`,
+        ],
+        date: '2016',
+        tags: ['Illustrator']
+    },
+    {
+        id: 50,
+        title: 'Фотобокс',
+        description: 'Логотип для компании по фотоуслугам, проявке и продаже фотопленки, печати фотографий',
+        type: 'branding',
+        imageUrl: `${baseUrl}branding/photoboxs/rp_photoboxs_00.webp`,
+        images: [
+            `${baseUrl}branding/photoboxs/rp_photoboxs_01.webp`,
+            `${baseUrl}branding/photoboxs/rp_photoboxs_02.webp`,
+        ],
+        date: '2026',
+        tags: ['Illustrator']
+    },
 
     // Проекты
     {
-        id: 17,
+        id: 50,
         title: 'Интерактивная выставка c элементами игры',
         description: 'Работа была сделана в рамках проекта виртуальной интерактивной выставки про выдающегося человека своего времени Н. Г. Гарина-Михайловского.',
         type: 'projects',
@@ -723,29 +789,35 @@ export const galleryItems: GalleryItem[] = [
         images: [
             `${baseUrl}projects/garin/rp_garin_01.webp`,
             `${baseUrl}projects/garin/rp_garin_02.webp`,
-            `${baseUrl}projects/garin/rp_garin_03.webp`
+            `${baseUrl}projects/garin/rp_garin_03.webp`,
+            `${baseUrl}projects/garin/rp_garin_04.webp`,
+            `${baseUrl}projects/garin/rp_garin_05.webp`,
+            `${baseUrl}projects/garin/rp_garin_06.webp`,
+            `${baseUrl}projects/garin/rp_garin_07.webp`,
+            `${baseUrl}projects/garin/rp_garin_08.webp`,
+            `${baseUrl}projects/garin/rp_garin_09.webp`,
         ],
-        date: '2023',
+        date: '2025',
         tags: ['Blender', 'Substance Painter', 'HTML', 'CSS', 'Javascript']
     },
     {
-        id: 17,
-        title: 'Интерактивная выставка',
-        description: 'Работа была сделана в рамках проекта виртуальной интерактивной выставки про выдающегося человека своего времени Н. Г. Гарина-Михайловского.',
+        id: 51,
+        title: 'Интерактивная проект к 80-летию Победы',
+        description: 'Работа была сделана в рамках проекта виртуальной интерактивной книги',
         type: 'projects',
-        imageUrl: `${baseUrl}projects/garin/rp_garin_00.webp`,
+        imageUrl: `${baseUrl}projects/victory80/rp_victory80_00.webp`,
         images: [
-            `${baseUrl}projects/garin/rp_garin_01.webp`,
-            `${baseUrl}projects/garin/rp_garin_02.webp`,
-            `${baseUrl}projects/garin/rp_garin_03.webp`
+            `${baseUrl}projects/victory80/rp_victory80_01.webp`,
+            `${baseUrl}projects/victory80/rp_victory80_02.webp`,
+            `${baseUrl}projects/victory80/rp_victory80_03.webp`
         ],
-        date: '2023',
+        date: '2025',
         tags: ['Blender', 'Substance Painter', 'HTML', 'CSS', 'Javascript']
     },
 
     // Арт
     {
-        id: 10,
+        id: 52,
         title: 'Мир прекрасен',
         description: 'Мир никогда не перестанет быть красивым, как бы люди не старались его уничтожить. Всегда найдутся крепкие духом, кто будет цепляться за эту красоту, бороться за неё и жить дальше...',
         type: 'art',
@@ -758,7 +830,7 @@ export const galleryItems: GalleryItem[] = [
         tags: ['Blender', 'Substance Painter', 'DaVinci Resolve']
     },
     {
-        id: 3,
+        id: 53,
         title: 'Последняя сигарета',
         description: 'Когда мир на краю пропасти, когда конец неизбежен, остаётся только выкурить последнюю сигарету и поразмышлять напоследок, да вспомнить былое...',
         type: 'art',
@@ -774,6 +846,21 @@ export const galleryItems: GalleryItem[] = [
         tags: ['Blender', 'Substance Painter', 'Photoshop']
     },
 
+    // Видео
+    {
+        id: 55,
+        title: 'Мир прекрасен',
+        description: 'Мир никогда не перестанет быть красивым, как бы люди не старались его уничтожить. Всегда найдутся крепкие духом, кто будет цепляться за эту красоту, бороться за неё и жить дальше...',
+        type: 'video',
+        imageUrl: 'projects/forpost/ForpostCover',
+        images: [
+            'projects/garage/rp_garage_1',
+            'projects/garage/rp_garage_2'
+        ],
+        date: '2025',
+        tags: ['Blender', 'Substance Painter', 'DaVinci Resolve']
+    },
+
 ];
 
 export const filterOptions: FilterOption[] = [
@@ -784,5 +871,6 @@ export const filterOptions: FilterOption[] = [
     // { id: 'publish', label: 'Принт', icon: 'fas fa-book-open', count: galleryItems.filter(item => item.type === 'publish').length },
     { id: 'projects', label: 'Проекты', icon: 'fas fa-video', count: galleryItems.filter(item => item.type === 'projects').length },
     { id: 'art', label: 'Арт', icon: 'fas fa-paint-brush', count: galleryItems.filter(item => item.type === 'art').length },
+    { id: 'video', label: 'Видео', icon: 'fas fa-video', count: galleryItems.filter(item => item.type === 'video').length },
     { id: 'all', label: 'Всего', icon: 'fas fa-th-large', count: galleryItems.length }
 ];

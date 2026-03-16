@@ -428,6 +428,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
             'games': 'игры',
             'branding': 'брэндинг',
             'projects': 'проекты',
+            'video': 'видео',
             'art': 'арт'
         };
         return labels[type] || type;
@@ -440,6 +441,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
             'games': '#8059dc',
             'branding': '#da408d',
             'projects': '#10b981',
+            'video': '#61b323',
             'art': '#c83535'
         };
         return colors[type] || '#6b7280';
