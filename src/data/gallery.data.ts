@@ -262,11 +262,13 @@ export const galleryItems: GalleryItem[] = [
         title: 'Славянские мифы',
         description: 'Интерактивная викторина по славянской мифологии',
         type: 'games',
-        imageUrl: `${baseUrl}games/slavicMyth/rp_slavicMyth_00.webp`,
+        imageUrl: `${baseUrl}games/slavicMyth/rpg_slavicMyth_00.webp`,
         images: [
-            `${baseUrl}games/slavicMyth/rp_slavicMyth_01.webp`,
-            `${baseUrl}games/slavicMyth/rp_slavicMyth_02.webp`,
-            `${baseUrl}games/slavicMyth/rp_slavicMyth_03.webp`
+            `${baseUrl}games/slavicMyth/rpg_slavicMyth_01.webp`,
+            `${baseUrl}games/slavicMyth/rpg_slavicMyth_02.webp`,
+            `${baseUrl}games/slavicMyth/rpg_slavicMyth_03.webp`,
+            `${baseUrl}games/slavicMyth/rpg_slavicMyth_04.webp`,
+            `${baseUrl}games/slavicMyth/rpg_slavicMyth_05.webp`,
         ],
         date: '2023',
         tags: ['HTML', 'CSS', 'Javascript'],
@@ -277,11 +279,12 @@ export const galleryItems: GalleryItem[] = [
         title: 'Космические пазлы',
         description: 'Интерактивная викторина по славянской мифологии',
         type: 'games',
-        imageUrl: `${baseUrl}games/cosmicPuzzles/rp_cosmicPuzzles_00.webp`,
+        imageUrl: `${baseUrl}games/cosmicPuzzles/rpg_cosmicPuzzles_00.webp`,
         images: [
-            `${baseUrl}games/cosmicPuzzles/rp_cosmicPuzzles_01.webp`,
-            `${baseUrl}games/cosmicPuzzles/rp_cosmicPuzzles_02.webp`,
-            `${baseUrl}games/cosmicPuzzles/rp_cosmicPuzzles_03.webp`
+            `${baseUrl}games/cosmicPuzzles/rpg_cosmicPuzzles_01.webp`,
+            `${baseUrl}games/cosmicPuzzles/rpg_cosmicPuzzles_02.webp`,
+            `${baseUrl}games/cosmicPuzzles/rpg_cosmicPuzzles_03.webp`,
+            `${baseUrl}games/cosmicPuzzles/rpg_cosmicPuzzles_04.webp`,
         ],
         date: '2023',
         tags: ['HTML', 'CSS', 'Javascript'],
@@ -292,11 +295,16 @@ export const galleryItems: GalleryItem[] = [
         title: 'Краеведия',
         description: 'Интерактивная викторина по славянской мифологии',
         type: 'games',
-        imageUrl: `${baseUrl}games/kraevedia/rp_kraevedia_00.webp`,
+        imageUrl: `${baseUrl}games/kraevedia/rpg_kraevedia_00.webp`,
         images: [
-            `${baseUrl}games/kraevedia/rp_kraevedia_01.webp`,
-            `${baseUrl}games/kraevedia/rp_kraevedia_02.webp`,
-            `${baseUrl}games/kraevedia/rp_kraevedia_03.webp`
+            `${baseUrl}games/kraevedia/rpg_kraevedia_01.webp`,
+            `${baseUrl}games/kraevedia/rpg_kraevedia_02.webp`,
+            `${baseUrl}games/kraevedia/rpg_kraevedia_03.webp`,
+            `${baseUrl}games/kraevedia/rpg_kraevedia_04.webp`,
+            `${baseUrl}games/kraevedia/rpg_kraevedia_05.webp`,
+            `${baseUrl}games/kraevedia/rpg_kraevedia_06.webp`,
+            `${baseUrl}games/kraevedia/rpg_kraevedia_07.webp`,
+            `${baseUrl}games/kraevedia/rpg_kraevedia_08.webp`,
         ],
         date: '2023',
         tags: ['HTML', 'CSS', 'Javascript'],
@@ -307,13 +315,19 @@ export const galleryItems: GalleryItem[] = [
         title: 'Игросказы',
         description: 'Интерактивная викторина по славянской мифологии',
         type: 'games',
-        imageUrl: `${baseUrl}games/igroskazy/rp_igroskazy_00.webp`,
+        imageUrl: `${baseUrl}games/igroskazy/rpg_igroskazy_00.webp`,
         images: [
-            `${baseUrl}games/igroskazy/rp_igroskazy_01.webp`,
-            `${baseUrl}games/igroskazy/rp_igroskazy_02.webp`,
-            `${baseUrl}games/igroskazy/rp_igroskazy_03.webp`
+            `${baseUrl}games/igroskazy/rpg_igroskazy_01.webp`,
+            `${baseUrl}games/igroskazy/rpg_igroskazy_02.webp`,
+            `${baseUrl}games/igroskazy/rpg_igroskazy_03.webp`,
+            `${baseUrl}games/igroskazy/rpg_igroskazy_04.webp`,
+            `${baseUrl}games/igroskazy/rpg_igroskazy_05.webp`,
+            `${baseUrl}games/igroskazy/rpg_igroskazy_06.webp`,
+            `${baseUrl}games/igroskazy/rpg_igroskazy_07.webp`,
+            `${baseUrl}games/igroskazy/rpg_igroskazy_08.webp`,
+            `${baseUrl}games/igroskazy/rpg_igroskazy_09.webp`,
         ],
-        date: '2023',
+        date: '2025',
         tags: ['HTML', 'CSS', 'Javascript'],
         linked: 'https://smibs.ru/igroskazy/'
     },
@@ -322,13 +336,23 @@ export const galleryItems: GalleryItem[] = [
         title: 'Волшебное перо',
         description: 'Интерактивная викторина по славянской мифологии',
         type: 'games',
-        imageUrl: `${baseUrl}games/magicFeather/rp_magicFeather_00.webp`,
+        imageUrl: `${baseUrl}games/magicFeather/rpg_magicFeather_00.webp`,
         images: [
-            `${baseUrl}games/magicFeather/rp_magicFeather_01.webp`,
-            `${baseUrl}games/magicFeather/rp_magicFeather_02.webp`,
-            `${baseUrl}games/magicFeather/rp_magicFeather_03.webp`
+            `${baseUrl}games/magicFeather/rpg_magicFeather_01.webp`,
+            `${baseUrl}games/magicFeather/rpg_magicFeather_02.webp`,
+            `${baseUrl}games/magicFeather/rpg_magicFeather_03.webp`,
+            `${baseUrl}games/magicFeather/rpg_magicFeather_04.webp`,
+            `${baseUrl}games/magicFeather/rpg_magicFeather_05.webp`,
+            `${baseUrl}games/magicFeather/rpg_magicFeather_06.webp`,
+            `${baseUrl}games/magicFeather/rpg_magicFeather_07.webp`,
+            `${baseUrl}games/magicFeather/rpg_magicFeather_08.webp`,
+            `${baseUrl}games/magicFeather/rpg_magicFeather_09.webp`,
+            `${baseUrl}games/magicFeather/rpg_magicFeather_010.webp`,
+            `${baseUrl}games/magicFeather/rpg_magicFeather_011.webp`,
+            `${baseUrl}games/magicFeather/rpg_magicFeather_012.webp`,
+            `${baseUrl}games/magicFeather/rpg_magicFeather_013.webp`,
         ],
-        date: '2023',
+        date: '2024',
         tags: ['HTML', 'CSS', 'Javascript'],
         linked: 'https://smibs.ru/magicfeather/'
     },
@@ -337,13 +361,17 @@ export const galleryItems: GalleryItem[] = [
         title: 'Старая квартира',
         description: 'Интерактивная викторина по славянской мифологии',
         type: 'games',
-        imageUrl: `${baseUrl}games/oldApartment/rp_oldApartment_00.webp`,
+        imageUrl: `${baseUrl}games/oldAppartment/rpg_oldAppartment_00.webp`,
         images: [
-            `${baseUrl}games/oldApartment/rp_oldApartment_01.webp`,
-            `${baseUrl}games/oldApartment/rp_oldApartment_02.webp`,
-            `${baseUrl}games/oldApartment/rp_oldApartment_03.webp`
+            `${baseUrl}games/oldAppartment/rpg_oldAppartment_01.webp`,
+            `${baseUrl}games/oldAppartment/rpg_oldAppartment_02.webp`,
+            `${baseUrl}games/oldAppartment/rpg_oldAppartment_03.webp`,
+            `${baseUrl}games/oldAppartment/rpg_oldAppartment_04.webp`,
+            `${baseUrl}games/oldAppartment/rpg_oldAppartment_05.webp`,
+            `${baseUrl}games/oldAppartment/rpg_oldAppartment_06.webp`,
+            `${baseUrl}games/oldAppartment/rpg_oldAppartment_07.webp`,
         ],
-        date: '2023',
+        date: '2024',
         tags: ['HTML', 'CSS', 'Javascript'],
         linked: 'https://smibs.ru/oldapartment/'
     },
@@ -352,13 +380,16 @@ export const galleryItems: GalleryItem[] = [
         title: 'Марина Цветаева',
         description: 'Интерактивная викторина по славянской мифологии',
         type: 'games',
-        imageUrl: `${baseUrl}games/cvetaeva/rp_cvetaeva_00.webp`,
+        imageUrl: `${baseUrl}games/cvetaeva/rpg_cvetaeva_00.webp`,
         images: [
-            `${baseUrl}games/cvetaeva/rp_cvetaeva_01.webp`,
-            `${baseUrl}games/cvetaeva/rp_cvetaeva_02.webp`,
-            `${baseUrl}games/cvetaeva/rp_cvetaeva_03.webp`
+            `${baseUrl}games/cvetaeva/rpg_cvetaeva_01.webp`,
+            `${baseUrl}games/cvetaeva/rpg_cvetaeva_02.webp`,
+            `${baseUrl}games/cvetaeva/rpg_cvetaeva_03.webp`,
+            `${baseUrl}games/cvetaeva/rpg_cvetaeva_04.webp`,
+            `${baseUrl}games/cvetaeva/rpg_cvetaeva_05.webp`,
+            `${baseUrl}games/cvetaeva/rpg_cvetaeva_06.webp`,
         ],
-        date: '2023',
+        date: '2025',
         tags: ['HTML', 'CSS', 'Javascript'],
         linked: 'https://smibs.ru/cvetaeva/'
     },
@@ -781,13 +812,12 @@ export const galleryItems: GalleryItem[] = [
 
     // Проекты
     {
-        id: 50,
+        id: 51,
         title: 'Интерактивная выставка c элементами игры',
         description: 'Работа была сделана в рамках проекта виртуальной интерактивной выставки про выдающегося человека своего времени Н. Г. Гарина-Михайловского.',
         type: 'projects',
         imageUrl: `${baseUrl}projects/garin/rp_garin_00.webp`,
         images: [
-            `${baseUrl}projects/garin/rp_garin_01.webp`,
             `${baseUrl}projects/garin/rp_garin_02.webp`,
             `${baseUrl}projects/garin/rp_garin_03.webp`,
             `${baseUrl}projects/garin/rp_garin_04.webp`,
@@ -796,28 +826,61 @@ export const galleryItems: GalleryItem[] = [
             `${baseUrl}projects/garin/rp_garin_07.webp`,
             `${baseUrl}projects/garin/rp_garin_08.webp`,
             `${baseUrl}projects/garin/rp_garin_09.webp`,
+            `${baseUrl}projects/garin/rp_garin_01.webp`,
+        ],
+        videos: [
+            {
+                url: `${baseUrl}projects/garin/video/rp_garin_intro.mp4`,
+                thumbnail: `${baseUrl}projects/garin/video/thumb/rp_garin_intro.webp`,
+            },
+            {
+                url: `${baseUrl}projects/garin/video/rp_garin_into.mp4`,
+                thumbnail: `${baseUrl}projects/garin/video/thumb/rp_garin_into.webp`,
+
+            },
         ],
         date: '2025',
-        tags: ['Blender', 'Substance Painter', 'HTML', 'CSS', 'Javascript']
+        tags: ['Blender', 'Substance Painter', 'HTML', 'CSS', 'Javascript'],
+        linked: 'https://smibs.ru/garin/'
     },
     {
-        id: 51,
+        id: 52,
         title: 'Интерактивная проект к 80-летию Победы',
         description: 'Работа была сделана в рамках проекта виртуальной интерактивной книги',
         type: 'projects',
-        imageUrl: `${baseUrl}projects/victory80/rp_victory80_00.webp`,
+        imageUrl: `${baseUrl}projects/victory80/rpp_victory80_00.webp`,
         images: [
-            `${baseUrl}projects/victory80/rp_victory80_01.webp`,
-            `${baseUrl}projects/victory80/rp_victory80_02.webp`,
-            `${baseUrl}projects/victory80/rp_victory80_03.webp`
+            `${baseUrl}projects/victory80/rpp_victory80_01.webp`,
+            `${baseUrl}projects/victory80/rpp_victory80_02.webp`,
+            `${baseUrl}projects/victory80/rpp_victory80_03.webp`,
+            `${baseUrl}projects/victory80/rpp_victory80_04.webp`,
+            `${baseUrl}projects/victory80/rpp_victory80_05.webp`,
+            `${baseUrl}projects/victory80/rpp_victory80_06.webp`,
+        ],
+        videos: [
+            {
+                url: `${baseUrl}projects/victory80/rpp_victory80_00.mp4`,
+                thumbnail: `${baseUrl}projects/victory80/rpp_victory80S_00.webp`,
+            },
+            {
+                url: `${baseUrl}projects/victory80/rpp_victory80_01.mp4`,
+                thumbnail: `${baseUrl}projects/victory80/rpp_victory80S_01.webp`,
+
+            },
+            {
+                url: `${baseUrl}projects/victory80/rpp_victory80_02.mp4`,
+                thumbnail: `${baseUrl}projects/victory80/rpp_victory80S_02.webp`,
+
+            },
         ],
         date: '2025',
-        tags: ['Blender', 'Substance Painter', 'HTML', 'CSS', 'Javascript']
+        tags: ['Blender', 'Substance Painter', 'HTML', 'CSS', 'Javascript'],
+        linked: 'https://smibs.ru/victory80/'
     },
 
     // Арт
     {
-        id: 52,
+        id: 53,
         title: 'Мир прекрасен',
         description: 'Мир никогда не перестанет быть красивым, как бы люди не старались его уничтожить. Всегда найдутся крепкие духом, кто будет цепляться за эту красоту, бороться за неё и жить дальше...',
         type: 'art',
@@ -830,7 +893,7 @@ export const galleryItems: GalleryItem[] = [
         tags: ['Blender', 'Substance Painter', 'DaVinci Resolve']
     },
     {
-        id: 53,
+        id: 54,
         title: 'Последняя сигарета',
         description: 'Когда мир на краю пропасти, когда конец неизбежен, остаётся только выкурить последнюю сигарету и поразмышлять напоследок, да вспомнить былое...',
         type: 'art',
