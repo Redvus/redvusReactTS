@@ -10,9 +10,11 @@
     display: flex;
     align-items: baseline;
     justify-content: center;
-    padding: calc((var(--header-height) * 3) + (var(--wrapperPadding) * 0.1)) var(--wrapperPadding) 0;
-    overflow: hidden;
-    z-index: 1;
+    padding: calc((var(--header-height) * 4) + (var(--wrapperPadding) * 0.1)) var(--wrapperPadding) 0;
+    // overflow: hidden;
+    position: relative;
+    background-color: var(--headerBackgroundLight);
+    z-index: 10;
 
     &__shutter {
         width: 50%;
@@ -192,6 +194,10 @@
                 height: 10vmax;
             }
         }
+    }
+
+    @include dark-theme {
+        background-color: var(--layoutBackground);
     }
 
     @include bp.media-up('XSmall') {

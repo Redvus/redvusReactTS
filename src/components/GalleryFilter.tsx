@@ -1,5 +1,5 @@
-// import React, { useEffect, useRef } from 'react';
-import React, { useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+// import React, { useRef } from 'react';
 // import { gsap } from 'gsap';
 import type { FilterType } from '../types/gallery.types';
 import type { FilterOption } from '../data/gallery.data';
@@ -14,6 +14,9 @@ const GalleryFilter: React.FC<GalleryFilterProps> = ({ activeFilter, onFilterCha
     const filterRef = useRef<HTMLDivElement>(null);
     const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
     // const indicatorRef = useRef<HTMLSpanElement>(null);
+
+    const [isFilterFixed, setIsFilterFixed] = useState(false);
+    const [originalTop, setOriginalTop] = useState(0);
 
     // useEffect(() => {
     //     if (filterRef.current) {
@@ -61,8 +64,39 @@ const GalleryFilter: React.FC<GalleryFilterProps> = ({ activeFilter, onFilterCha
         // }
     };
 
+    // Фиксация фильтров при скролле
+    useEffect(() => {
+        const handleScroll = () => {
+            if (!filterRef.current) return;
+
+            // Сохраняем исходную позицию при первом вызове
+            if (originalTop === 0) {
+                setOriginalTop(filterRef.current.offsetTop);
+            }
+
+            const scrollY = window.scrollY;
+            const headerHeight = 60; // высота header
+            const scrollOffset = 60; // ← добавьте это значение (в пикселях)
+
+            // Фиксируем, когда прокрутка прошла позицию фильтра
+            // И возвращаем, когда прокрутка меньше
+            if (scrollY > originalTop - headerHeight + scrollOffset) {
+                setIsFilterFixed(true);
+            } else {
+                setIsFilterFixed(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        handleScroll(); // Вызываем при загрузке
+
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [originalTop]); // добавили originalTop в зависимости
+
     return (
-        <div ref={filterRef} className="gallery-filter">
+        <div
+            ref={filterRef}
+            className={`gallery-filter${isFilterFixed ? ' fixed' : ''}`}>
             <div className="gallery-filter__container">
                 {/* <span
                     ref={indicatorRef}

@@ -1,11 +1,16 @@
 // import React, { useEffect, useRef } from 'react';
 import React, { useRef } from 'react';
 // import { gsap } from 'gsap';
+import Navigation from '../Navigation/Navigation';
 
 import RedvusLogo from '../../UI/RedvusLogo';
 // import Social from '../../UI/Social';
 
-const Header: React.FC = () => {
+interface HeaderProps {
+    onAboutClick: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ onAboutClick }) => {
     const headerRef = useRef<HTMLDivElement>(null);
 
     // useEffect(() => {
@@ -44,6 +49,7 @@ const Header: React.FC = () => {
             <header ref={headerRef} className="header">
                 <RedvusLogo className="header__logo" />
                 {/* <Social className="header__social" /> */}
+                <Navigation onAboutClick={onAboutClick} />
             </header>
         </>
     );

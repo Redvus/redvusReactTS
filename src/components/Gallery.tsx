@@ -5,6 +5,7 @@ import Header from './Layout/Header/Header';
 import Footer from './Layout/Footer/Footer';
 
 import Modal from './Modal';
+import AboutModal from './AboutModal';
 
 import GalleryFilter from './GalleryFilter';
 import GalleryItem from './GalleryItem';
@@ -17,6 +18,9 @@ const Gallery: React.FC = () => {
     const [activeFilter, setActiveFilter] = useState<FilterType>('all');
     const [filteredItems, setFilteredItems] = useState<GalleryItemType[]>(galleryItems);
     const [isLoading, setIsLoading] = useState(false);
+
+    // Состояние для модального окна "Обо мне"
+    const [isAboutModalOpen, setIsAboutModalOpen] = useState(false);
 
     const galleryRef = useRef<HTMLDivElement>(null);
     // const counterRef = useRef<HTMLSpanElement>(null);
@@ -57,7 +61,6 @@ const Gallery: React.FC = () => {
     // }, []);
 
     // Фильтрация работ с использованием requestAnimationFrame для избежания каскадных рендеров
-
     useEffect(() => {
         let isMounted = true;
 
@@ -174,6 +177,16 @@ const Gallery: React.FC = () => {
         setTimeout(() => setSelectedItem(null), 300);
     };
 
+    // Открытие модального окна "Обо мне"
+    const handleOpenAboutModal = () => {
+        setIsAboutModalOpen(true);
+    };
+
+    // Закрытие модального окна "Обо мне"
+    const handleCloseAboutModal = () => {
+        setIsAboutModalOpen(false);
+    };
+
     // Оптимизированная функция для вычисления статистики
     // const getGalleryStats = () => {
     //     const totalItems = filteredItems.length;
@@ -190,7 +203,7 @@ const Gallery: React.FC = () => {
 
     return (
         <>
-            <Header />
+            <Header onAboutClick={handleOpenAboutModal} />
 
             <GalleryFilter
                 activeFilter={activeFilter}
@@ -301,6 +314,11 @@ const Gallery: React.FC = () => {
                 isOpen={isModalOpen}
                 onClose={handleCloseModal}
                 item={selectedItem}
+            />
+
+            <AboutModal
+                isOpen={isAboutModalOpen}
+                onClose={handleCloseAboutModal}
             />
 
             <Footer />
