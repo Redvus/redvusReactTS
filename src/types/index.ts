@@ -7,6 +7,7 @@ export interface RouteItem {
 export interface NavigationProps {
     isMenuOpen: boolean;
     toggleMenu: () => void;
+    onAboutClick?: () => void;
 }
 
 export interface PageTransitionProps {

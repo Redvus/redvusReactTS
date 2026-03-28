@@ -7,10 +7,10 @@ import RedvusLogo from '../../UI/RedvusLogo';
 // import Social from '../../UI/Social';
 
 interface HeaderProps {
-    onAboutClick: () => void;
+    onAboutClick?: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ onAboutClick }) => {
+const Header: React.FC<HeaderProps> = ({ onAboutClick = () => { } }) => {
     const headerRef = useRef<HTMLDivElement>(null);
 
     // useEffect(() => {
