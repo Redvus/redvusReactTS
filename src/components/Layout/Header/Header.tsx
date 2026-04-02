@@ -6,6 +6,8 @@ import Navigation from '../Navigation/Navigation';
 import RedvusLogo from '../../UI/RedvusLogo';
 // import Social from '../../UI/Social';
 
+import Social from '../../UI/Social';
+
 interface HeaderProps {
     onAboutClick?: () => void;
 }
@@ -48,8 +50,10 @@ const Header: React.FC<HeaderProps> = ({ onAboutClick = () => { } }) => {
         <>
             <header ref={headerRef} className="header">
                 <RedvusLogo className="header__logo" />
-                {/* <Social className="header__social" /> */}
-                <Navigation onAboutClick={onAboutClick} />
+                <div className="header__nav">
+                    <Navigation onAboutClick={onAboutClick} />
+                    <Social className="header__social" />
+                </div>
             </header>
         </>
     );

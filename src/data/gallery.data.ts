@@ -11,35 +11,35 @@ export interface FilterOption {
 
 export const galleryItems: GalleryItem[] = [
     // Сайты
-    {
-        id: 1,
-        title: 'Джин Джу',
-        description: 'Ресторан китайской кухни',
-        type: 'web',
-        imageUrl: `${baseUrl}web/djindju/rpw_djindju_00.webp`,
-        images: [
-            `${baseUrl}web/djindju/rpw_djindju_01.webp`,
-            `${baseUrl}web/djindju/rpw_djindju_02.webp`,
-        ],
-        date: '2013',
-        tags: ['HTML', 'CSS', 'Javascript'],
-        linked: 'https://djindju.redvus.ru/'
-    },
-    {
-        id: 2,
-        title: 'Трэкшн Групп',
-        description: 'Продажа, обслуживание и ремонт грузовых автомобилей',
-        type: 'web',
-        imageUrl: `${baseUrl}web/traction/rpw_traction_00.webp`,
-        images: [
-            `${baseUrl}web/traction/rpw_traction_01.webp`,
-            `${baseUrl}web/traction/rpw_traction_02.webp`,
-            `${baseUrl}web/traction/rpw_traction_03.webp`
-        ],
-        date: '2015',
-        tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
-        linked: 'https://tractiongroup.ru/'
-    },
+    // {
+    //     id: 1,
+    //     title: 'Джин Джу',
+    //     description: 'Ресторан китайской кухни',
+    //     type: 'web',
+    //     imageUrl: `${baseUrl}web/djindju/rpw_djindju_00.webp`,
+    //     images: [
+    //         `${baseUrl}web/djindju/rpw_djindju_01.webp`,
+    //         `${baseUrl}web/djindju/rpw_djindju_02.webp`,
+    //     ],
+    //     date: '2013',
+    //     tags: ['HTML', 'CSS', 'Javascript'],
+    //     linked: 'https://djindju.redvus.ru/'
+    // },
+    // {
+    //     id: 2,
+    //     title: 'Трэкшн Групп',
+    //     description: 'Продажа, обслуживание и ремонт грузовых автомобилей',
+    //     type: 'web',
+    //     imageUrl: `${baseUrl}web/traction/rpw_traction_00.webp`,
+    //     images: [
+    //         `${baseUrl}web/traction/rpw_traction_01.webp`,
+    //         `${baseUrl}web/traction/rpw_traction_02.webp`,
+    //         `${baseUrl}web/traction/rpw_traction_03.webp`
+    //     ],
+    //     date: '2015',
+    //     tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
+    //     linked: 'https://tractiongroup.ru/'
+    // },
     // {
     //     id: 3,
     //     title: 'Тарзания',
@@ -811,125 +811,188 @@ export const galleryItems: GalleryItem[] = [
     },
 
     // Проекты
-    // {
-    //     id: 51,
-    //     title: 'Интерактивная выставка c элементами игры',
-    //     description: 'Работа была сделана в рамках проекта виртуальной интерактивной выставки про выдающегося человека своего времени Н. Г. Гарина-Михайловского.',
-    //     type: 'projects',
-    //     imageUrl: `${baseUrl}projects/garin/rp_garin_00.webp`,
-    //     images: [
-    //         `${baseUrl}projects/garin/rp_garin_02.webp`,
-    //         `${baseUrl}projects/garin/rp_garin_03.webp`,
-    //         `${baseUrl}projects/garin/rp_garin_04.webp`,
-    //         `${baseUrl}projects/garin/rp_garin_05.webp`,
-    //         `${baseUrl}projects/garin/rp_garin_06.webp`,
-    //         `${baseUrl}projects/garin/rp_garin_07.webp`,
-    //         `${baseUrl}projects/garin/rp_garin_08.webp`,
-    //         `${baseUrl}projects/garin/rp_garin_09.webp`,
-    //         `${baseUrl}projects/garin/rp_garin_01.webp`,
-    //     ],
-    //     videos: [
-    //         {
-    //             url: `${baseUrl}projects/garin/video/rp_garin_intro.mp4`,
-    //             thumbnail: `${baseUrl}projects/garin/video/thumb/rp_garin_intro.webp`,
-    //         },
-    //         {
-    //             url: `${baseUrl}projects/garin/video/rp_garin_into.mp4`,
-    //             thumbnail: `${baseUrl}projects/garin/video/thumb/rp_garin_into.webp`,
+    {
+        id: 51,
+        title: 'Интерактивная выставка c элементами игры',
+        description: 'Работа была сделана в рамках проекта виртуальной интерактивной выставки про выдающегося человека своего времени Н. Г. Гарина-Михайловского.',
+        type: 'projects',
+        imageUrl: `${baseUrl}projects/garin/rp_garin_00.webp`,
+        images: [
+            `${baseUrl}projects/garin/rp_garin_02.webp`,
+            `${baseUrl}projects/garin/rp_garin_03.webp`,
+            `${baseUrl}projects/garin/rp_garin_04.webp`,
+            `${baseUrl}projects/garin/rp_garin_05.webp`,
+            `${baseUrl}projects/garin/rp_garin_06.webp`,
+            `${baseUrl}projects/garin/rp_garin_07.webp`,
+            `${baseUrl}projects/garin/rp_garin_08.webp`,
+            `${baseUrl}projects/garin/rp_garin_09.webp`,
+            `${baseUrl}projects/garin/rp_garin_01.webp`,
+        ],
+        videos: [
+            {
+                url: `${baseUrl}projects/garin/video/rp_garin_intro.mp4`,
+                thumbnail: `${baseUrl}projects/garin/video/thumb/rp_garin_intro.webp`,
+            },
+            {
+                url: `${baseUrl}projects/garin/video/rp_garin_into.mp4`,
+                thumbnail: `${baseUrl}projects/garin/video/thumb/rp_garin_into.webp`,
 
-    //         },
-    //     ],
-    //     date: '2025',
-    //     tags: ['Blender', 'Substance Painter', 'HTML', 'CSS', 'Javascript'],
-    //     linked: 'https://smibs.ru/garin/'
-    // },
-    // {
-    //     id: 52,
-    //     title: 'Интерактивная проект к 80-летию Победы',
-    //     description: 'Работа была сделана в рамках проекта виртуальной интерактивной книги',
-    //     type: 'projects',
-    //     imageUrl: `${baseUrl}projects/victory80/rpp_victory80_00.webp`,
-    //     images: [
-    //         `${baseUrl}projects/victory80/rpp_victory80_01.webp`,
-    //         `${baseUrl}projects/victory80/rpp_victory80_02.webp`,
-    //         `${baseUrl}projects/victory80/rpp_victory80_03.webp`,
-    //         `${baseUrl}projects/victory80/rpp_victory80_04.webp`,
-    //         `${baseUrl}projects/victory80/rpp_victory80_05.webp`,
-    //         `${baseUrl}projects/victory80/rpp_victory80_06.webp`,
-    //     ],
-    //     videos: [
-    //         {
-    //             url: `${baseUrl}projects/victory80/rpp_victory80_00.mp4`,
-    //             thumbnail: `${baseUrl}projects/victory80/rpp_victory80S_00.webp`,
-    //         },
-    //         {
-    //             url: `${baseUrl}projects/victory80/rpp_victory80_01.mp4`,
-    //             thumbnail: `${baseUrl}projects/victory80/rpp_victory80S_01.webp`,
+            },
+        ],
+        date: '2025',
+        tags: ['Blender', 'Substance Painter', 'HTML', 'CSS', 'Javascript'],
+        linked: 'https://smibs.ru/garin/'
+    },
+    {
+        id: 52,
+        title: 'Интерактивная проект к 80-летию Победы',
+        description: 'Работа была сделана в рамках проекта виртуальной интерактивной книги',
+        type: 'projects',
+        imageUrl: `${baseUrl}projects/victory80/rpp_victory80_00.webp`,
+        images: [
+            `${baseUrl}projects/victory80/rpp_victory80_01.webp`,
+            `${baseUrl}projects/victory80/rpp_victory80_02.webp`,
+            `${baseUrl}projects/victory80/rpp_victory80_03.webp`,
+            `${baseUrl}projects/victory80/rpp_victory80_04.webp`,
+            `${baseUrl}projects/victory80/rpp_victory80_05.webp`,
+            `${baseUrl}projects/victory80/rpp_victory80_06.webp`,
+        ],
+        videos: [
+            {
+                url: `${baseUrl}projects/victory80/rpp_victory80_00.mp4`,
+                thumbnail: `${baseUrl}projects/victory80/rpp_victory80S_00.webp`,
+            },
+            {
+                url: `${baseUrl}projects/victory80/rpp_victory80_01.mp4`,
+                thumbnail: `${baseUrl}projects/victory80/rpp_victory80S_01.webp`,
 
-    //         },
-    //         {
-    //             url: `${baseUrl}projects/victory80/rpp_victory80_02.mp4`,
-    //             thumbnail: `${baseUrl}projects/victory80/rpp_victory80S_02.webp`,
+            },
+            {
+                url: `${baseUrl}projects/victory80/rpp_victory80_02.mp4`,
+                thumbnail: `${baseUrl}projects/victory80/rpp_victory80S_02.webp`,
 
-    //         },
-    //     ],
-    //     date: '2025',
-    //     tags: ['Blender', 'Substance Painter', 'HTML', 'CSS', 'Javascript'],
-    //     linked: 'https://smibs.ru/victory80/'
-    // },
+            },
+        ],
+        date: '2025',
+        tags: ['Blender', 'Substance Painter', 'HTML', 'CSS', 'Javascript'],
+        linked: 'https://smibs.ru/victory80/'
+    },
 
     // Арт
-    // {
-    //     id: 53,
-    //     title: 'Мир прекрасен',
-    //     description: 'Мир никогда не перестанет быть красивым, как бы люди не старались его уничтожить. Всегда найдутся крепкие духом, кто будет цепляться за эту красоту, бороться за неё и жить дальше...',
-    //     type: 'art',
-    //     imageUrl: 'projects/forpost/ForpostCover',
-    //     images: [
-    //         'projects/garage/rp_garage_1',
-    //         'projects/garage/rp_garage_2'
-    //     ],
-    //     date: '2025',
-    //     tags: ['Blender', 'Substance Painter']
-    // },
-    // {
-    //     id: 54,
-    //     title: 'Предсказуемость глупости',
-    //     description: 'Когда мир на краю пропасти, когда конец неизбежен, остаётся только выкурить последнюю сигарету и поразмышлять напоследок, да вспомнить былое...',
-    //     type: 'art',
-    //     imageUrl: `${baseUrl}projects/girlNuclear/rp_girlnuclear_00.webp`,
-    //     images: [
-    //         `${baseUrl}projects/girlNuclear/rp_girlnuclear_01.webp`,
-    //         `${baseUrl}projects/girlNuclear/rp_girlnuclear_02.webp`,
-    //         `${baseUrl}projects/girlNuclear/rp_girlnuclear_03.webp`,
-    //         `${baseUrl}projects/girlNuclear/rp_girlnuclear_04.webp`,
-    //         `${baseUrl}projects/girlNuclear/rp_girlnuclear_05.webp`
-    //     ],
-    //     date: '2025',
-    //     tags: ['Blender', 'Substance Painter', 'Photoshop']
-    // },
+    {
+        id: 53,
+        title: 'Гараж',
+        description: 'Когда мир на краю пропасти, когда конец неизбежен, остаётся только выкурить последнюю сигарету и поразмышлять напоследок, да вспомнить былое...',
+        type: 'art',
+        imageUrl: `${baseUrl}art/garage/rpa_garage_00.webp`,
+        images: [
+            `${baseUrl}art/garage/rpa_garage_01.webp`,
+            `${baseUrl}art/garage/rpa_garage_02.webp`,
+            `${baseUrl}art/garage/rpa_garage_03.webp`,
+            `${baseUrl}art/garage/rpa_garage_04.webp`,
+            `${baseUrl}art/garage/rpa_garage_05.webp`,
+            `${baseUrl}art/garage/rpa_garage_06.webp`,
+            `${baseUrl}art/garage/rpa_garage_07.webp`,
+            `${baseUrl}art/garage/rpa_garage_08.webp`,
+            `${baseUrl}art/garage/rpa_garage_09.webp`,
+            `${baseUrl}art/garage/rpa_garage_010.webp`,
+        ],
+        date: '2025',
+        tags: ['Blender', 'Substance Painter', 'Photoshop']
+    },
+    {
+        id: 54,
+        title: 'Предсказуемость глупости',
+        description: 'Когда мир на краю пропасти, когда конец неизбежен, остаётся только выкурить последнюю сигарету и поразмышлять напоследок, да вспомнить былое...',
+        type: 'art',
+        imageUrl: `${baseUrl}art/girlNuclear/rp_girlnuclear_00.webp`,
+        images: [
+            `${baseUrl}art/girlNuclear/rp_girlnuclear_01.webp`,
+            `${baseUrl}art/girlNuclear/rp_girlnuclear_02.webp`,
+            `${baseUrl}art/girlNuclear/rp_girlnuclear_03.webp`,
+            `${baseUrl}art/girlNuclear/rp_girlnuclear_04.webp`,
+            `${baseUrl}art/girlNuclear/rp_girlnuclear_05.webp`
+        ],
+        date: '2026',
+        tags: ['Blender', 'Substance Painter', 'Photoshop']
+    },
+    {
+        id: 55,
+        title: 'Мир прекрасен',
+        description: 'Мир никогда не перестанет быть красивым, как бы люди не старались его уничтожить. Всегда найдутся крепкие духом, кто будет цепляться за эту красоту, бороться за неё и жить дальше...',
+        type: 'art',
+        imageUrl: `${baseUrl}art/dgMountain/rp_dgMountain_00.webp`,
+        images: [
+            `${baseUrl}art/dgMountain/rp_dgMountain_01.webp`,
+            `${baseUrl}art/dgMountain/rp_dgMountain_02.webp`,
+            `${baseUrl}art/dgMountain/rp_dgMountain_03.webp`,
+        ],
+        date: '2025',
+        tags: ['Blender', 'Substance Painter', 'Photoshop']
+    },
 
     // Видео
-    // {
-    //     id: 55,
-    //     title: 'Мир прекрасен',
-    //     description: 'Мир никогда не перестанет быть красивым, как бы люди не старались его уничтожить. Всегда найдутся крепкие духом, кто будет цепляться за эту красоту, бороться за неё и жить дальше...',
-    //     type: 'video',
-    //     imageUrl: 'projects/forpost/ForpostCover',
-    //     images: [
-    //         'projects/garage/rp_garage_1',
-    //         'projects/garage/rp_garage_2'
-    //     ],
-    //     date: '2025',
-    //     tags: ['Blender', 'Substance Painter', 'DaVinci Resolve']
-    // },
-
+    {
+        id: 56,
+        title: 'Форпост',
+        description: 'Тренировочный проект – разбавить статику небольшой анимацией. Взял модели из предыдущих проектов и добавил новые. Освоение новых инструментов, принципов анимации, изучение основ работы в DaVinci Stidio для дальнейшего развития.',
+        type: 'video',
+        imageUrl: `${baseUrl}video/forpost/rpv_forpost_00.webp`,
+        images: [
+            // `${baseUrl}video/forpost/rpv_forpost_01.webp`,
+            // `${baseUrl}video/forpost/rpv_forpost_02.webp`,
+            // `${baseUrl}video/forpost/rpv_forpost_03.webp`
+        ],
+        videos: [
+            {
+                url: `${baseUrl}video/forpost/rpv_forpost.mp4`,
+                thumbnail: `${baseUrl}video/forpost/rpv_forpostCover.webp`,
+            },
+        ],
+        date: '2026',
+        tags: ['Blender', 'Substance Painter', 'DaVinci Resolve'],
+        linked: 'https://vk.com/video/@id713554684?z=video713554684_456239043'
+    },
+    {
+        id: 57,
+        title: 'Фотобокс',
+        description: 'Тренировочный проект – разбавить статику небольшой анимацией. Взял модели из предыдущих проектов и добавил новые. Освоение новых инструментов, принципов анимации, изучение основ работы в DaVinci Stidio для дальнейшего развития.',
+        type: 'video',
+        imageUrl: `${baseUrl}video/photoboxs/rpv_photoboxs_00.webp`,
+        videos: [
+            {
+                url: `${baseUrl}video/photoboxs/rpv_photoboxs.mp4`,
+                thumbnail: `${baseUrl}video/photoboxs/rpv_photoboxsCover.webp`,
+            },
+            {
+                url: `${baseUrl}video/photoboxs/rpv_photoboxs_2.mp4`,
+                thumbnail: `${baseUrl}video/photoboxs/rpv_photoboxsCover_2.webp`,
+            },
+        ],
+        date: '2025',
+        tags: ['Blender'],
+    },
+    {
+        id: 58,
+        title: 'Литературный театр',
+        description: 'Тренировочный проект – разбавить статику небольшой анимацией. Взял модели из предыдущих проектов и добавил новые. Освоение новых инструментов, принципов анимации, изучение основ работы в DaVinci Stidio для дальнейшего развития.',
+        type: 'video',
+        imageUrl: `${baseUrl}video/smibs/rpv_theaterLogo_00.webp`,
+        videos: [
+            {
+                url: `${baseUrl}video/smibs/rpv_theaterLogo.mp4`,
+                thumbnail: `${baseUrl}video/smibs/rpv_theaterLogoCover.webp`,
+            },
+        ],
+        date: '2025',
+        tags: ['Blender'],
+    },
 ];
 
 export const filterOptions: FilterOption[] = [
-    { id: 'web', label: 'Сайты', icon: 'fas fa-globe', count: galleryItems.filter(item => item.type === 'web').length },
+    // { id: 'web', label: 'Сайты', icon: 'fas fa-globe', count: galleryItems.filter(item => item.type === 'web').length },
     { id: 'games', label: 'Игры', icon: 'fas fa-gamepad', count: galleryItems.filter(item => item.type === 'games').length },
-    { id: 'mobile', label: 'Мобильные', icon: 'fas fa-mobile-screen-button', count: galleryItems.filter(item => item.type === 'mobile').length },
+    // { id: 'mobile', label: 'Мобильные', icon: 'fas fa-mobile-screen-button', count: galleryItems.filter(item => item.type === 'mobile').length },
     { id: 'branding', label: 'Брэндинг', icon: 'fas fa-splotch', count: galleryItems.filter(item => item.type === 'branding').length },
     // { id: 'publish', label: 'Принт', icon: 'fas fa-book-open', count: galleryItems.filter(item => item.type === 'publish').length },
     { id: 'projects', label: 'Проекты', icon: 'fas fa-video', count: galleryItems.filter(item => item.type === 'projects').length },

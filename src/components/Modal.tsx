@@ -593,7 +593,11 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, item }) => {
 
                         <ul className="modal__media_tags">
                             {item.tags.map((tag, index) => (
-                                <li key={index} className="modal__media_tag">
+                                <li
+                                    key={index}
+                                    className="modal__media_tag"
+                                    style={{ backgroundColor: getTypeColor(item.type) }}
+                                >
                                     {tag}
                                 </li>
                             ))}

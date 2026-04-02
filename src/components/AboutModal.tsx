@@ -128,7 +128,7 @@ const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
                         </div>
                     </div>
 
-                    <div className="about-modal__contacts">
+                    {/* <div className="about-modal__contacts">
                         <h3>Контакты</h3>
                         <div className="contacts-list">
                             <a href="mailto:email@example.com" className="contact-link">
@@ -141,7 +141,7 @@ const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
                                 <span>📱</span> Telegram
                             </a>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>
