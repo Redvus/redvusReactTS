@@ -137,7 +137,7 @@ $font-width-extended: 125%;
 
     @else if $size ==h3 {
         font-size: var(--font-size-h3);
-        font-weight: $font-weight-light;
+        font-weight: $font-weight-regular;
         font-stretch: $font-width-normal;
     }
 
