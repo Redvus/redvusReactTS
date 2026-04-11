@@ -11,35 +11,35 @@ export interface FilterOption {
 
 export const galleryItems: GalleryItem[] = [
     // Сайты
-    // {
-    //     id: 1,
-    //     title: 'Джин Джу',
-    //     description: 'Ресторан китайской кухни',
-    //     type: 'web',
-    //     imageUrl: `${baseUrl}web/djindju/rpw_djindju_00.webp`,
-    //     images: [
-    //         `${baseUrl}web/djindju/rpw_djindju_01.webp`,
-    //         `${baseUrl}web/djindju/rpw_djindju_02.webp`,
-    //     ],
-    //     date: '2013',
-    //     tags: ['HTML', 'CSS', 'Javascript'],
-    //     linked: 'https://djindju.redvus.ru/'
-    // },
-    // {
-    //     id: 2,
-    //     title: 'Трэкшн Групп',
-    //     description: 'Продажа, обслуживание и ремонт грузовых автомобилей',
-    //     type: 'web',
-    //     imageUrl: `${baseUrl}web/traction/rpw_traction_00.webp`,
-    //     images: [
-    //         `${baseUrl}web/traction/rpw_traction_01.webp`,
-    //         `${baseUrl}web/traction/rpw_traction_02.webp`,
-    //         `${baseUrl}web/traction/rpw_traction_03.webp`
-    //     ],
-    //     date: '2015',
-    //     tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
-    //     linked: 'https://tractiongroup.ru/'
-    // },
+    {
+        id: 1,
+        title: 'Джин Джу',
+        description: 'Ресторан китайской кухни',
+        type: 'web',
+        imageUrl: `${baseUrl}web/djindju/rpw_djindju_00.webp`,
+        images: [
+            `${baseUrl}web/djindju/rpw_djindju_01.webp`,
+            `${baseUrl}web/djindju/rpw_djindju_02.webp`,
+        ],
+        date: '2013',
+        tags: ['HTML', 'CSS', 'Javascript'],
+        linked: 'https://djindju.redvus.ru/'
+    },
+    {
+        id: 2,
+        title: 'Трэкшн Групп',
+        description: 'Продажа, обслуживание и ремонт грузовых автомобилей',
+        type: 'web',
+        imageUrl: `${baseUrl}web/traction/rpw_traction_00.webp`,
+        images: [
+            `${baseUrl}web/traction/rpw_traction_01.webp`,
+            `${baseUrl}web/traction/rpw_traction_02.webp`,
+            `${baseUrl}web/traction/rpw_traction_03.webp`
+        ],
+        date: '2015',
+        tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
+        linked: 'https://tractiongroup.ru/'
+    },
     // {
     //     id: 3,
     //     title: 'Тарзания',
@@ -56,21 +56,21 @@ export const galleryItems: GalleryItem[] = [
     //     tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
     //     linked: 'https://tarzaniya.com/'
     // },
-    // {
-    //     id: 4,
-    //     title: 'Фабрика Форте',
-    //     description: 'Фабрика по пошиву постельного белья и домашнего текстиля',
-    //     type: 'web',
-    //     imageUrl: `${baseUrl}web/fabrikaForte/rp_fabrikaForte_00.webp`,
-    //     images: [
-    //         `${baseUrl}web/fabrikaForte/rp_fabrikaForte_01.webp`,
-    //         `${baseUrl}web/fabrikaForte/rp_fabrikaForte_02.webp`,
-    //         `${baseUrl}web/fabrikaForte/rp_fabrikaForte_03.webp`
-    //     ],
-    //     date: '2017',
-    //     tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
-    //     linked: 'https://fabrika-forte.ru/'
-    // },
+    {
+        id: 4,
+        title: 'Фабрика Форте',
+        description: 'Фабрика по пошиву постельного белья и домашнего текстиля',
+        type: 'web',
+        imageUrl: `${baseUrl}web/fabrikaForte/rp_fabrikaForte_00.webp`,
+        images: [
+            `${baseUrl}web/fabrikaForte/rp_fabrikaForte_01.webp`,
+            `${baseUrl}web/fabrikaForte/rp_fabrikaForte_02.webp`,
+            `${baseUrl}web/fabrikaForte/rp_fabrikaForte_03.webp`
+        ],
+        date: '2017',
+        tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
+        linked: 'https://fabrika-forte.ru/'
+    },
     // {
     //     id: 5,
     //     title: 'Время обедать',
@@ -118,21 +118,21 @@ export const galleryItems: GalleryItem[] = [
     //     tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
     //     linked: 'https://listt63.ru/'
     // },
-    // {
-    //     id: 8,
-    //     title: 'СМИБС',
-    //     description: `Муниципальное бюджетное учреждение культуры городского округа Самара «Самарская муниципальная информационно-библиотечная система»`,
-    //     type: 'web',
-    //     imageUrl: `${baseUrl}web/smibs/rp_smibs_00.webp`,
-    //     images: [
-    //         `${baseUrl}web/smibs/rp_smibs_01.webp`,
-    //         `${baseUrl}web/smibs/rp_smibs_02.webp`,
-    //         `${baseUrl}web/smibs/rp_smibs_03.webp`,
-    //     ],
-    //     date: '2021',
-    //     tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
-    //     linked: 'https://smibs.ru/'
-    // },
+    {
+        id: 8,
+        title: 'СМИБС',
+        description: `Муниципальное бюджетное учреждение культуры городского округа Самара «Самарская муниципальная информационно-библиотечная система»`,
+        type: 'web',
+        imageUrl: `${baseUrl}web/smibs/rp_smibs_00.webp`,
+        images: [
+            `${baseUrl}web/smibs/rp_smibs_01.webp`,
+            `${baseUrl}web/smibs/rp_smibs_02.webp`,
+            `${baseUrl}web/smibs/rp_smibs_03.webp`,
+        ],
+        date: '2021',
+        tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
+        linked: 'https://smibs.ru/'
+    },
     // {
     //     id: 9,
     //     title: 'Аквалайф',
@@ -178,38 +178,38 @@ export const galleryItems: GalleryItem[] = [
     //     tags: ['HTML', 'CSS', 'Javascript'],
     //     linked: 'https://goliaph.redvus.ru/'
     // },
-    // {
-    //     id: 12,
-    //     title: 'Фотобокс',
-    //     description: `Продажа и профессиональная проявка фотопленки.<br>><br>
-    //     Печать фотографий и плакатов.`,
-    //     type: 'web',
-    //     imageUrl: `${baseUrl}web/photoboxs/rp_photoboxs_00.webp`,
-    //     images: [
-    //         `${baseUrl}web/photoboxs/rp_photoboxs_01.webp`,
-    //         `${baseUrl}web/photoboxs/rp_photoboxs_02.webp`,
-    //         `${baseUrl}web/photoboxs/rp_photoboxs_03.webp`,
-    //     ],
-    //     date: '2023',
-    //     tags: ['HTML', 'CSS', 'Javascript'],
-    //     linked: 'https://photoboxs.ru/'
-    // },
-    // {
-    //     id: 13,
-    //     title: 'Проект для ресторана',
-    //     description: `Бизнес-ланч для ресторана с доставкой еды.<br><br>
-    //     Заказ блюд из меню ресторана с доставкой в офис или на дом.`,
-    //     type: 'web',
-    //     imageUrl: `${baseUrl}web/sandwich/rp_sandwich_00.webp`,
-    //     images: [
-    //         `${baseUrl}web/sandwich/rp_sandwich_01.webp`,
-    //         `${baseUrl}web/sandwich/rp_sandwich_02.webp`,
-    //         `${baseUrl}web/sandwich/rp_sandwich_03.webp`,
-    //     ],
-    //     date: '2023',
-    //     tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
-    //     linked: 'https://sandvich.redvus.ru/'
-    // },
+    {
+        id: 12,
+        title: 'Фотобокс',
+        description: `Продажа и профессиональная проявка фотопленки.<br>><br>
+        Печать фотографий и плакатов.`,
+        type: 'web',
+        imageUrl: `${baseUrl}web/photoboxs/rp_photoboxs_00.webp`,
+        images: [
+            `${baseUrl}web/photoboxs/rp_photoboxs_01.webp`,
+            `${baseUrl}web/photoboxs/rp_photoboxs_02.webp`,
+            `${baseUrl}web/photoboxs/rp_photoboxs_03.webp`,
+        ],
+        date: '2023',
+        tags: ['HTML', 'CSS', 'Javascript'],
+        linked: 'https://photoboxs.ru/'
+    },
+    {
+        id: 13,
+        title: 'Проект для ресторана',
+        description: `Бизнес-ланч для ресторана с доставкой еды.<br><br>
+        Заказ блюд из меню ресторана с доставкой в офис или на дом.`,
+        type: 'web',
+        imageUrl: `${baseUrl}web/sandwich/rp_sandwich_00.webp`,
+        images: [
+            `${baseUrl}web/sandwich/rp_sandwich_01.webp`,
+            `${baseUrl}web/sandwich/rp_sandwich_02.webp`,
+            `${baseUrl}web/sandwich/rp_sandwich_03.webp`,
+        ],
+        date: '2023',
+        tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
+        linked: 'https://sandvich.redvus.ru/'
+    },
     // {
     //     id: 14,
     //     title: 'ЕвроАвтоЦентр',
@@ -225,21 +225,21 @@ export const galleryItems: GalleryItem[] = [
     //     tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
     //     linked: 'https://mb-truck.ru/'
     // },
-    // {
-    //     id: 15,
-    //     title: 'Краспан',
-    //     description: `Продажа материалов для фасадов и кровли`,
-    //     type: 'web',
-    //     imageUrl: `${baseUrl}web/kraspan/rp_kraspan_00.webp`,
-    //     images: [
-    //         `${baseUrl}web/kraspan/rp_kraspan_01.webp`,
-    //         `${baseUrl}web/kraspan/rp_kraspan_02.webp`,
-    //         `${baseUrl}web/kraspan/rp_kraspan_03.webp`,
-    //     ],
-    //     date: '2024',
-    //     tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
-    //     linked: 'https://краспан-поволжье.рф/'
-    // },
+    {
+        id: 15,
+        title: 'Краспан',
+        description: `Продажа материалов для фасадов и кровли`,
+        type: 'web',
+        imageUrl: `${baseUrl}web/kraspan/rpw_kraspan_00.webp`,
+        images: [
+            `${baseUrl}web/kraspan/rpw_kraspan_01.webp`,
+            `${baseUrl}web/kraspan/rpw_kraspan_02.webp`,
+            `${baseUrl}web/kraspan/rpw_kraspan_03.webp`,
+        ],
+        date: '2024',
+        tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
+        linked: 'https://краспан-поволжье.рф/'
+    },
     // {
     //     id: 16,
     //     title: 'Форсунка',
@@ -815,7 +815,7 @@ export const galleryItems: GalleryItem[] = [
         id: 51,
         title: 'Интерактивная выставка c элементами игры',
         description: 'Работа была сделана в рамках проекта виртуальной интерактивной выставки про выдающегося человека своего времени Н. Г. Гарина-Михайловского.',
-        type: 'projects',
+        type: 'web',
         imageUrl: `${baseUrl}projects/garin/rp_garin_00.webp`,
         images: [
             `${baseUrl}projects/garin/rp_garin_02.webp`,
@@ -847,7 +847,7 @@ export const galleryItems: GalleryItem[] = [
         id: 52,
         title: 'Интерактивная проект к 80-летию Победы',
         description: 'Работа была сделана в рамках проекта виртуальной интерактивной книги',
-        type: 'projects',
+        type: 'web',
         imageUrl: `${baseUrl}projects/victory80/rpp_victory80_00.webp`,
         images: [
             `${baseUrl}projects/victory80/rpp_victory80_01.webp`,
@@ -939,9 +939,15 @@ export const galleryItems: GalleryItem[] = [
         type: 'video',
         imageUrl: `${baseUrl}video/forpost/rpv_forpost_00.webp`,
         images: [
-            // `${baseUrl}video/forpost/rpv_forpost_01.webp`,
-            // `${baseUrl}video/forpost/rpv_forpost_02.webp`,
-            // `${baseUrl}video/forpost/rpv_forpost_03.webp`
+            `${baseUrl}video/forpost/rpv_forpost_01.webp`,
+            `${baseUrl}video/forpost/rpv_forpost_02.webp`,
+            `${baseUrl}video/forpost/rpv_forpost_03.webp`,
+            `${baseUrl}video/forpost/rpv_forpost_04.webp`,
+            `${baseUrl}video/forpost/rpv_forpost_05.webp`,
+            `${baseUrl}video/forpost/rpv_forpost_06.webp`,
+            `${baseUrl}video/forpost/rpv_forpost_07.webp`,
+            `${baseUrl}video/forpost/rpv_forpost_08.webp`,
+            `${baseUrl}video/forpost/rpv_forpost_09.webp`,
         ],
         videos: [
             {
@@ -956,7 +962,7 @@ export const galleryItems: GalleryItem[] = [
     {
         id: 57,
         title: 'Фотобокс',
-        description: 'Тренировочный проект – разбавить статику небольшой анимацией. Взял модели из предыдущих проектов и добавил новые. Освоение новых инструментов, принципов анимации, изучение основ работы в DaVinci Stidio для дальнейшего развития.',
+        description: 'Рекламный проект от компании по фотоуслугам, проявке и продаже фотопленки, печати фотографий для трансляции на видео-биллборде у оживленной автомобильной трассы.',
         type: 'video',
         imageUrl: `${baseUrl}video/photoboxs/rpv_photoboxs_00.webp`,
         videos: [
@@ -975,7 +981,7 @@ export const galleryItems: GalleryItem[] = [
     {
         id: 58,
         title: 'Литературный театр',
-        description: 'Тренировочный проект – разбавить статику небольшой анимацией. Взял модели из предыдущих проектов и добавил новые. Освоение новых инструментов, принципов анимации, изучение основ работы в DaVinci Stidio для дальнейшего развития.',
+        description: 'Проект для маленького театра в филиале библиотеки СМИБС. Заставка логотипа для показа через проектор на задний фон.',
         type: 'video',
         imageUrl: `${baseUrl}video/smibs/rpv_theaterLogo_00.webp`,
         videos: [
@@ -990,12 +996,12 @@ export const galleryItems: GalleryItem[] = [
 ];
 
 export const filterOptions: FilterOption[] = [
-    // { id: 'web', label: 'Сайты', icon: 'fas fa-globe', count: galleryItems.filter(item => item.type === 'web').length },
+    { id: 'web', label: 'Сайты', icon: 'fas fa-globe', count: galleryItems.filter(item => item.type === 'web').length },
     { id: 'games', label: 'Игры', icon: 'fas fa-gamepad', count: galleryItems.filter(item => item.type === 'games').length },
-    // { id: 'mobile', label: 'Мобильные', icon: 'fas fa-mobile-screen-button', count: galleryItems.filter(item => item.type === 'mobile').length },
+    { id: 'mobile', label: 'Мобильные', icon: 'fas fa-mobile-screen-button', count: galleryItems.filter(item => item.type === 'mobile').length },
     { id: 'branding', label: 'Брэндинг', icon: 'fas fa-splotch', count: galleryItems.filter(item => item.type === 'branding').length },
-    // { id: 'publish', label: 'Принт', icon: 'fas fa-book-open', count: galleryItems.filter(item => item.type === 'publish').length },
-    { id: 'projects', label: 'Проекты', icon: 'fas fa-video', count: galleryItems.filter(item => item.type === 'projects').length },
+    { id: 'publish', label: 'Принт', icon: 'fas fa-book-open', count: galleryItems.filter(item => item.type === 'publish').length },
+    // { id: 'projects', label: 'Проекты', icon: 'fas fa-video', count: galleryItems.filter(item => item.type === 'projects').length },
     { id: 'art', label: 'Арт', icon: 'fas fa-paint-brush', count: galleryItems.filter(item => item.type === 'art').length },
     { id: 'video', label: 'Видео', icon: 'fas fa-video', count: galleryItems.filter(item => item.type === 'video').length },
     { id: 'all', label: 'Всего', icon: 'fas fa-th-large', count: galleryItems.length }
