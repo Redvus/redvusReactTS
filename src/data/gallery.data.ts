@@ -14,12 +14,16 @@ export const galleryItems: GalleryItem[] = [
     {
         id: 1,
         title: 'Джин Джу',
-        description: 'Ресторан китайской кухни',
+        description: 'Ресторан китайской кухни. Первая серьезная работа на поприще веб-разработки. Только осваивал HTML, CSS и Javascript, поэтому сайт получился довольно простым, но визуально стильным с некоторыми интерактивными элементами. Некоторые русские названия специально переводил на китайский.',
         type: 'web',
         imageUrl: `${baseUrl}web/djindju/rpw_djindju_00.webp`,
         images: [
             `${baseUrl}web/djindju/rpw_djindju_01.webp`,
             `${baseUrl}web/djindju/rpw_djindju_02.webp`,
+            `${baseUrl}web/djindju/rpw_djindju_03.webp`,
+            `${baseUrl}web/djindju/rpw_djindju_04.webp`,
+            `${baseUrl}web/djindju/rpw_djindju_05.webp`,
+            `${baseUrl}web/djindju/rpw_djindju_06.webp`,
         ],
         date: '2013',
         tags: ['HTML', 'CSS', 'Javascript'],
@@ -28,7 +32,7 @@ export const galleryItems: GalleryItem[] = [
     {
         id: 2,
         title: 'Трэкшн Групп',
-        description: 'Продажа, обслуживание и ремонт грузовых автомобилей',
+        description: 'Продажа, обслуживание и ремонт грузовых автомобилей. Первый сайт, сделанный сначала на Wordpress, потом переработанный под CMS Modx, так как нашел эту систему наиболее гибкой, функциональной и надежной для создания сайтов.',
         type: 'web',
         imageUrl: `${baseUrl}web/traction/rpw_traction_00.webp`,
         images: [
@@ -40,22 +44,22 @@ export const galleryItems: GalleryItem[] = [
         tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
         linked: 'https://tractiongroup.ru/'
     },
-    // {
-    //     id: 3,
-    //     title: 'Тарзания',
-    //     description: 'Строительство и обслуживание веревочных парков',
-    //     type: 'web',
-    //     imageUrl: `${baseUrl}web/tarzaniya/rpw_tarzaniya_00.webp`,
-    //     images: [
-    //         `${baseUrl}web/tarzaniya/rpw_tarzaniya_01.webp`,
-    //         `${baseUrl}web/tarzaniya/rpw_tarzaniya_02.webp`,
-    //         `${baseUrl}web/tarzaniya/rpw_tarzaniya_03.webp`,
-    //         `${baseUrl}web/tarzaniya/rpw_tarzaniya_04.webp`,
-    //     ],
-    //     date: '2015',
-    //     tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
-    //     linked: 'https://tarzaniya.com/'
-    // },
+    {
+        id: 3,
+        title: 'Тарзания',
+        description: 'Строительство и обслуживание веревочных парков',
+        type: 'web',
+        imageUrl: `${baseUrl}web/tarzaniya/rpw_tarzaniya_00.webp`,
+        images: [
+            `${baseUrl}web/tarzaniya/rpw_tarzaniya_01.webp`,
+            `${baseUrl}web/tarzaniya/rpw_tarzaniya_02.webp`,
+            `${baseUrl}web/tarzaniya/rpw_tarzaniya_03.webp`,
+            `${baseUrl}web/tarzaniya/rpw_tarzaniya_04.webp`,
+        ],
+        date: '2015',
+        tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
+        linked: 'https://tarzaniya.com/'
+    },
     {
         id: 4,
         title: 'Фабрика Форте',
@@ -86,38 +90,38 @@ export const galleryItems: GalleryItem[] = [
     //     tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
     //     linked: 'https://ttl.redvus.ru/'
     // },
-    // {
-    //     id: 6,
-    //     title: 'Бизнес-Ремонт',
-    //     description: 'Ремонт и обслуживание коммерческой недвижимости',
-    //     type: 'web',
-    //     imageUrl: `${baseUrl}web/businessRemont/rp_businessRemont_00.webp`,
-    //     images: [
-    //         `${baseUrl}web/businessRemont/rp_businessRemont_01.webp`,
-    //         `${baseUrl}web/businessRemont/rp_businessRemont_02.webp`,
-    //         `${baseUrl}web/businessRemont/rp_businessRemont_03.webp`,
-    //     ],
-    //     date: '2019',
-    //     tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
-    //     linked: 'https://business-remont.ru/'
-    // },
-    // {
-    //     id: 7,
-    //     title: 'Листт 63',
-    //     description:
-    //         `Строительство зданий и производственных, выставочных или складских сооружений.<br /><br />
-    //         Ремонт офисных, торговых помещений, объектов общественного питания, медицинских помещений`,
-    //     type: 'web',
-    //     imageUrl: `${baseUrl}web/businessRemont/rp_businessRemont_00.webp`,
-    //     images: [
-    //         `${baseUrl}web/businessRemont/rp_businessRemont_01.webp`,
-    //         `${baseUrl}web/businessRemont/rp_businessRemont_02.webp`,
-    //         `${baseUrl}web/businessRemont/rp_businessRemont_03.webp`,
-    //     ],
-    //     date: '2019',
-    //     tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
-    //     linked: 'https://listt63.ru/'
-    // },
+    {
+        id: 6,
+        title: 'Бизнес-Ремонт',
+        description: 'Ремонт и обслуживание коммерческой недвижимости',
+        type: 'web',
+        imageUrl: `${baseUrl}web/businessRemont/rp_businessRemont_00.webp`,
+        images: [
+            `${baseUrl}web/businessRemont/rp_businessRemont_01.webp`,
+            `${baseUrl}web/businessRemont/rp_businessRemont_02.webp`,
+            `${baseUrl}web/businessRemont/rp_businessRemont_03.webp`,
+        ],
+        date: '2019',
+        tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
+        linked: 'https://business-remont.ru/'
+    },
+    {
+        id: 7,
+        title: 'Листт 63',
+        description:
+            `Строительство зданий и производственных, выставочных или складских сооружений.<br /><br />
+            Ремонт офисных, торговых помещений, объектов общественного питания, медицинских помещений`,
+        type: 'web',
+        imageUrl: `${baseUrl}web/businessRemont/rp_businessRemont_00.webp`,
+        images: [
+            `${baseUrl}web/businessRemont/rp_businessRemont_01.webp`,
+            `${baseUrl}web/businessRemont/rp_businessRemont_02.webp`,
+            `${baseUrl}web/businessRemont/rp_businessRemont_03.webp`,
+        ],
+        date: '2019',
+        tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
+        linked: 'https://listt63.ru/'
+    },
     {
         id: 8,
         title: 'СМИБС',
@@ -133,51 +137,54 @@ export const galleryItems: GalleryItem[] = [
         tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
         linked: 'https://smibs.ru/'
     },
-    // {
-    //     id: 9,
-    //     title: 'Аквалайф',
-    //     description: 'Ионизаторы и фильтры для воды',
-    //     type: 'web',
-    //     imageUrl: `${baseUrl}web/akvalife/rp_akvalife_00.webp`,
-    //     images: [
-    //         `${baseUrl}web/akvalife/rp_akvalife_01.webp`,
-    //         `${baseUrl}web/akvalife/rp_akvalife_02.webp`,
-    //         `${baseUrl}web/akvalife/rp_akvalife_03.webp`,
-    //     ],
-    //     date: '2022',
-    //     tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
-    //     linked: 'https://akvalife.redvus.ru/'
-    // },
-    // {
-    //     id: 10,
-    //     title: 'Плейофф',
-    //     description: 'Школа для подготовки юных хоккеистов',
-    //     type: 'web',
-    //     imageUrl: `${baseUrl}web/playoff/rp_playoff_00.webp`,
-    //     images: [
-    //         `${baseUrl}web/playoff/rp_playoff_01.webp`,
-    //         `${baseUrl}web/playoff/rp_playoff_02.webp`,
-    //         `${baseUrl}web/playoff/rp_playoff_03.webp`,
-    //     ],
-    //     date: '2022',
-    //     tags: ['HTML', 'CSS', 'Javascript'],
-    //     linked: 'https://playoff.redvus.ru/'
-    // },
-    // {
-    //     id: 11,
-    //     title: 'Голиаф',
-    //     description: 'Компания по перевозке крупногабаритных грузов',
-    //     type: 'web',
-    //     imageUrl: `${baseUrl}web/goliaph/rp_goliaph_00.webp`,
-    //     images: [
-    //         `${baseUrl}web/goliaph/rp_goliaph_01.webp`,
-    //         `${baseUrl}web/goliaph/rp_goliaph_02.webp`,
-    //         `${baseUrl}web/goliaph/rp_goliaph_03.webp`,
-    //     ],
-    //     date: '2022',
-    //     tags: ['HTML', 'CSS', 'Javascript'],
-    //     linked: 'https://goliaph.redvus.ru/'
-    // },
+    {
+        id: 9,
+        title: 'Аквалайф',
+        description: 'Ионизаторы и фильтры для воды. Сайт сделан в виде одной страницы с анимациями и интерактивными элементами, но имитирующим переход на другую страницу со скрытием содержимиго одного блока и отображением другого.',
+        type: 'web',
+        imageUrl: `${baseUrl}web/akvalife/rpw_akvalife_00.webp`,
+        images: [
+            `${baseUrl}web/akvalife/rpw_akvalife_01.webp`,
+            `${baseUrl}web/akvalife/rpw_akvalife_02.webp`,
+            `${baseUrl}web/akvalife/rpw_akvalife_03.webp`,
+            `${baseUrl}web/akvalife/rpw_akvalife_04.webp`,
+            `${baseUrl}web/akvalife/rpw_akvalife_05.webp`,
+        ],
+        date: '2022',
+        tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
+        linked: 'https://akvalife.redvus.ru/'
+    },
+    {
+        id: 10,
+        title: 'Плейофф',
+        description: 'Школа для подготовки юных хоккеистов. Сайт сделан в виде одной страницы с анимациями и интерактивными элементами.',
+        type: 'web',
+        imageUrl: `${baseUrl}web/playoff/rpw_playoff_00.webp`,
+        images: [
+            `${baseUrl}web/playoff/rpw_playoff_01.webp`,
+            `${baseUrl}web/playoff/rpw_playoff_02.webp`,
+            `${baseUrl}web/playoff/rpw_playoff_03.webp`,
+            `${baseUrl}web/playoff/rpw_playoff_04.webp`,
+        ],
+        date: '2022',
+        tags: ['HTML', 'CSS', 'Javascript'],
+        linked: 'https://playoff.redvus.ru/'
+    },
+    {
+        id: 11,
+        title: 'Голиаф',
+        description: 'Компания по перевозке крупногабаритных грузов',
+        type: 'web',
+        imageUrl: `${baseUrl}web/goliaph/rp_goliaph_00.webp`,
+        images: [
+            `${baseUrl}web/goliaph/rp_goliaph_01.webp`,
+            `${baseUrl}web/goliaph/rp_goliaph_02.webp`,
+            `${baseUrl}web/goliaph/rp_goliaph_03.webp`,
+        ],
+        date: '2022',
+        tags: ['HTML', 'CSS', 'Javascript'],
+        linked: 'https://goliaph.redvus.ru/'
+    },
     {
         id: 12,
         title: 'Фотобокс',
@@ -210,21 +217,21 @@ export const galleryItems: GalleryItem[] = [
         tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
         linked: 'https://sandvich.redvus.ru/'
     },
-    // {
-    //     id: 14,
-    //     title: 'ЕвроАвтоЦентр',
-    //     description: `Продажа и обслуживание грузовых автомобилей Мерседес-Бенц`,
-    //     type: 'web',
-    //     imageUrl: `${baseUrl}web/mbtruck/rp_mbtruck_00.webp`,
-    //     images: [
-    //         `${baseUrl}web/mbtruck/rp_mbtruck_01.webp`,
-    //         `${baseUrl}web/mbtruck/rp_mbtruck_02.webp`,
-    //         `${baseUrl}web/mbtruck/rp_mbtruck_03.webp`,
-    //     ],
-    //     date: '2024',
-    //     tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
-    //     linked: 'https://mb-truck.ru/'
-    // },
+    {
+        id: 14,
+        title: 'ЕвроАвтоЦентр',
+        description: `Продажа и обслуживание грузовых автомобилей Мерседес-Бенц`,
+        type: 'web',
+        imageUrl: `${baseUrl}web/mbtruck/rp_mbtruck_00.webp`,
+        images: [
+            `${baseUrl}web/mbtruck/rp_mbtruck_01.webp`,
+            `${baseUrl}web/mbtruck/rp_mbtruck_02.webp`,
+            `${baseUrl}web/mbtruck/rp_mbtruck_03.webp`,
+        ],
+        date: '2024',
+        tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
+        linked: 'https://mb-truck.ru/'
+    },
     {
         id: 15,
         title: 'Краспан',
@@ -240,21 +247,21 @@ export const galleryItems: GalleryItem[] = [
         tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
         linked: 'https://краспан-поволжье.рф/'
     },
-    // {
-    //     id: 16,
-    //     title: 'Форсунка',
-    //     description: `Продажа автозапчастей для грузовых автомобилей`,
-    //     type: 'web',
-    //     imageUrl: `${baseUrl}web/forsunka/rp_forsunka_00.webp`,
-    //     images: [
-    //         `${baseUrl}web/forsunka/rp_forsunka_01.webp`,
-    //         `${baseUrl}web/forsunka/rp_forsunka_02.webp`,
-    //         `${baseUrl}web/forsunka/rp_forsunka_03.webp`,
-    //     ],
-    //     date: '2026',
-    //     tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
-    //     linked: 'https://forsunka.com/'
-    // },
+    {
+        id: 16,
+        title: 'Форсунка',
+        description: `Продажа автозапчастей для грузовых автомобилей`,
+        type: 'web',
+        imageUrl: `${baseUrl}web/forsunka/rp_forsunka_00.webp`,
+        images: [
+            `${baseUrl}web/forsunka/rp_forsunka_01.webp`,
+            `${baseUrl}web/forsunka/rp_forsunka_02.webp`,
+            `${baseUrl}web/forsunka/rp_forsunka_03.webp`,
+        ],
+        date: '2026',
+        tags: ['PHP', 'HTML', 'CSS', 'Javascript'],
+        linked: 'https://forsunka.com/'
+    },
 
     // Игры
     {
@@ -998,9 +1005,9 @@ export const galleryItems: GalleryItem[] = [
 export const filterOptions: FilterOption[] = [
     { id: 'web', label: 'Сайты', icon: 'fas fa-globe', count: galleryItems.filter(item => item.type === 'web').length },
     { id: 'games', label: 'Игры', icon: 'fas fa-gamepad', count: galleryItems.filter(item => item.type === 'games').length },
-    { id: 'mobile', label: 'Мобильные', icon: 'fas fa-mobile-screen-button', count: galleryItems.filter(item => item.type === 'mobile').length },
+    // { id: 'mobile', label: 'Мобильные', icon: 'fas fa-mobile-screen-button', count: galleryItems.filter(item => item.type === 'mobile').length },
     { id: 'branding', label: 'Брэндинг', icon: 'fas fa-splotch', count: galleryItems.filter(item => item.type === 'branding').length },
-    { id: 'publish', label: 'Принт', icon: 'fas fa-book-open', count: galleryItems.filter(item => item.type === 'publish').length },
+    // { id: 'publish', label: 'Полиграфия', icon: 'fas fa-book-open', count: galleryItems.filter(item => item.type === 'publish').length },
     // { id: 'projects', label: 'Проекты', icon: 'fas fa-video', count: galleryItems.filter(item => item.type === 'projects').length },
     { id: 'art', label: 'Арт', icon: 'fas fa-paint-brush', count: galleryItems.filter(item => item.type === 'art').length },
     { id: 'video', label: 'Видео', icon: 'fas fa-video', count: galleryItems.filter(item => item.type === 'video').length },

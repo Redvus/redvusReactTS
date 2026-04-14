@@ -89,7 +89,7 @@ const AboutModal: React.FC<AboutModalProps> = ({ isOpen, onClose }) => {
     const skillsWeb = [
         { name: 'HTML', level: 95, icon: <DiHtml5 /> },
         { name: 'SCSS', level: 90, icon: <SiSass /> },
-        { name: 'GSAP', level: 85, icon: <SiGsap /> },
+        { name: 'GSAP', level: 70, icon: <SiGsap /> },
         { name: 'PHP', level: 50, icon: <SiPhp /> },
         { name: 'JavaScript', level: 60, icon: <SiJavascript /> },
         { name: 'TypeScript', level: 35, icon: <SiTypescript /> },
