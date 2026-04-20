@@ -33,10 +33,45 @@ const Gallery: React.FC = () => {
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         return prefersDark ? 'dark' : 'light';
     });
-    // const [selectedItem, setSelectedItem] = useState<GalleryItemType | null>(null);
-    // const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedItem, setSelectedItem] = useState<GalleryItemType | null>(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
+
+    // Infinite scrolling для загрузки дополнительных работ
+    // Ссылка на «footer» для observer (вставляется в конец сетки)
+    // const observerTarget = useRef<HTMLDivElement>(null);
+    // // Состояние — загружается ли следующая порция
+    // const [isLoadingMore, setIsLoadingMore] = useState(false);
+    // // [hasMore] должно быть у вас где-то — например, при разборе пагинации
+    // // const [hasMore, setHasMore] = useState(true);
+
+    // useEffect(() => {
+    //     const target = observerTarget.current;
+    //     if (!target) return;
+
+    //     const observer = new IntersectionObserver(
+    //         (entries) => {
+    //             const [entry] = entries;
+    //             if (entry.isIntersecting && hasMore && !isLoadingMore) {
+    //                 setIsLoadingMore(true);
+    //                 loadMoreItems() // <-- твоя функция загрузки порции
+    //                     .then(() => {
+    //                         // Здесь можно, например, обновить items/filteredItems
+    //                         // и/или setHasMore(...)
+    //                     })
+    //                     .catch((err) => {
+    //                         console.error('Ошибка при загрузке работ:', err);
+    //                     })
+    //                     .finally(() => {
+    //                         setIsLoadingMore(false);
+    //                     });
+    //             }
+    //         },
+    //         { root: galleryRef.current, rootMargin: '100px', threshold: 0 }
+    //     );
+
+    //     observer.observe(target);
+    //     return () => observer.disconnect();
+    // }, [isLoadingMore, hasMore]);
 
     // useEffect(() => {
     //     // Анимация фоновых элементов

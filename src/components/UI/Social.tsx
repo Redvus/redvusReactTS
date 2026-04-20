@@ -2,9 +2,9 @@
 const Social = ({ className = '' }) => {
     return (
         <div className={`social ${className}`}>
-            <a href="https://github.com/Redvus" target='_blank'>
+            {/* <a href="https://github.com/Redvus" target='_blank'>
                 <i className="fab fa-github"></i>
-            </a>
+            </a> */}
             <a href="mailto:info@redvus.ru">
                 <i className="fas fa-envelope-open"></i>
             </a>
