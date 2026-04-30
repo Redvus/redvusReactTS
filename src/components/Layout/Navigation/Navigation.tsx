@@ -9,7 +9,7 @@ const Nav: React.FC<NavProps> = ({ onAboutClick }) => {
         // { id: 'gallery', label: 'Галерея', href: '/' },
         // { id: 'portfolio', label: 'Портфолио', href: '/portfolio' },
         { id: 'about', label: 'Обо мне', isModal: true },
-        { id: 'blog', label: 'Блог', href: 'https://readvus.ru' },
+        { id: 'blog', label: 'Блог', href: 'https://redvus.ru/blog' },
     ];
 
     const handleNavClick = (item: typeof navItems[0]) => {
