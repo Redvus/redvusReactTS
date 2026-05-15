@@ -255,7 +255,8 @@ export const galleryItems: GalleryItem[] = [
         id: 16,
         title: 'Форсунка',
         description: `Продажа автозапчастей для грузовых автомобилей.<br><br>
-        Интернет-магазин на базе CMS OpenCart с доработками по дизайну и функционалу.`,
+        Интернет-магазин на базе CMS OpenCart с доработками по дизайну и функционалу.<br><br>
+        Обеспечена синхронизация с 1С для автоматического и ручного обновления наличия и цен товаров на сайте.`,
         type: 'web',
         imageUrl: `${baseUrl}web/forsunka/rpw_forsunka_00.webp?${version}`,
         images: [
