@@ -822,7 +822,7 @@ export const galleryItems: GalleryItem[] = [
             `${baseUrl}branding/photoboxs/rp_photoboxs_02.webp?${version}`,
         ],
         date: '2026',
-        tags: ['Illustrator']
+        tags: ['Illustrator', 'Blender']
     },
 
     // Проекты
