@@ -93,13 +93,9 @@ $font-width-extended: 125%;
 
     @if $size ==base {
         font-size: var(--font-size-base);
-    }
-
-    @else if $size ==large {
+    } @else if $size ==large {
         font-size: var(--font-size-large);
-    }
-
-    @else if $size ==small {
+    } @else if $size ==small {
         font-size: var(--font-size-small);
 
         @include bp.media-up('XLarge') {
@@ -117,7 +113,7 @@ $font-width-extended: 125%;
 @mixin hx($size) {
     font-family: var(--heading-font);
     font-weight: $font-weight-regular;
-    // color: var(--heading-font-color);
+    color: var(--heading-font-color);
     display: block;
     line-height: var(--heading-line-height);
     margin-top: 0;
@@ -127,29 +123,19 @@ $font-width-extended: 125%;
         font-size: var(--font-size-h1);
         font-weight: $font-weight-medium;
         font-stretch: $font-width-normal;
-    }
-
-    @else if $size ==h2 {
+    } @else if $size ==h2 {
         font-size: var(--font-size-h2);
         font-weight: $font-weight-regular;
         font-stretch: $font-width-normal;
-    }
-
-    @else if $size ==h3 {
+    } @else if $size ==h3 {
         font-size: var(--font-size-h3);
         font-weight: $font-weight-regular;
         font-stretch: $font-width-normal;
-    }
-
-    @else if $size ==h4 {
+    } @else if $size ==h4 {
         font-size: var(--font-size-h4);
-    }
-
-    @else if $size ==h5 {
+    } @else if $size ==h5 {
         font-size: var(--font-size-h5);
-    }
-
-    @else if $size ==h6 {
+    } @else if $size ==h6 {
         font-size: var(--font-size-h6);
     }
 }
